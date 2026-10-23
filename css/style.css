@@ -37,6 +37,7 @@ body {
     font-weight: 400;
 }
 
+
 /* Encabezados */
 h1, h2, h3, h4, h5, h6,
 .titulo, .subtitulo {
@@ -48,4 +49,51 @@ h1, h2, h3, h4, h5, h6,
 button, .btn, input[type="submit"] {
     font-family: var(--fuente-contenido);
     font-weight: 700;
+}
+
+/* Estilos para el Navbar */
+nav{
+    background-color: var(--azul-marino-intenso);
+    font-family: var(--fuente-encabezados);
+}
+
+
+nav .barra-encabezado input{
+    background-color: #e8e8e8;
+    border-color: #e8e8e8;
+    color: var(--azul-marino-intenso);
+}
+
+.form-contol{
+    background-color: #e8e8e8;
+}
+.navbar-brand{
+    color:var(--blanco-calido)
+}
+nav .barra-encabezado input:hover{
+    border-color: #e8e8e8;
+}
+nav .barra-encabezado button{
+    background-color: #e8e8e8;
+    border-color: #e8e8e8;
+    color: var(--azul-marino-intenso);
+}
+nav .nav-item a{
+    color: var(--blanco-calido);
+}
+
+.input-group .nav-item .activo{
+       color: var(--rosa-coral);
+}
+.navbar-toggler-icon{
+    background-image: var(--blanco-calido);
+}
+
+#carritoCompra{
+    background-color: var(--menta);
+}
+
+#btnInicioSesion{
+    background-color: var(--rosa-sakura);
+    color: var(--blanco-calido);
 }
