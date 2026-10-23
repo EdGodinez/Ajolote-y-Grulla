@@ -1,0 +1,20 @@
+/* hero.css */
+.hero-about {
+    background-color: var(--blanco-calido);
+}
+
+.hero-about__titulo {
+    color: var(--rosa-coral);
+    line-height: 0.9;
+}
+
+.hero-about__img {
+    max-width: 330px;
+}
+
+.hero-about__linea {
+    width: 115px;
+    height: 6px;
+    background-color: var(--rosa-coral);
+}
+

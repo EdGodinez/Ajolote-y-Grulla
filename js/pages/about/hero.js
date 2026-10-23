@@ -4,29 +4,33 @@ export function renderHero() {
     if (!container) return;
 
     container.innerHTML = `
-        <div class="container-fluid flex-grow-1">
-                <main class="col-md-12 py-4">
-                    <h1 class="display-5 fw-bold text-left">Sobre Nosotros</h1>      
+        <section class="hero-about py-5">
+            <div class="container py-lg-4">
+                <div class="row align-items-center g-5">
 
-                    <div class="card shadow-sm my-4 overflow-hidden">
-                        <div class="row g-0">
-                            <div class="col-md-8">
-                            <p class="card-text">
-                             Ajolote y Grulla es un e-commerce de artículos de papelería japonesa en México.
-                             En nuestro catálogo destacan productos ganadores de los prestigiosos premios <strong>"Japanese Stationery Awards."</strong>                             
-                             Como diferenciador logramos mejorar la experiencia de búsqueda detallando la singularidad 
-                             de cada artículo, no solo por su funcionalidad o características, sino con descripciones 
-                             que destaquen su "personalidad".
-                            </p>
-                        </div> 
-
-                        <div class="col-md-4">
-                            <img src="https://m.media-amazon.com/images/I/81V9c0GCb+L._UF1000,1000_QL80_.jpg"
-                                class="img-fluid h-100 object-fit-cover"
-                                alt="Logo de Ajolote y Grulla">
-                        </div>
+                    <div class="col-12 col-md-6 text-center text-md-start">
+                        <h1 class="hero-about__titulo display-4 fw-bold mb-4">
+                            Sobre<br>nosotros:
+                        </h1>
+                        <p class="text-secondary fs-5 mb-4">
+                            Ajolote y Grulla es un e-commerce de artículos de papelería japonesa en México.
+                            En nuestro catálogo destacan productos ganadores de los prestigiosos premios
+                            <strong>"Japanese Stationery Awards."</strong>
+                            Como diferenciador logramos mejorar la experiencia de búsqueda detallando la
+                            singularidad de cada artículo, no solo por su funcionalidad o características,
+                            sino con descripciones que destaquen su "personalidad".
+                        </p>
+                        <div class="hero-about__linea mx-auto mx-md-0"></div>
                     </div>
-            </main>
-        </div>
+
+                    <div class="col-12 col-md-6 text-center">
+                        <img src="assets/images/Logotipo-Principal.png"
+                            class="img-fluid hero-about__img"
+                            alt="Logo de Ajolote y Grulla">
+                    </div>
+
+                </div>
+            </div>
+        </section>
     `;
 }
