@@ -1,0 +1,51 @@
+
+/* ==========================================
+   AJOLOTE & GRULLA
+   Estilos y variables globales
+   ========================================== */
+
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap');
+
+/* ==========================================
+   VARIABLES GLOBALES
+   ========================================== */
+
+:root {
+    /* Paleta de colores */
+    --rosa-coral: #F85C70;
+    --lila: #C9B7F0;
+    --rosa-sakura: #F5A9C3;
+    --menta: #B7E6DB;
+    --azul-marino-intenso: #2E3855;
+    --blanco-calido: #F9F6F0;
+
+    /* Tipografías */
+    --fuente-encabezados: 'Poppins', sans-serif;
+    --fuente-contenido: 'Source Sans 3', sans-serif;
+
+    /* Integración con Bootstrap */
+    --bs-body-font-family: var(--fuente-contenido);
+}
+
+/* ==========================================
+   ESTILOS GENERALES
+   ========================================== */
+
+body {
+    font-family: var(--fuente-contenido);
+    font-weight: 400;
+}
+
+/* Encabezados */
+h1, h2, h3, h4, h5, h6,
+.titulo, .subtitulo {
+    font-family: var(--fuente-encabezados);
+    font-weight: 700;
+}
+
+/* Botones */
+button, .btn, input[type="submit"] {
+    font-family: var(--fuente-contenido);
+    font-weight: 700;
+}
