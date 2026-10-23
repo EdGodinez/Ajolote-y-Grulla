@@ -3,7 +3,7 @@ const presentationcards = [
         name: "Luis Enrique Jiménez Bernal",
         role: "Desarrollador Fullstack - frontend & UI/UX • Scrum Master - Product Owner - QA- Tester - DevOps",
         description: "Como Desarrollador Full Stack, mi misión es que tu experiencia en Ajolote & Grulla sea tan fluida y agradable como estrenar una libreta nueva. Uso mi lado analítico para construir toda la arquitectura técnica de la tienda (con Java y Spring Boot) y asegurarme de que todo funcione a la perfección. Me encanta el orden, el trabajo en equipo y resolver problemas. Fuera del código, tengo dos grandes pasiones que me ayudan a mantener el equilibrio: sentir el viento rodando en mi motocicleta estilo chopper y consentir a mi perrita Kyra.",
-        image: "C:\\Users\\ljime\\OneDrive\\Escritorio\\GENERATION DESARROLLADOR JAVA\\develop\\Ajolote-y-Grulla\\js\\pages\\about\\Fotos del equipo\\Luis Enrique.jpg", // Aquí pondrás la ruta de la imagen real
+        image: "C:\\Users\\ljime\\OneDrive\\Escritorio\\GENERATION DESARROLLADOR JAVA\\develop\\Ajolote-y-Grulla\\js\\pages\\about\\Fotos del equipo\\Luis Enrique.jpg",
         skills: [
             { name: "Figma", color: "var(--pastel-mint)" },
             { name: "HTML5 & CSS3", color: "var(--pastel-pink)" },
@@ -25,7 +25,7 @@ const presentationcards = [
         name: "Argelia Gómez Melquiades",
         role: "Desarrollador Fullstack - frontend & UI/UX • Scrum Master - Product Owner - QA- Tester - DevOps",
         description: "Como Desarrolladora Full Stack Jr, mi misión es que Ajolote & Grulla no solo tenga un código impecable, sino una visión sin fronteras. Gracias a mi formación en Negocios Internacionales, me apasiona ser el puente entre el desarrollo tecnológico (usando mis herramientas favoritas, Java y Python) y los objetivos de crecimiento de nuestro proyecto. Para mí, programar es como diseñar un mapa hacia nuevos horizontes: requiere estrategia, orden y que cada pieza encaje perfecto para conectar con las personas. Fuera de la pantalla, disfruto explorar nuevas ideas, culturas y aportar esa chispa de innovación para que el equipo siga llegando cada vez más lejos.",
-        image: "C:\\Users\\ljime\\OneDrive\\Escritorio\\GENERATION DESARROLLADOR JAVA\\develop\\Ajolote-y-Grulla\\js\\pages\\about\\Fotos del equipo\\Argelia.jpeg", // Aquí pondrás la ruta de la imagen real
+        image: "C:\\Users\\ljime\\OneDrive\\Escritorio\\GENERATION DESARROLLADOR JAVA\\develop\\Ajolote-y-Grulla\\js\\pages\\about\\Fotos del equipo\\Argelia.jpeg", 
         skills: [
             { name: "Figma", color: "var(--pastel-mint)" },
             { name: "HTML5 & CSS3", color: "var(--pastel-pink)" },
@@ -63,7 +63,7 @@ const presentationcards = [
         name: "Cristian Ruiz ortega",
         role: "Desarrollador Fullstack - frontend & UI/UX • Scrum Master - Product Owner - QA- Tester - DevOps",
         description: "Vengo del sector industrial, donde aprendí que cada pequeño engranaje cuenta, y ahora aplico esa misma precisión al código. Como Desarrollador Full Stack, utilizo mis herramientas favoritas (Java, Spring Boot, MySQL y JavaScript) para resolver cualquier rompecabezas técnico y construir una plataforma sólida y fluida. Me adapto a los nuevos retos tan rápido como la tinta seca sobre el papel y disfruto muchísimo colaborar con el equipo para darle vida a Ajolote & Grulla. Además, soy un entusiasta de la Inteligencia Artificial; me encanta explorar cómo esta tecnología puede darle un toque de magia e innovación a nuestro proyecto para estar siempre un paso adelante hacia el futuro.",
-        image: "C:\\Users\\ljime\\OneDrive\\Escritorio\\GENERATION DESARROLLADOR JAVA\\develop\\Ajolote-y-Grulla\\js\\pages\\about\\Fotos del equipo\\Aída Alejandra Carvajal Aguado.jpg", // Aquí pondrás la ruta de la imagen real
+        image: "C:\\Users\\ljime\\OneDrive\\Escritorio\\GENERATION DESARROLLADOR JAVA\\develop\\Ajolote-y-Grulla\\js\\pages\\about\\Fotos del equipo\\cris.jpg",
         skills: [
             { name: "HTML5 & CSS3", color: "var(--pastel-pink)" },
             { name: "Bootstrap 5", color: "var(--pastel-lilac)" },
@@ -81,7 +81,7 @@ const presentationcards = [
         name: "Alan Jair Cruz Arenas",
         role: "Desarrollador Fullstack - frontend & UI/UX • Scrum Master - Product Owner - QA- Tester - DevOps",
         description: "Desarrollador Full Stack Java Jr. con experiencia práctica en desarrollo de software, construcción de soluciones tecnológicas y resolución de problemas. Cuento con conocimientos en Java, Python, bases de datos y desarrollo web, además de experiencia en robótica, electrónica e infraestructura tecnológica.He liderado proyectos técnicos y equipos multidisciplinarios en competencias como FIRST y WRO, combinando programación, ingeniería y gestión de proyectos para desarrollar soluciones funcionales. Me interesa seguir creciendo en desarrollo de software, tecnología y soluciones de ingeniería.",
-        image: "C:\\Users\\ljime\\OneDrive\\Escritorio\\GENERATION DESARROLLADOR JAVA\\develop\\Ajolote-y-Grulla\\js\\pages\\about\\Fotos del equipo\\Aída Alejandra Carvajal Aguado.jpg", // Aquí pondrás la ruta de la imagen real
+        image: "C:\\Users\\ljime\\OneDrive\\Escritorio\\GENERATION DESARROLLADOR JAVA\\develop\\Ajolote-y-Grulla\\js\\pages\\about\\Fotos del equipo\\Alan.jpeg",
         skills: [
             { name: "Figma", color: "var(--pastel-mint)" },
             { name: "HTML5 & CSS3", color: "var(--pastel-pink)" },
@@ -138,7 +138,7 @@ const presentationcards = [
         name: "Mariana Arleth Aquino Alarcón",
         role: "Desarrollador Fullstack - frontend & UI/UX • Scrum Master - Product Owner - QA- Tester - DevOps",
         description: "Como Desarrolladora Java Full Stack Jr., mi gran pasión es el BackEnd y el modelado de bases de datos. Me gusta pensar que estructuro y organizo la información de Ajolote & Grulla con el mismo cuidado y detalle con el que acomodarías una colección de washi tapes. Me encanta trabajar en entornos ágiles con Scrum y usar Git para que el código de todos los Bit Busters fluya en perfecta armonía. Lo que más me emociona es lograr esa magia de integrar datos en tiempo real con interfaces dinámicas, haciendo que la experiencia de cada usuario en la tienda se sienta viva e instantánea.",
-        image: "C:\\Users\\ljime\\OneDrive\\Escritorio\\GENERATION DESARROLLADOR JAVA\\develop\\Ajolote-y-Grulla\\js\\pages\\about\\Fotos del equipo\\Mariana.jpeg", // Aquí pondrás la ruta de la imagen real
+        image: "C:\\Users\\ljime\\OneDrive\\Escritorio\\GENERATION DESARROLLADOR JAVA\\develop\\Ajolote-y-Grulla\\js\\pages\\about\\Fotos del equipo\\Mariana.jpeg",
         skills: [
             { name: "HTML5 & CSS3", color: "var(--pastel-pink)" },
             { name: "Bootstrap 5", color: "var(--pastel-lilac)" },
@@ -155,7 +155,7 @@ const presentationcards = [
         name: "Erick Sebastian Cortes Tovar",
         role: "Desarrollador Fullstack - frontend & UI/UX • Scrum Master - Product Owner - QA- Tester - DevOps",
         description: "Vengo del mundo del soporte de TI, donde aprendí que la paciencia y el orden son la clave para resolver cualquier problema. Como Desarrollador Full Stack Jr, aplico ese mismo pensamiento estructurado para que la plataforma de Ajolote & Grulla sea escalable y súper confiable. Me apasiona armar soluciones utilizando ecosistemas modernos como Node.js, React, Java y Docker; de hecho, me gusta imaginar cada contenedor como un compartimento perfectamente organizado de nuestra papelería. Soy un fiel creyente del aprendizaje constante y disfruto sumar mi energía al equipo para superar juntos cualquier reto técnico.", 
-        image: "C:\\Users\\ljime\\OneDrive\\Escritorio\\GENERATION DESARROLLADOR JAVA\\develop\\Ajolote-y-Grulla\\js\\pages\\about\\Fotos del equipo\\Aída Alejandra Carvajal Aguado.jpg",
+        image: "C:\\Users\\ljime\\OneDrive\\Escritorio\\GENERATION DESARROLLADOR JAVA\\develop\\Ajolote-y-Grulla\\js\\pages\\about\\Fotos del equipo\\erick Sebastian.jpeg", 
         skills: [
             { name: "HTML5 & CSS3", color: "var(--pastel-pink)" },
             { name: "Bootstrap 5", color: "var(--pastel-lilac)" },
