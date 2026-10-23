@@ -1,0 +1,127 @@
+/* ESTILOS DEL HERO */
+
+.stamp {
+  border-color: var(--rosa-coral) !important;
+  color: var(--rosa-coral);
+}
+
+.hero-circle {
+  background-color: var(--lila);
+  position: absolute;
+  bottom: 20%;
+  left: 17%;
+  width: 70%;
+  aspect-ratio: 1 / 1; /* Mantiene el círculo perfecto */
+  border-radius: 50%;
+  z-index: 0;
+}
+
+.hero-card-green {
+  position: absolute;
+  width: 60%;
+  height: 80%;
+  background-color: var(--menta);
+  transform: rotate(15deg) translate(60px, 10px);
+  z-index: 1;
+}
+
+.hero-main-img {
+  position: relative;
+  width: 60%;
+  max-width: 280px;
+  object-fit: cover;
+  transform: rotate(-4deg);
+  z-index: 2;
+  border: 8px solid white;
+  transition: transform 0.3s ease;
+}
+
+.hero-main-img:hover {
+  transform: rotate(2deg) scale(1.05);
+  z-index: 4;
+}
+
+.hero-floating-tag {
+  position: absolute;
+  bottom: 25%;
+  left: 10%;
+  transform: rotate(-17deg);
+  z-index: 3;
+}
+
+.hero-note .text {
+  font-size: 10px !important;
+}
+/* ESTILOS DEL HERO - FIN*/
+
+
+/* ESTILOS DE CATEGORIAS */
+.bg-cat-red {
+  background-color: #f25c69;
+}
+.bg-cat-purple {
+  background-color: #c8bbf2;
+}
+.bg-cat-green {
+  background-color: #aee6d2;
+}
+.bg-cat-pink {
+  background-color: #f2a9b9;
+}
+
+.categorie-card {
+  color: #2b2b42;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.categorie-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1) !important;
+  transform: rotate(2deg) scale(1.05);
+}
+
+/* ESTILOS DE CATEGORIAS - FIN */
+
+
+/* ESTILO DE PRODUCTOS */
+#categoriesFilter .active {
+  color: var(--rosa-coral);
+  border-bottom-color: currentcolor;
+}
+
+#categoriesFilter button {
+  color: gray;
+}
+
+#products img {
+  height: 250px;
+  width: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.product:hover img {
+  transform: scale(1.05);
+}
+
+.product .purchase-btn {
+  transform: translateY(100%);
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.product:hover .purchase-btn {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.glass-effect {
+  background: rgba(255, 255, 255, 0.85) !important;
+  backdrop-filter: blur(5px);
+  color: #212529 !important;
+  border: 1px solid rgba(255, 255, 255, 0.85);
+}
+
+/* ESTILO DE PRODUCTOS - FIN */
