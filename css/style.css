@@ -1,45 +1,53 @@
-@import url("https://googleapis.com");
+
+/* ==========================================
+   AJOLOTE & GRULLA
+   Estilos y variables globales
+   ========================================== */
+
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap');
+
+/* ==========================================
+   VARIABLES GLOBALES
+   ========================================== */
 
 :root {
-  --rosa-coral: #f85c70;
-  --lila: #c9b7f0;
-  --rosa-sakura: #f5a9c3;
-  --menta: #b7e6db;
-  --azul-marino-intenso: #2e3855;
-  --blanco-calido: #f9f6f0;
-  --fuente-encabezados: "Poppins", sans-serif;
-  --fuente-contenido: "Source Sans 3", sans-serif;
+    /* Paleta de colores */
+    --rosa-coral: #F85C70;
+    --lila: #C9B7F0;
+    --rosa-sakura: #F5A9C3;
+    --menta: #B7E6DB;
+    --azul-marino-intenso: #2E3855;
+    --blanco-calido: #F9F6F0;
+
+    /* Tipografías */
+    --fuente-encabezados: 'Poppins', sans-serif;
+    --fuente-contenido: 'Source Sans 3', sans-serif;
+
+    /* Integración con Bootstrap */
+    --bs-body-font-family: var(--fuente-contenido);
 }
+
+/* ==========================================
+   ESTILOS GENERALES
+   ========================================== */
 
 body {
-  font-family: var(--fuente-contenido);
-  font-weight: 400; /* Regular */
+    font-family: var(--fuente-contenido);
+    font-weight: 400;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-.titulo,
-.subtitulo {
-  font-family: var(--fuente-encabezados);
-  font-weight: 700; /* Esto asegura el estilo "Bold" de Poppins */
+/* Encabezados */
+h1, h2, h3, h4, h5, h6,
+.titulo, .subtitulo {
+    font-family: var(--fuente-encabezados);
+    font-weight: 700;
 }
 
-p,
-span,
-li,
-a {
-  font-family: var(--fuente-contenido);
-}
-
-button,
-.btn,
-input[type="submit"] {
-  font-family: var(--fuente-contenido);
-  font-weight: 700; /* Opcional: si quieres tus botones en negrita */
+/* Botones */
+button, .btn, input[type="submit"] {
+    font-family: var(--fuente-contenido);
+    font-weight: 700;
 }
 
 a {
