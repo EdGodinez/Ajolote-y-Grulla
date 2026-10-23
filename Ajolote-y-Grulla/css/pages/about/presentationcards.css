@@ -1,0 +1,163 @@
+/* Variables de color oficiales del proyecto */
+:root {
+    --indigo: #1C2143;
+    --coral: #F85C70;
+    --bg-page: #FAF4EE;
+    --card-bg: #FFFFFF;
+    --pastel-mint: #B7E6DB;
+    --pastel-yellow: #FFF0BB;
+    --pastel-lilac: #C9B7F0;
+    --pastel-pink: #F5A9C3;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Nunito', sans-serif;
+}
+
+body {
+    background-color: var(--bg-page);
+    color: var(--indigo);
+    padding: 40px 20px;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2rem;
+    color: var(--indigo);
+}
+
+/* Contenedor de todas las tarjetas */
+.team-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Estilo individual de la tarjeta */
+.team-card {
+    background-color: var(--card-bg);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(28, 33, 67, 0.08);
+    display: flex;
+    flex-direction: row;
+    max-width: 800px;
+    width: 100%;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    border: 2px solid var(--pastel-pink);
+}
+
+.team-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Columna Izquierda (Imagen y Badge) */
+.card-left {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(245, 169, 195, 0.1); /* Rosa muy sutil */
+    min-width: 250px;
+}
+
+.avatar {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--pastel-mint);
+    margin-bottom: 15px;
+}
+
+.team-badge {
+    background-color: var(--pastel-yellow);
+    color: var(--indigo);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+/* Columna Derecha (Información) */
+.card-right {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.card-name {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--indigo);
+    line-height: 1.2;
+}
+
+.card-role {
+    color: var(--coral);
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+.card-description {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: #4a4f6b;
+}
+
+/* Habilidades */
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.skill-tag {
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--indigo);
+}
+
+/* Redes Sociales */
+.social-links a {
+    color: var(--indigo);
+    font-size: 1.5rem;
+    margin-right: 15px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: var(--coral);
+}
+
+/* Diseño Responsivo (Celulares) */
+@media (max-width: 768px) {
+    .team-card {
+        flex-direction: column;
+    }
+    .card-left {
+        border-bottom: 2px solid var(--pastel-pink);
+    }
+    .card-name, .card-role, .card-description {
+        text-align: center;
+    }
+    .skills-container, .social-links {
+        justify-content: center;
+    }
+}

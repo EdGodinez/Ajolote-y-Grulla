@@ -1,0 +1,36 @@
+# ==========================================
+# AJOLOTE & GRULLA - GITIGNORE
+# ==========================================
+
+# Archivos del sistema operativo
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Archivos temporales
+*.tmp
+*.temp
+*.log
+*.bak
+*.swp
+*~
+
+# Configuración local de editores
+.vscode/
+.idea/
+
+# Dependencias (por si se utiliza npm)
+node_modules/
+
+# Carpetas de compilación
+dist/
+build/
+
+# Variables de entorno y secretos
+.env
+.env.*
+!.env.example
+
+# Archivos de pruebas y cobertura
+coverage/
+.nyc_output/
