@@ -55,45 +55,55 @@ button, .btn, input[type="submit"] {
 nav{
     background-color: var(--azul-marino-intenso);
     font-family: var(--fuente-encabezados);
-}
-
-
-nav .barra-encabezado input{
-    background-color: #e8e8e8;
-    border-color: #e8e8e8;
-    color: var(--azul-marino-intenso);
-}
-
-.form-contol{
-    background-color: #e8e8e8;
-}
-.navbar-brand{
-    color:var(--blanco-calido)
-}
-nav .barra-encabezado input:hover{
-    border-color: #e8e8e8;
-}
-nav .barra-encabezado button{
-    background-color: #e8e8e8;
-    border-color: #e8e8e8;
-    color: var(--azul-marino-intenso);
-}
-nav .nav-item a{
     color: var(--blanco-calido);
 }
+#formBusqueda{
+background-color: #e8e8e8;
+}
+
+#formBusqueda input{
+    background-color: #e8e8e8;
+    border-color: #e8e8e8;
+    color: var(--azul-marino-intenso);
+    outline: none;
+    border: 0;
+}
+#formBusqueda .barra-encabezado input :focus, #formBusqueda .barra-encabezado input :focus-visible{
+    background-color: #e8e8e8;
+    color: var(--lila);
+    outline: none !important;
+    box-shadow: none !important;
+    border-color: transparent !important;
+}
+.form-control:focus, .btn-busqueda:focus-visible, .btn-busqueda:focus,.btn-busqueda:active, #btnMenu{
+    box-shadow: none;
+    border-color: transparent;
+    border: 0;
+}
+
+.navbar-brand, nav .nav-item a{
+    color:var(--blanco-calido)
+}
+
+
 
 .input-group .nav-item .activo{
        color: var(--rosa-coral);
-}
-.navbar-toggler-icon{
-    background-image: var(--blanco-calido);
 }
 
 #carritoCompra{
     background-color: var(--menta);
 }
 
+#carritoCompra i{
+    color: var(--azul-marino-intenso);
+}
+
 #btnInicioSesion{
     background-color: var(--rosa-sakura);
     color: var(--blanco-calido);
+}
+
+.navbar-toggler-icon{
+    filter: invert(1) grayscale(100%) brightness(200%);
 }
