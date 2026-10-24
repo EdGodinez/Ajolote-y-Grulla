@@ -44,7 +44,7 @@ export function renderHeader() {
                             <a href="#" class="nav-link 
                                 ${currentPage === "#"
                                 ? " activo"
-                                : " nav-link"}">Catalogo</a>
+                                : " nav-link"}">Catálogo</a>
                         </li>
                         <li class="nav-item p-2 ms-auto">
                             <a href="#" class="nav-link 
@@ -56,7 +56,7 @@ export function renderHeader() {
                             <a href="./about.html" class="nav-link 
                                 ${currentPage === "about.html"
                                 ? " activo"
-                                : " nav-link"}">Contactanos</a>
+                                : " nav-link"}">Contáctanos</a>
                         </li>
                         <li class="nav-item p-2 ms-auto">
                             <a type="button" href="#" id="carritoCompra" class="btn rounded-pill px-3"><i class="bi bi-cart2"></i></a>
@@ -67,10 +67,6 @@ export function renderHeader() {
                   </ul>    
                 </div>
                 </div>
-               
-
-
-
             </div>
         </nav>
     `;
