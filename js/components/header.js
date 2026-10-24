@@ -8,12 +8,13 @@ export function renderHeader() {
     const currentPage = window.location.pathname.split("/").pop() || "index.html";
 
     header.innerHTML = `
-        <nav class="navbar navbar-expand-md">
+        <nav class="navbar fixed-top navbar-expand-md">
             <div class="container-fluid">
 
                 <!-- Nombre de la tienda -->
-                <a class="navbar-brand fw-bold" href="./index.html">
-                    Ajolote & Grulla
+                <a class="navbar-brand d-flex aling-items-center" href="./index.html">
+                <img src="./assets/images/Positivo.png" alt="Logo" id="logo" width="40" height="32" class="d-inline-block aling-text-top me-2">
+                <span class="d-none d-md-inline">Ajolote & Grulla </span>
                 </a>
 
                 <!-- barra de busqueda -->
@@ -36,7 +37,7 @@ export function renderHeader() {
 
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 input-group">
                         <li class="nav-item p-2 ms-auto">
-                            <a href="./index.html" class="nav-link${currentPage === "index.html"
+                            <a href="./index.html" class="nav-link ${currentPage === "index.html"
                                 ? " activo"
                                 : " nav-link"}">Inicio</a>
                         </li>
@@ -47,14 +48,14 @@ export function renderHeader() {
                                 : " nav-link"}">Catalogo</a>
                         </li>
                         <li class="nav-item p-2 ms-auto">
-                            <a href="#" class="nav-link 
-                                ${currentPage === "#"
+                            <a href="./about.html" class="nav-link 
+                                ${currentPage === "about.html"
                                 ? " activo"
                                 : " nav-link"}">Sobre Nosotros</a>
                         </li>
                         <li class="nav-item p-2 ms-auto">
-                            <a href="./about.html" class="nav-link 
-                                ${currentPage === "about.html"
+                            <a href="#" class="nav-link 
+                                ${currentPage === "#"
                                 ? " activo"
                                 : " nav-link"}">Contactanos</a>
                         </li>

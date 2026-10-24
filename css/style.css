@@ -110,7 +110,7 @@ h2 i {
   border-color: var(--azul-marino-intenso);
 }
 
-/* Estilos para el Navbar */
+/*INICIO ESTILOS DE HEADER */
 nav{
     background-color: var(--azul-marino-intenso);
     font-family: var(--fuente-encabezados);
@@ -168,3 +168,9 @@ nav .nav-item a:hover{
 .navbar-toggler-icon{
     filter: invert(1) grayscale(100%) brightness(200%);
 }
+
+#logo{
+    width: 40;
+    height: 32;
+}
+/* FIN DE ESTILOS DE HEADER */

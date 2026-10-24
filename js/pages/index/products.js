@@ -166,7 +166,7 @@ export function renderProducts() {
   const container = document.getElementById("categoriesFilter");
 
 
-  container.addEventListener("click", (e) => {
+container.addEventListener("click", (e) => {
     if (!e.target.matches(".nav-link")) return;
 
     //Busca un elemento con clase "active" para delegar su estilo
