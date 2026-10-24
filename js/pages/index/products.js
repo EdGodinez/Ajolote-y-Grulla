@@ -160,27 +160,39 @@ function renderProductGrill(categoriaSeleccionada = "Todos") {
  * @export
  * @returns {void} No retorna ningún valor.
  */
+
 export function renderProducts() {
-  renderHeadersFilters()
-  renderProductGrill()
-  const container = document.getElementById("categoriesFilter");
+    // Verificar si existe la sección de productos
+    const productSection = document.getElementById("productSection");
 
+    if (!productSection) return;
 
-  container.addEventListener("click", (e) => {
-    if (!e.target.matches(".nav-link")) return;
+    // Renderizar componentes
+    renderHeadersFilters();
+    renderProductGrill();
 
-    //Busca un elemento con clase "active" para delegar su estilo
-    const activo = container.querySelector(".active");
-    if (activo) {
-      activo.classList.remove("active");
-    }
+    // Obtener el contenedor de filtros
+    const container = document.getElementById("categoriesFilter");
 
-    e.target.classList.add("active");
+    if (!container) return;
 
-    // Se saca la categoria de la seleccion y se renderiza los productos nuevamente
-    const categoria = e.target.getAttribute("data-categoria");
-    renderProductGrill(categoria);
-  });
+    // Escuchar clics en las categorías
+    container.addEventListener("click", (e) => {
+        if (!e.target.matches(".nav-link")) return;
+
+        // Remover la categoría activa anterior
+        const activo = container.querySelector(".active");
+
+        if (activo) {
+            activo.classList.remove("active");
+        }
+
+        // Activar la nueva categoría
+        e.target.classList.add("active");
+
+        // Filtrar y renderizar productos
+        const categoria = e.target.getAttribute("data-categoria");
+
+        renderProductGrill(categoria);
+    });
 }
-
-renderProducts();

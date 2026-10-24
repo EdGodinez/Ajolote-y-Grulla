@@ -1,24 +1,32 @@
+
+/* ==========================================
+   COMPONENTES GLOBALES
+   ========================================== */
+
 import { renderHeader } from "./components/header.js";
-
-renderHeader();
-
 import { renderFooter } from "./components/footer.js";
 
-renderFooter();
+/* ==========================================
+   COMPONENTES DE INICIO
+   ========================================== */
 
 import { renderIndexHero } from "./pages/index/hero.js";
-
-renderIndexHero();
-
 import { renderCategories } from "./pages/index/categories.js";
-
-renderCategories();
-
 import { renderProducts } from "./pages/index/products.js";
-
-renderProducts();
-
 import { renderIndexAboutUs } from "./pages/index/aboutus.js";
 
-renderIndexAboutUs();
+/* ==========================================
+   INICIALIZACIÓN
+   ========================================== */
 
+// Componentes globales
+renderHeader();
+renderFooter();
+
+// Componentes exclusivos de index.html
+if (document.getElementById("productSection")) {
+    renderIndexHero();
+    renderCategories();
+    renderProducts();
+    renderIndexAboutUs();
+}
