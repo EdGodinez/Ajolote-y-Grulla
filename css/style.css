@@ -85,7 +85,9 @@ background-color: #e8e8e8;
     color:var(--blanco-calido)
 }
 
-
+nav .nav-item a:hover{
+    color:var(--lila);
+}
 
 .input-group .nav-item .activo{
        color: var(--rosa-coral);
