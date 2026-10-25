@@ -167,10 +167,10 @@ export function renderContact() {
                                     </h5>
 
                                     <a
-                                        href="mailto:soporte@ajoloteygrulla.com.mx"
+                                        href="mailto:mailto:ajoloteygrulla@outlook.com"
                                         class="contact-highlight"
                                     >
-                                        soporte@ajoloteygrulla.com.mx
+                                        ajoloteygrulla@outlook.com
                                     </a>
 
                                     <p class="contact-small mb-0 mt-1">
