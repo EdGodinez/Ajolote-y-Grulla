@@ -16,6 +16,19 @@ import { renderProducts } from "./pages/index/products.js";
 import { renderIndexAboutUs } from "./pages/index/aboutus.js";
 
 /* ==========================================
+   COMPONENTE DE ABOUT
+   ========================================== */
+
+import { renderAbout } from "./pages/about/index-about.js";
+
+/* ==========================================
+   COMPONENTE DE CONTACT
+   ========================================== */
+
+import { renderContact } from "./pages/contact/index-contact.js";
+
+
+/* ==========================================
    INICIALIZACIÓN
    ========================================== */
 
@@ -30,3 +43,14 @@ if (document.getElementById("productSection")) {
     renderProducts();
     renderIndexAboutUs();
 }
+
+// Componentes exclusivos de about.html
+if (document.getElementById("about-hero")) {
+    renderAbout();
+}
+
+// Componentes exclusivos de contact.html
+if (document.getElementById("contact")) {
+    renderContact();
+}
+
