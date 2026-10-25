@@ -12,7 +12,7 @@ export function renderHeader() {
             <div class="container-fluid">
 
                 <!-- Nombre de la tienda -->
-                <a class="navbar-brand d-flex aling-items-center" href="./index.html">
+                <a class="navbar-brand d-flex align-items-center" href="./index.html">
                 <img src="./assets/images/Positivo.png" alt="Logo" id="logo" width="40" height="32" class="d-inline-block aling-text-top me-2">
                 <span class="d-none d-md-inline">Ajolote & Grulla </span>
                 </a>
@@ -54,8 +54,8 @@ export function renderHeader() {
                                 : " nav-link"}">Sobre Nosotros</a>
                         </li>
                         <li class="nav-item p-2 ms-auto">
-                            <a href="#" class="nav-link 
-                                ${currentPage === "#"
+                            <a href="./contact.html" class="nav-link 
+                                ${currentPage === "contact.html"
                                 ? " activo"
                                 : " nav-link"}">Contáctanos</a>
                         </li>
