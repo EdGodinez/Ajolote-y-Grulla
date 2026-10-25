@@ -35,6 +35,7 @@
 body {
     font-family: var(--fuente-contenido);
     font-weight: 400;
+    padding-top: 50px;
 }
 
 
@@ -170,7 +171,34 @@ nav .nav-item a:hover{
 }
 
 #logo{
-    width: 40;
-    height: 32;
+    width: 40px;
+    height: 40px;
+}
+
+/* Buscador del navbar */
+#formBusqueda {
+    background-color: #e8e8e8;
+    border: none;
+    padding: 8px 16px;
+}
+
+#formBusqueda input.form-control {
+    background-color: transparent;
+    border: none;
+    padding: 8px 12px;
+    color: var(--azul-marino-intenso);
+    box-shadow: none;
+}
+
+#formBusqueda input::placeholder {
+    color: #555;
+    opacity: 1;
+}
+
+#formBusqueda .btn-busqueda {
+    border: none;
+    padding: 8px;
+    color: var(--azul-marino-intenso);
 }
 /* FIN DE ESTILOS DE HEADER */
+
