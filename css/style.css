@@ -38,7 +38,9 @@
 body {
     font-family: var(--fuente-contenido);
     font-weight: 400;
+    padding-top: 50px;
 }
+
 
 /* Encabezados */
 h1, h2, h3, h4, h5, h6,
@@ -111,3 +113,95 @@ h2 i {
   background-color: var(--azul-marino-intenso);
   border-color: var(--azul-marino-intenso);
 }
+
+/*INICIO ESTILOS DE HEADER */
+nav{
+    background-color: var(--azul-marino-intenso);
+    font-family: var(--fuente-encabezados);
+    color: var(--blanco-calido);
+}
+#formBusqueda{
+background-color: #e8e8e8;
+}
+
+#formBusqueda input{
+    background-color: #e8e8e8;
+    border-color: #e8e8e8;
+    color: var(--azul-marino-intenso);
+    outline: none;
+    border: 0;
+}
+#formBusqueda .barra-encabezado input :focus, #formBusqueda .barra-encabezado input :focus-visible{
+    background-color: #e8e8e8;
+    color: var(--lila);
+    outline: none !important;
+    box-shadow: none !important;
+    border-color: transparent !important;
+}
+.form-control:focus, .btn-busqueda:focus-visible, .btn-busqueda:focus,.btn-busqueda:active, #btnMenu{
+    box-shadow: none;
+    border-color: transparent;
+    border: 0;
+}
+
+.navbar-brand, nav .nav-item a{
+    color:var(--blanco-calido)
+}
+
+nav .nav-item a:hover{
+    color:var(--lila);
+}
+
+.input-group .nav-item .activo{
+       color: var(--rosa-coral);
+}
+
+#carritoCompra{
+    background-color: var(--menta);
+}
+
+#carritoCompra i{
+    color: var(--azul-marino-intenso);
+}
+
+#btnInicioSesion{
+    background-color: var(--rosa-sakura);
+    color: var(--blanco-calido);
+}
+
+.navbar-toggler-icon{
+    filter: invert(1) grayscale(100%) brightness(200%);
+}
+
+#logo{
+    width: 40px;
+    height: 40px;
+}
+
+/* Buscador del navbar */
+#formBusqueda {
+    background-color: #e8e8e8;
+    border: none;
+    padding: 8px 16px;
+}
+
+#formBusqueda input.form-control {
+    background-color: transparent;
+    border: none;
+    padding: 8px 12px;
+    color: var(--azul-marino-intenso);
+    box-shadow: none;
+}
+
+#formBusqueda input::placeholder {
+    color: #555;
+    opacity: 1;
+}
+
+#formBusqueda .btn-busqueda {
+    border: none;
+    padding: 8px;
+    color: var(--azul-marino-intenso);
+}
+/* FIN DE ESTILOS DE HEADER */
+
