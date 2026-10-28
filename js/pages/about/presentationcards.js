@@ -176,10 +176,19 @@ const presentationcards = [
 
 // Función para renderizar las tarjetas en el HTML
 function renderTeam() {
-    const container = document.getElementById("about-team");
-    if (!container) return;
+    const section = document.getElementById("about-team");
+    if (!section) return;
 
-    let allCardsHTML = '';
+if (!section.querySelector(".section-header-team")) {
+        section.insertAdjacentHTML('afterbegin', `
+            <div class="section-header-team">
+                <h2 class="section-title-main">Nuestro equipo</h2>
+                <p class="section-subtitle-main">Conoce a las personas detrás del proyecto.</p>
+            </div>
+        `);
+    }
+
+    let allCardsHTML = '<div class="team-container">';
 
     presentationcards.forEach(miembro => {
         let skillsHTML = '';
@@ -227,12 +236,11 @@ function renderTeam() {
     });
 
     allCardsHTML += `
-        <article class="tarjeta-equipo tarjeta-foto-final">
-            <img src="assets/images/bitbusters.jpeg" alt="Equipo Bit Busters">
-        </article>
+            <article class="tarjeta-equipo tarjeta-foto-final">
+                <img src="assets/images/bitbusters.jpeg" alt="Equipo Bit Busters">
+            </article>
+        </div>
     `;
-
-    container.innerHTML = allCardsHTML;
-}
-
+section.insertAdjacentHTML('beforeend', allCardsHTML);
+}  
 document.addEventListener('DOMContentLoaded', renderTeam);
