@@ -176,8 +176,10 @@ const presentationcards = [
 ];  
 
 // Función para renderizar las tarjetas en el HTML
-function renderTeam() {
-    const container = document.getElementById("about-team");
+export function renderTeamCards() {
+    const container = document.querySelector("#about-team .team-container");
+
+    if (!container) return;
 
     presentationcards.forEach(member => {
         let skillsHTML = '';
@@ -212,4 +214,3 @@ function renderTeam() {
     });
 }
 
-document.addEventListener('DOMContentLoaded', renderTeam);

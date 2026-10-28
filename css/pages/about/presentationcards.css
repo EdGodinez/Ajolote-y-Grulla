@@ -1,163 +1,354 @@
-/* Variables de color oficiales del proyecto */
+
+/* VARIABLES DE COLOR */
+
 :root {
     --indigo: #1C2143;
     --coral: #F85C70;
     --bg-page: #FAF4EE;
     --card-bg: #FFFFFF;
+
     --pastel-mint: #B7E6DB;
     --pastel-yellow: #FFF0BB;
     --pastel-lilac: #C9B7F0;
     --pastel-pink: #F5A9C3;
 }
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+
+/* SECCIÓN NUESTRO EQUIPO */
+
+.about-team {
+    width: 100%;
+    padding: 60px 20px;
+    background-color: var(--bg-page);
+    color: var(--indigo);
     font-family: 'Nunito', sans-serif;
 }
 
-body {
-    background-color: var(--bg-page);
-    color: var(--indigo);
-    padding: 40px 20px;
-}
 
-.section-title {
-    text-align: center;
-    margin-bottom: 40px;
-    font-size: 2rem;
-    color: var(--indigo);
-}
+/* ENCABEZADO DE LA SECCIÓN*/
 
-/* Contenedor de todas las tarjetas */
-.team-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-/* Estilo individual de la tarjeta */
-.team-card {
-    background-color: var(--card-bg);
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(28, 33, 67, 0.08);
-    display: flex;
-    flex-direction: row;
-    max-width: 800px;
+.about-team__container {
     width: 100%;
-    overflow: hidden;
-    transition: transform 0.3s ease;
+    max-width: 1400px;
+    margin: 0 auto 40px;
+}
+
+.about-team__container h2 {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--indigo);
+    margin-bottom: 10px;
+}
+
+.about-team__container p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #4A4F6B;
+    margin-bottom: 0;
+}
+
+
+/*  CONTENEDOR DE TARJETAS - CSS GRID */
+
+.team-container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+
+    align-items: stretch;
+}
+
+
+/*  TARJETA INDIVIDUAL */
+
+.team-card {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    min-width: 0;
+    height: 100%;
+
+    background-color: var(--card-bg);
     border: 2px solid var(--pastel-pink);
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    box-shadow: 0 10px 30px rgba(28, 33, 67, 0.08);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
 .team-card:hover {
     transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(28, 33, 67, 0.12);
 }
 
-/* Columna Izquierda (Imagen y Badge) */
+
+/* PARTE SUPERIOR - IMAGEN Y BADGE */
+
 .card-left {
-    padding: 30px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: rgba(245, 169, 195, 0.1); /* Rosa muy sutil */
-    min-width: 250px;
+
+    width: 100%;
+    min-width: 0;
+    padding: 30px 20px;
+
+    background-color: rgba(245, 169, 195, 0.1);
 }
 
-.avatar {
-    width: 180px;
-    height: 180px;
+
+/* Fotografía del integrante */
+
+.about-team .avatar {
+    display: block;
+
+    width: 120px;
+    height: 120px;
+
     border-radius: 50%;
-    object-fit: cover;
     border: 4px solid var(--pastel-mint);
+
+    object-fit: cover;
+    object-position: center;
+
     margin-bottom: 15px;
 }
+
+
+/* Etiqueta del equipo */
 
 .team-badge {
+    display: inline-block;
+
     background-color: var(--pastel-yellow);
     color: var(--indigo);
+
     padding: 5px 15px;
     border-radius: 20px;
-    font-weight: 700;
+
     font-size: 0.9rem;
+    font-weight: 700;
+    text-align: center;
 }
 
-/* Columna Derecha (Información) */
+
+/*  PARTE INFERIOR - INFORMACIÓN */
+
 .card-right {
-    padding: 30px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    flex: 1;
+
+    min-width: 0;
+    padding: 25px;
 }
+
+
+/* Nombre */
 
 .card-name {
-    font-size: 1.8rem;
+    font-size: 1.4rem;
     font-weight: 800;
+    line-height: 1.3;
+
     color: var(--indigo);
-    line-height: 1.2;
+    text-align: center;
+
+    margin-bottom: 10px;
 }
+
+
+/* Rol */
 
 .card-role {
-    color: var(--coral);
-    font-size: 1.1rem;
+    font-size: 0.95rem;
     font-weight: 700;
-    margin-top: 5px;
-    margin-bottom: 15px;
+    line-height: 1.4;
+
+    color: var(--coral);
+    text-align: center;
+
+    margin-bottom: 20px;
 }
+
+
+/* Descripción */
 
 .card-description {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
+    font-weight: 400;
     line-height: 1.6;
+
+    color: #4A4F6B;
+    text-align: left;
+
     margin-bottom: 20px;
-    color: #4a4f6b;
+    overflow-wrap: anywhere;
 }
 
+
 /* Habilidades */
+
 .skills-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    justify-content: flex-start;
+    align-content: flex-start;
+
+    gap: 8px;
     margin-bottom: 20px;
 }
 
 .skill-tag {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
     padding: 5px 12px;
     border-radius: 15px;
-    font-size: 0.85rem;
+
+    font-size: 0.8rem;
     font-weight: 700;
+    line-height: 1.3;
+
     color: var(--indigo);
+    white-space: normal;
+    text-align: center;
 }
 
-/* Redes Sociales */
+
+/* reedes sociales */
+
+.social-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    gap: 20px;
+    margin-top: auto;
+    padding-top: 20px;
+}
+
 .social-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
     color: var(--indigo);
     font-size: 1.5rem;
-    margin-right: 15px;
+
     text-decoration: none;
-    transition: color 0.3s;
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
 }
 
 .social-links a:hover {
     color: var(--coral);
+    transform: translateY(-3px);
 }
 
-/* Diseño Responsivo (Celulares) */
+.social-links a:focus-visible {
+    outline: 2px solid var(--coral);
+    outline-offset: 4px;
+    border-radius: 4px;
+}
+
+
+/* Responsivo */
+
+@media (max-width: 1100px) {
+
+    .team-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+    }
+
+    .about-team {
+        padding: 50px 20px;
+    }
+
+    .card-right {
+        padding: 20px;
+    }
+
+    .card-name {
+        font-size: 1.3rem;
+    }
+
+}
+
+
+/* Responsivo celulares */
+
 @media (max-width: 768px) {
-    .team-card {
-        flex-direction: column;
+
+    .about-team {
+        padding: 40px 15px;
     }
-    .card-left {
-        border-bottom: 2px solid var(--pastel-pink);
-    }
-    .card-name, .card-role, .card-description {
+
+    .about-team__container {
+        margin-bottom: 30px;
         text-align: center;
     }
-    .skills-container, .social-links {
+
+    .about-team__container h2 {
+        font-size: 1.7rem;
+    }
+
+    .about-team__container p {
+        font-size: 0.95rem;
+    }
+
+    .team-container {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .team-card {
+        width: 100%;
+    }
+
+    .card-left {
+        padding: 25px 15px;
+    }
+
+    .about-team .avatar {
+        width: 110px;
+        height: 110px;
+    }
+
+    .card-right {
+        padding: 20px;
+    }
+
+    .card-name {
+        font-size: 1.3rem;
+    }
+
+    .card-role {
+        font-size: 0.9rem;
+    }
+
+    .card-description {
+        font-size: 0.9rem;
+    }
+
+    .skills-container {
         justify-content: center;
     }
+
 }
