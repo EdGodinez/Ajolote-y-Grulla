@@ -42,8 +42,8 @@ export function renderHeader() {
                                 : " nav-link"}">Inicio</a>
                         </li>
                         <li class="nav-item p-2 ms-auto">
-                            <a href="#" class="nav-link 
-                                ${currentPage === "#"
+                            <a href="./products.html" class="nav-link 
+                                ${currentPage === "products.html" 
                                 ? " activo"
                                 : " nav-link"}">Catálogo</a>
                         </li>
