@@ -8,5 +8,7 @@ export function renderTeam() {
             <h2>Nuestro equipo</h2>
             <p>Conoce a las personas detrás del proyecto.</p>
         </div>
+
+        <div class="team-container"></div>
     `;
 }
