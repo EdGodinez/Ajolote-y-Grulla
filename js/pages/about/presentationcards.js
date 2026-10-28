@@ -18,9 +18,8 @@ const presentationcards = [
         ],
         github: "https://github.com/Don-kikin",
         linkedin: "https://www.linkedin.com/in/luis-enrique-jimenez-bernal/",
-        correoelectronico:  "luisenriquejimenezber@gmail.com"
+        correoelectronico: "luisenriquejimenezber@gmail.com"
     },
-
     {
         nombre: "Argelia Gómez Melquiades",
         rol: "Desarrollador Fullstack - frontend & UI/UX • Scrum Master - Product Owner - QA- Tester - DevOps",
@@ -36,9 +35,8 @@ const presentationcards = [
         ],
         github: "https://github.com/ArgeliaGM",
         linkedin: "http://www.linkedin.com/in/argelia-gomez-melquiades",
-        correoelectronico:  "argegm17@gmail.com"
+        correoelectronico: "argegm17@gmail.com"
     },
-
     {
         nombre: "Eduardo Godinez Santana",
         rol: "Desarrollador Fullstack - frontend & UI/UX • Scrum Master - Product Owner - QA- Tester - DevOps",
@@ -56,9 +54,8 @@ const presentationcards = [
         ],
         github: "https://github.com/EdGodinez",
         linkedin: "http://www.linkedin.com/in/edgodinez",
-        correoelectronico:  "eduardo_godinez@outlook.es"
+        correoelectronico: "eduardo_godinez@outlook.es"
     },
-
     {
         nombre: "Cristian Ruiz ortega",
         rol: "Desarrollador Fullstack - frontend & UI/UX • Scrum Master - Product Owner - QA- Tester - DevOps",
@@ -74,9 +71,8 @@ const presentationcards = [
         ],
         github: "https://github.com/ruisc021-droid/cristian.git",
         linkedin: "www.linkedin.com/in/ristian-ruiz-ortega",
-        correoelectronico:  "ruisc021@gmail.com"
+        correoelectronico: "ruisc021@gmail.com"
     },
-    
     {
         nombre: "Alan Jair Cruz Arenas",
         rol: "Desarrollador Fullstack - frontend & UI/UX • Scrum Master - Product Owner - QA- Tester - DevOps",
@@ -93,9 +89,8 @@ const presentationcards = [
         ],
         github: "https://github.com/Alan-JC",
         linkedin: "http://www.linkedin.com/in/alan-jair-cruz-arenas",
-        correoelectronico:  "cruz.arenas.alanjair@hotmail.com"
+        correoelectronico: "cruz.arenas.alanjair@hotmail.com"
     },
-
     {
         nombre: "Aída Alejandra Carvajal Aguado",
         rol: "Desarrollador Fullstack - frontend & UI/UX • Scrum Master - Product Owner - QA- Tester - DevOps",
@@ -113,9 +108,8 @@ const presentationcards = [
         ],
         github: "https://github.com/aalecarvajal",
         linkedin: "www.linkedin.com/in/aalecarvajal",
-        correoelectronico:  "aidalecarvajal@gmail.com"
+        correoelectronico: "aidalecarvajal@gmail.com"
     },
-
     {
         nombre: "Kevin Adair Martinez Yañez",
         rol: "Desarrollador Fullstack - frontend & UI/UX • Scrum Master - Product Owner - QA- Tester - DevOps",
@@ -130,9 +124,8 @@ const presentationcards = [
         ],
         github: "https://github.com/KevinMartinezY",
         linkedin: "www.linkedin.com/in/kev-mtz",
-        correoelectronico:  "kevinadairmtzyanez@gmail.com"
+        correoelectronico: "kevinadairmtzyanez@gmail.com"
     },
-    
     {
         nombre: "Mariana Arleth Aquino Alarcón",
         rol: "Desarrollador Fullstack - frontend & UI/UX • Scrum Master - Product Owner - QA- Tester - DevOps",
@@ -147,9 +140,8 @@ const presentationcards = [
         ],
         github: "https://github.com/marianaaquinoalarcon",
         linkedin: "https://www.linkedin.com/in/mariana-arleth-aquino-alarcon/",
-        correoelectronico:  "marianaalarcon519@gmail.com"
+        correoelectronico: "marianaalarcon519@gmail.com"
     },
-    
     {        
         nombre: "Erick Sebastian Cortes Tovar",
         rol: "Desarrollador Fullstack - frontend & UI/UX • Scrum Master - Product Owner - QA- Tester - DevOps",
@@ -168,27 +160,20 @@ const presentationcards = [
         ],
         github: "https://github.com/cbas-o7",
         linkedin: "https://www.linkedin.com/in/erick-sebastian-cortes-tovar-3373a1288/",
-        correoelectronico:  "escortes.dev@gmail.com"
+        correoelectronico: "escortes.dev@gmail.com"
+    }
+];
 
-    }, 
+export function renderTeamCards() {
+    const container = document.getElementById("about-team");
+    if (!container) return;
 
-];  
-
-// Función para renderizar las tarjetas en el HTML
-function renderTeam() {
-    const section = document.getElementById("about-team");
-    if (!section) return;
-
-if (!section.querySelector(".section-header-team")) {
-        section.insertAdjacentHTML('afterbegin', `
-            <div class="section-header-team">
+    let allCardsHTML = `;
+        <div class="section-header-team">
                 <h2 class="section-title-main">Nuestro equipo</h2>
                 <p class="section-subtitle-main">Conoce a las personas detrás del proyecto.</p>
             </div>
-        `);
-    }
-
-    let allCardsHTML = '<div class="team-container">';
+        `;
 
     presentationcards.forEach(miembro => {
         let skillsHTML = '';
@@ -236,11 +221,15 @@ if (!section.querySelector(".section-header-team")) {
     });
 
     allCardsHTML += `
-            <article class="tarjeta-equipo tarjeta-foto-final">
-                <img src="assets/images/bitbusters.jpeg" alt="Equipo Bit Busters">
-            </article>
-        </div>
+        <article class="tarjeta-equipo tarjeta-foto-final">
+            <img src="assets/images/bitbusters.jpeg" alt="Equipo Bit Busters">
+        </article>
     `;
-section.insertAdjacentHTML('beforeend', allCardsHTML);
-}  
-document.addEventListener('DOMContentLoaded', renderTeam);
+
+    container.innerHTML = allCardsHTML;
+}
+
+export const renderTeam = renderTeamCards;
+
+document.addEventListener('DOMContentLoaded', renderTeamCards);
+window.addEventListener('load', renderTeamCards);

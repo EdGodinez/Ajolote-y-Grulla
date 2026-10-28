@@ -1,6 +1,4 @@
-
 /* VARIABLES DE COLOR */
-
 :root {
     --indigo: #1C2143;
     --coral: #F85C70;
@@ -12,15 +10,32 @@
     --rosa-pastel: #F5A9C3;
 }
 
-
 /* SECCIÓN NUESTRO EQUIPO */
-
 .about-team {
     width: 100%;
-    padding: 60px 20px;
+    padding: 30px 20px 60px 20px;
     background-color: var(--bg-page);
     color: var(--indigo);
     font-family: 'Nunito', sans-serif;
+}
+.section-header-team {
+    grid-column: 1 / -1;
+    text-align: left;
+    margin-bottom: 5px;
+}
+
+.section-title-main {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--indigo);
+    margin-bottom: 4px;
+    line-height: 1.2;
+}
+
+.section-subtitle-main {
+    font-size: 1rem;
+    color: #4a4f6b;
+    margin-bottom: 0;
 }
 
 #about-team,
