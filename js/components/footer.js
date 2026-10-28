@@ -65,17 +65,17 @@ export function renderFooter() {
                 <h5 class="header-text-footer" class="item-footer" style="padding-top: 40px;">Navegación</h5>
                 <nav>
                     <ul class="" style="padding: 10px; list-style: none;">
-                        <li><a href="#" class="p-text-footer">Inicio</a></li>
+                        <li><a href="../../index.html" class="p-text-footer">Inicio</a></li>
                         <li><a href="#" class="p-text-footer">Catálogo</a></li>
-                        <li><a href="#" class="p-text-footer">Sobre Nosotros</a></li>
-                        <li><a href="#" class="p-text-footer">Contáctanos</a></li>
+                        <li><a href="../../about.html" class="p-text-footer">Sobre Nosotros</a></li>
+                        <li><a href="../../contact.html" class="p-text-footer">Contáctanos</a></li>
                     </ul>
                 </nav>
             </div>
 
          <!--Información de contacto -->
             <div >
-                <h5 class="header-text-footer" class="item-footer" style="padding-top: 40px;">Contactanos</h5>
+                <h5 class="header-text-footer" class="item-footer" style="padding-top: 40px;">Contáctanos</h5>
                 <address >
                     <p class="p-text-footer">soporte@ajoloteygrulla.com</p>
                     <p class="p-text-footer">+52 (55) 1234-5678</p>
