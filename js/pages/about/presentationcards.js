@@ -222,7 +222,7 @@ export function renderTeamCards() {
 
     allCardsHTML += `
         <article class="tarjeta-equipo tarjeta-foto-final">
-            <img src="assets/images/bitbusters.jpeg" alt="Equipo Bit Busters">
+            <img src="assets/team-photos/bitbusters.jpeg" alt="Equipo Bit Busters">
         </article>
     `;
 

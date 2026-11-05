@@ -17,7 +17,7 @@ export function renderFooter() {
                 <h5 class="header-text-footer item-footer" style="padding-bottom: 10px; padding-top: 20px;">Redes Sociales</h5>
                 <div class="social-icons">
                     <a 
-                    href="https://www.facebook.com/"
+                    href="https://www.facebook.com/profile.php?id=61596419964468"
                     target="_blank">
                     <img src="./assets/footer/FB.png" 
                     alt="Link a Facebook de Ajolote y Grulla"
@@ -25,7 +25,7 @@ export function renderFooter() {
                     </a>
 
                     <a 
-                    href="https://www.instagram.com/"
+                    href="https://www.instagram.com/ajogru/"
                     target="_blank">
                     <img src="./assets/footer/IG.png" 
                     alt="Link a Instagram de Ajolote y Grulla"
@@ -41,7 +41,7 @@ export function renderFooter() {
                     </a>
 
                     <a 
-                    href="https://www.tiktok.com/"
+                    href="https://www.tiktok.com/@ajoygru"
                     target="_blank">
                     <img src="./assets/footer/TK.png" 
                     alt="Link a TikTok de Ajolote y Grulla"
@@ -49,7 +49,7 @@ export function renderFooter() {
                     </a>
 
                     <a 
-                    href="https://x.com/"
+                    href="https://x.com/AjoloteGrulla"
                     target="_blank">
                     <img src="./assets/footer/X.png" 
                     alt="Link a X de Ajolote y Grulla"
@@ -65,10 +65,10 @@ export function renderFooter() {
                 <h5 class="header-text-footer" class="item-footer" style="padding-top: 40px;">Navegación</h5>
                 <nav>
                     <ul class="" style="padding: 10px; list-style: none;">
-                        <li><a href="../../index.html" class="p-text-footer">Inicio</a></li>
-                        <li><a href="#" class="p-text-footer">Catálogo</a></li>
-                        <li><a href="../../about.html" class="p-text-footer">Sobre Nosotros</a></li>
-                        <li><a href="../../contact.html" class="p-text-footer">Contáctanos</a></li>
+                        <li><a href="/Ajolote-y-Grulla/index.html" class="p-text-footer">Inicio</a></li>
+                        <li><a href="/Ajolote-y-Grulla/products.html" class="p-text-footer">Catálogo</a></li>
+                        <li><a href="/Ajolote-y-Grulla/about.html" class="p-text-footer">Sobre Nosotros</a></li>
+                        <li><a href="/Ajolote-y-Grulla/contact.html" class="p-text-footer">Contáctanos</a></li>
                     </ul>
                 </nav>
             </div>
