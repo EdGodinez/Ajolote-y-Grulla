@@ -24,7 +24,7 @@ export function renderHero() {
                     </div>
 
                     <div class="col-12 col-md-6 text-center">
-                        <img src="assets/images/Logotipo-Principal.png"
+                        <img src="assets/logos/Logotipo-Principal.png"
                             class="img-fluid hero-about__img"
                             alt="Logo de Ajolote y Grulla">
                     </div>
