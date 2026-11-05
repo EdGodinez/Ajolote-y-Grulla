@@ -1,9 +1,24 @@
 /* hero.css */
 .hero-about {
     background-color: var(--blanco-calido);
-    background-image: url("../../../assets/images/about/fondo-about.png");
-    background-size: cover;        /* cubre toda la sección sin deformarse */
-    background-position: center;
+
+    /* Imágenes de tinta y letras japonesas */
+    background-image:
+        url("../../../assets/images/about/salpicadura-arriba.png"),
+        url("../../../assets/images/about/salpicadura-izquierda.png"),
+        url("../../../assets/images/about/salpicadura-abajo.png");
+
+
+    background-position:
+        right top,
+        left center,
+        right bottom;
+    
+    background-size:    
+        clamp(260px, 38%, 600px) auto,   /* arriba */
+        clamp(70px, 8%, 150px) auto,     /* izquierda */
+        clamp(120px, 13%, 230px) auto;   /* abajo */
+
     background-repeat: no-repeat;
 }
 
