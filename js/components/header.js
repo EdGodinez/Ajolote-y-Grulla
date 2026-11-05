@@ -13,7 +13,7 @@ export function renderHeader() {
 
                 <!-- Nombre de la tienda -->
                 <a class="navbar-brand d-flex align-items-center" href="./index.html">
-                <img src="./assets/images/Positivo.png" alt="Logo" id="logo" width="40" height="32" class="d-inline-block aling-text-top me-2">
+                <img src="./assets/logos/Positivo.png" alt="Logo" id="logo" width="40" height="32" class="d-inline-block aling-text-top me-2">
                 <span class="d-none d-md-inline">Ajolote & Grulla </span>
                 </a>
 
@@ -42,8 +42,8 @@ export function renderHeader() {
                                 : " nav-link"}">Inicio</a>
                         </li>
                         <li class="nav-item p-2 ms-auto">
-                            <a href="#" class="nav-link 
-                                ${currentPage === "#"
+                            <a href="./products.html" class="nav-link 
+                                ${currentPage === "products.html" 
                                 ? " activo"
                                 : " nav-link"}">Catálogo</a>
                         </li>
