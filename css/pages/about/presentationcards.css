@@ -80,8 +80,8 @@
 }
 
 .avatar {
-    width: 115px;
-    height: 115px;
+    width: 135px;
+    height: 170px;
     border-radius: 50%;
     object-fit: cover;
     border: 4px solid var(--menta-pastel);
