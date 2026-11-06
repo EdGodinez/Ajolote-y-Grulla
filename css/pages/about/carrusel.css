@@ -1,3 +1,76 @@
- .carousel-item {
-      padding: 40px 20px;
+
+.carousel-item {
+      padding: 60px 20px;
     }
+
+    .card-carrusel, .card-vision, .card-valores {
+      max-width: 700px; 
+      width: 100%;
+      height: 380px; 
+      background-size: 100% 100%; 
+      background-position: center;
+      background-repeat: no-repeat;
+      margin: 0 auto;
+    }
+
+  .card-carrusel {
+     background-image: url("../../../assets/images/about/tarjeta-carrusel-1.png");
+    }
+
+    .card-vision {
+     background-image: url("../../../assets/images/about/tarjeta-carrusel-2.png");
+    }
+
+    .card-valores {
+     background-image: url("../../../assets/images/about/tarjeta-carrusel-3.png");
+    }
+    .card-title, .card-text {
+      max-width: 400px; 
+      margin-left: auto;
+      margin-right: auto;
+      text-align: justify;
+      font-size: 19px;
+    }
+
+    #slider-codersfree .carousel-inner {
+      height: 520px; 
+    }
+
+    #slider-codersfree .carousel-item .card {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+
+
+/* Tablets */
+@media (max-width: 992px) {
+    
+    #slider-codersfree .carousel-item {
+        min-height: 420px;
+        padding: 40px 50px;
+    }
+
+    #slider-codersfree .card {
+        min-height: 340px;
+    }
+}
+
+/* Celulares */
+
+@media (max-width: 768px) {
+    
+    #slider-codersfree .carousel-item {
+        min-height: 500px;
+        padding: 30px 40px;
+    }
+
+    #slider-codersfree .card {
+        min-height: 440px;
+    }
+
+    #slider-codersfree .carousel-icon {
+        font-size: 2rem;
+    }
+}
