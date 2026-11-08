@@ -39,6 +39,7 @@ background-color: #e8e8e8;
     padding:auto;
 }
 
+
 .nav-item a:hover{
     color:var(--lila);
 }
@@ -108,4 +109,28 @@ header .offcanvas form{
 
 header .offcanvas input{
     width: 85%;
+}
+
+
+@media (max-width: 1200px) {
+    /* estilo de links colapsados dentro del menu */
+.navbar-collapse {
+    padding-right: 10px ;
+    position: absolute;
+    text-align: center;
+    background-color: var(--azul-marino-intenso);
+    left: auto;
+  right: 0.7%;
+}
+
+.navbar-collapse .navbar-nav {
+    margin: 0 !important;          
+    align-items: center;
+  }
+
+  .navbar-collapse .nav-item {
+    margin-left: 0 !important;    
+    margin-right: 0 !important;
+  }
+
 }

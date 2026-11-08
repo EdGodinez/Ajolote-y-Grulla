@@ -41,7 +41,7 @@ export function renderHeader() {
 
                 <div class="collapse navbar-collapse text-nowrap" id="navbarTogglerPestañas">
 
-                    <ul class="navbar-nav me-auto mb-1 mb-xl-0">
+                    <ul class="navbar-nav align-items-center me-auto mb-1 mb-xl-0">
                         <li class="nav-item p-2 ms-auto">
                             <a href="./index.html" class="nav-link ${currentPage === "index.html"
             ? " activo"
