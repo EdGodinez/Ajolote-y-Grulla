@@ -115,12 +115,14 @@ header .offcanvas input{
 @media (max-width: 1200px) {
     /* estilo de links colapsados dentro del menu */
 .navbar-collapse {
-    padding-right: 10px ;
+    padding:10px;
     position: absolute;
     text-align: center;
     background-color: var(--azul-marino-intenso);
     left: auto;
-  right: 0.7%;
+  right: 0.5%;
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
 }
 
 .navbar-collapse .navbar-nav {
