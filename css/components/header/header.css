@@ -1,3 +1,4 @@
+
 nav{
     background-color: var(--azul-marino-intenso);
     font-family: var(--fuente-encabezados);
@@ -21,21 +22,28 @@ background-color: #e8e8e8;
     box-shadow: none !important;
     border-color: transparent !important;
 }
-.form-control:focus, .btn-busqueda:focus-visible, .btn-busqueda:focus,.btn-busqueda:active, #btnMenu{
+
+.btn-busqueda-Collapse{
+    color:var(--blanco-calido);
+}
+
+
+.barra-encabezado .form-control:focus, .btn-busqueda:focus-visible, .btn-busqueda:focus,.btn-busqueda:active, #btnMenu{
     box-shadow: none;
     border-color: transparent;
     border: 0;
 }
 
 .navbar-brand, nav .nav-item a{
-    color:var(--blanco-calido)
+    color:var(--blanco-calido);
+    padding:auto;
 }
 
-nav .nav-item a:hover{
+.nav-item a:hover{
     color:var(--lila);
 }
 
-.input-group .nav-item .activo{
+.nav-item .activo{
        color: var(--rosa-coral);
 }
 
@@ -65,13 +73,13 @@ nav .nav-item a:hover{
 #formBusqueda {
     background-color: #e8e8e8;
     border: none;
-    padding: 8px 16px;
+   
 }
 
-#formBusqueda input.form-control {
+#formBusqueda .barra-encabezado input{
+    padding:.375rem .75rem;
     background-color: transparent;
     border: none;
-    padding: 8px 12px;
     color: var(--azul-marino-intenso);
     box-shadow: none;
 }
@@ -83,6 +91,21 @@ nav .nav-item a:hover{
 
 #formBusqueda .btn-busqueda {
     border: none;
-    padding: 8px;
     color: var(--azul-marino-intenso);
+}
+
+/* offcanvas */
+header .offcanvas{
+    background-color: var(--azul-marino-intenso);
+    --bs-offcanvas-height: 15vh !important; 
+    flex-direction: row-reverse;
+    align-items: center;
+}
+
+header .offcanvas form{
+   width: 100vh;
+}
+
+header .offcanvas input{
+    width: 85%;
 }
