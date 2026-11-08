@@ -3,6 +3,8 @@ export function renderCarrusel() {
 
   if (!container) return;
 
+    container.innerHTML = `
+        <div class="container-fluid py-4" style="background-image:url(../../../assets/images/about/fondo.png) ; background-size: 1000px;">
   container.innerHTML = `
         <div class="container-fluid py-4" style="background-color: #c9b7f0;">
     <div id="slider-codersfree" class="carousel slide" data-bs-ride="carousel">
@@ -15,6 +17,20 @@ export function renderCarrusel() {
       
       <div class="carousel-inner">
 
+        <!-- Tarjeta 1: Misión -->
+         <div class="carousel-item active">
+         <div class="card mx-auto shadow-sm border-0 shadow-none rounded-9 bg-transparent card-carrusel">
+         <div class="card-body text-center p-5 d-flex flex-column  align-items-center">
+         <h3 class="card-title mb-3">Misión</h3>
+        <p class="card-text">Brindar a nuestros clientes en México acceso exclusivo a papelería japonesa de alta calidad, diseño único y funcionalidad destacada, transformando la rutina diaria de organización y creatividad en una experiencia inspiradora. Nos diferenciamos al acercar artículos innovadores y de creadores independientes que promueven la expresión personal y el amor por los detalles.</p>
+        </div>
+        </div>
+        </div>
+        
+        <!-- Tarjeta 2: Visión -->
+        <div class="carousel-item ">
+         <div class="card mx-auto shadow-sm border-0 shadow-none rounded-9 bg-transparent card-vision">
+         <div class="card-body text-center p-5 d-flex flex-column  align-items-center">
         <div class="carousel-item active">
           <div class="card mx-auto shadow-sm border-0 rounded-9" style="max-width: 600px; ; background-color: #B7E6DB;">
             <div class="card-body text-center p-5">
@@ -35,6 +51,10 @@ export function renderCarrusel() {
           </div>
         </div>
 
+        <!-- Tarjeta 3: Valores -->
+       <div class="carousel-item ">
+         <div class="card mx-auto shadow-sm border-0 shadow-none rounded-9 bg-transparent card-valores">
+         <div class="card-body text-center p-5 d-flex flex-column  align-items-center">
         <div class="carousel-item">
           <div class="card mx-auto shadow-sm border-0 rounded-9" style="max-width: 600px;  background-color: #B7E6DB;">
             <div class="card-body text-center p-5">
