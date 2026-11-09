@@ -11,7 +11,7 @@
     color: var(--rosa-coral);
     letter-spacing: -1px;
     font-family: var(--fuente-encabezados);
-    font-style: italic !important;
+    /* font-style: italic !important; */
 }
 
 .contact-description {
@@ -46,6 +46,8 @@
     border: 1px solid #d8dde3;
     border-radius: 6px;
     padding: 0.7rem 0.8rem;
+    min-height: 60px;
+
 }
 
 .contact-section .form-control::placeholder {
@@ -54,8 +56,8 @@
 
 .contact-section .form-control:focus {
     background-color: #ffffff;
-    border-color: var(--rosa-coral);
-    box-shadow: 0 0 0 0.2rem rgba(248, 92, 112, 0.15);
+    border-color: var(--menta);
+    box-shadow: 0 0 0 0.2rem rgba(183, 230, 219, 0.50);
 }
 
 .required {
@@ -74,6 +76,7 @@
     color: #b1b5ba;
 }
 
+/*
 .form-control:focus {
     background-color: #ffffff;
     border-color: var(--rosa-coral);
@@ -82,7 +85,7 @@
         0 0 0 0.2rem
         rgba(248, 92, 112, 0.15);
 }
-
+*/
 
 /* Textarea */
 textarea.form-control {
