@@ -7,59 +7,49 @@ export function renderFooter() {
 
     footer.innerHTML = `
         <div class="main-container-footer">
-         
+
          <!--Logotipo-->
-            <img src="./assets/footer/Logo.png" class="item-footer" style="padding-top: 20px;">
+            <img src="./assets/logos/Positivo.png" class="item-footer" style="padding-top: 20px; max-width: 180px">
 
 
-         <!--Redes Sociales-->
-            <div class="item-footer" style="display: flex; flex-direction: column;">
-                <h5 class="header-text-footer item-footer" style="padding-bottom: 10px; padding-top: 20px;">Redes Sociales</h5>
-                <div class="social-icons">
-                    <a 
-                    href="https://www.facebook.com/profile.php?id=61596419964468"
-                    target="_blank">
-                    <img src="./assets/footer/FB.png" 
-                    alt="Link a Facebook de Ajolote y Grulla"
-                    class="">
-                    </a>
 
-                    <a 
-                    href="https://www.instagram.com/ajogru/"
-                    target="_blank">
-                    <img src="./assets/footer/IG.png" 
-                    alt="Link a Instagram de Ajolote y Grulla"
-                    class="">
-                    </a>
+        <!-- Redes Sociales -->
+        <div class="item-footer" style="display: flex; flex-direction: column;">
+            <h5 class="header-text-footer item-footer" style="padding-bottom: 10px; padding-top: 20px;">
+                Redes Sociales
+            </h5>
 
-                    <a 
-                    href="https://www.whatsapp.com/"
-                    target="_blank">
-                    <img src="./assets/footer/WA.png" 
-                    alt="Link a Whatsapp de Ajolote y Grulla"
-                    class="">
-                    </a>
 
-                    <a 
-                    href="https://www.tiktok.com/@ajoygru"
-                    target="_blank">
-                    <img src="./assets/footer/TK.png" 
-                    alt="Link a TikTok de Ajolote y Grulla"
-                    class="">
-                    </a>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/profile.php?id=61596419964468"
+                target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                    <i class="bxl bx-facebook"></i>
+                </a>
 
-                    <a 
-                    href="https://x.com/AjoloteGrulla"
-                    target="_blank">
-                    <img src="./assets/footer/X.png" 
-                    alt="Link a X de Ajolote y Grulla"
-                    class="">
-                    </a>
-                </div>
-        
+                <a href="https://www.instagram.com/ajogru/"
+                target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                    <i class="bxl bx-instagram"></i>
+                </a>
+
+                <a href="https://www.whatsapp.com/"
+                target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+                    <i class="bxl bx-whatsapp"></i>
+                </a>
+
+                <a href="https://www.tiktok.com/@ajoygru"
+                target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+                    <i class="bxl bx-tiktok"></i>
+                </a>
+
+                <a href="https://x.com/AjoloteGrulla"
+                target="_blank" rel="noopener noreferrer" aria-label="X">
+                    <i class="bxl bx-twitter-x"></i>
+                </a>
             </div>
-         
-        
+        </div>
+
+
+
          <!--Navegación -->
             <div class="only-nav-footer" class="item-footer">
                 <h5 class="header-text-footer" class="item-footer" style="padding-top: 40px;">Navegación</h5>
@@ -83,7 +73,7 @@ export function renderFooter() {
                 </address>
             </div>
 
-        
+
          <!--Linea Rosa-->
             <img src="./assets/footer/Vector.png" alt="Línea decorativa Ajolote y Grulla" class="footer-line-img">
 
