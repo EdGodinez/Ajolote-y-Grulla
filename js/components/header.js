@@ -1,13 +1,12 @@
-
 export function renderHeader() {
-    const header = document.getElementById("header");
+  const header = document.getElementById("header");
 
-    if (!header) return;
+  if (!header) return;
 
-    // Obtener la página actual
-    const currentPage = window.location.pathname.split("/").pop() || "index.html";
+  // Obtener la página actual
+  const currentPage = window.location.pathname.split("/").pop() || "index.html";
 
-    header.innerHTML = `
+  header.innerHTML = `
         <nav class="navbar fixed-top navbar-expand-xl">
             <div class="container-fluid ">
 
@@ -34,36 +33,46 @@ export function renderHeader() {
 
 
                 <!-- links de Navegación -->
-                <div clas="d-flex col-xxl-3 me-auto ms-auto justify-content-between">
-                <button id="btnMenu" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerPestañas" aria-controls="navbarTogglerPestañas" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-                </button>
+<div class="d-flex align-items-center d-xl-none">
+    <button id="btnMenu" class="btn navbar-toggler" type="button"  data-bs-toggle="offcanvas" data-bs-target="#offcanvasMenu" aria-controls="offcanvasMenu">
+        <i class="navbar-toggler-icon"></i>
+    </button>
+</div>
 
-                <div class="collapse navbar-collapse text-nowrap" id="navbarTogglerPestañas">
+
+                <div class="d-none d-xl-flex text-nowrap" id="navbarTogglerPestañas">
 
                     <ul class="navbar-nav align-items-center me-auto mb-1 mb-xl-0">
                         <li class="nav-item p-2 ms-auto">
-                            <a href="./index.html" class="nav-link ${currentPage === "index.html"
-            ? " activo"
-            : " nav-link"}">Inicio</a>
+                            <a href="./index.html" class="nav-link ${
+                              currentPage === "index.html"
+                                ? " activo"
+                                : " nav-link"
+                            }">Inicio</a>
                         </li>
                         <li class="nav-item p-2 ms-auto">
                             <a href="./products.html" class="nav-link 
-                                ${currentPage === "products.html"
-            ? "activo"
-            : " nav-link"}">Catálogo</a>
+                                ${
+                                  currentPage === "products.html"
+                                    ? "activo"
+                                    : " nav-link"
+                                }">Catálogo</a>
                         </li>
                         <li class="nav-item p-2 ms-auto">
                             <a href="./about.html" class="nav-link 
-                                ${currentPage === "about.html"
-            ? "activo"
-            : " nav-link"}">Sobre Nosotros</a>
+                                ${
+                                  currentPage === "about.html"
+                                    ? "activo"
+                                    : " nav-link"
+                                }">Sobre Nosotros</a>
                         </li>
                         <li class="nav-item p-2 ms-auto">
                             <a href="./contact.html" class="nav-link 
-                                ${currentPage === "contact.html"
-            ? " activo"
-            : " nav-link"}">Contáctanos</a>
+                                ${
+                                  currentPage === "contact.html"
+                                    ? " activo"
+                                    : " nav-link"
+                                }">Contáctanos</a>
                         </li>
                         <li class="nav-item p-2 ms-auto">
                             <a type="button" href="#" id="carritoCompra" class="btn rounded-pill px-3"><i class="bi bi-cart2"></i></a>
@@ -76,6 +85,7 @@ export function renderHeader() {
                 </div>
             </div>
         </nav>
+<!-- Offcanvas de busqueda -->
         <div class="offcanvas offcanvas-top" data-bs-scroll="true" tabindex="-1" id="offcanvasBusqueda" aria-labelledby="offcanvasBusquedaLabel">
   <div class="offcanvas-header">
     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -90,6 +100,54 @@ export function renderHeader() {
         </form>
     </div>
   </div>
+</div>
+<!-- Offcanvas de navegacion -->
+
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasMenu" aria-labelledby="offcanvasMenu">
+<div class="offcanvas-header">
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+     <ul class="navbar-nav align-items-start me-auto mb-1 mb-xl-0">
+                        <li class="nav-item p-2 ms-auto">
+                            <a href="./index.html" class="nav-link ${
+                              currentPage === "index.html"
+                                ? " activo"
+                                : " nav-link"
+                            }">Inicio</a>
+                        </li>
+                        <li class="nav-item p-2 ms-auto">
+                            <a href="./products.html" class="nav-link 
+                                ${
+                                  currentPage === "products.html"
+                                    ? "activo"
+                                    : " nav-link"
+                                }">Catálogo</a>
+                        </li>
+                        <li class="nav-item p-2 ms-auto">
+                            <a href="./about.html" class="nav-link 
+                                ${
+                                  currentPage === "about.html"
+                                    ? "activo"
+                                    : " nav-link"
+                                }">Sobre Nosotros</a>
+                        </li>
+                        <li class="nav-item p-2 ms-auto">
+                            <a href="./contact.html" class="nav-link 
+                                ${
+                                  currentPage === "contact.html"
+                                    ? " activo"
+                                    : " nav-link"
+                                }">Contáctanos</a>
+                        </li>
+                        <li class="nav-item p-2 ms-auto">
+                            <a type="button" href="#" id="carritoCompra" class="btn rounded-pill px-3"><i class="bi bi-cart2"></i></a>
+                        </li>
+                        <li class="nav-item p-2 ms-auto">
+                            <a type="button" href="#" id="btnInicioSesion" class="btn rounded-pill px-3">Iniciar Sesión</i></a>
+                        </li>
+                  </ul>    
+   </div>
 </div>
 
     `;

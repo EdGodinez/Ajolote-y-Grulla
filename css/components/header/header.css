@@ -96,21 +96,20 @@ background-color: #e8e8e8;
 }
 
 /* offcanvas */
-header .offcanvas{
+header #offcanvasBusqueda{
     background-color: var(--azul-marino-intenso);
     --bs-offcanvas-height: 15vh !important; 
     flex-direction: row-reverse;
     align-items: center;
 }
 
-header .offcanvas form{
+header #offcanvasBusqueda form{
    width: 100vh;
 }
 
-header .offcanvas input{
+header #offcanvasBusqueda input{
     width: 85%;
 }
-
 
 @media (max-width: 1200px) {
     /* estilo de links colapsados dentro del menu */
@@ -135,4 +134,15 @@ header .offcanvas input{
     margin-right: 0 !important;
   }
 
+}
+
+header #offcanvasMenu{
+    color: var(--blanco-calido);
+    background-color: var(--azul-marino-intenso);
+    --bs-offcanvas-width: 300px !important; 
+    
+}
+
+header #offcanvasMenu .offcanvas-body{
+    align-items:self-start;
 }
