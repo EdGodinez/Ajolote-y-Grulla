@@ -3,6 +3,7 @@ const presentationcards = [
         nombre: "Luis Enrique Jiménez Bernal",
         rol: "Desarrollador Fullstack - frontend & UI/UX • Scrum Master - Product Owner - QA- Tester - DevOps",
         descripcion: "Como Desarrollador Full Stack, mi misión es que tu experiencia en Ajolote & Grulla sea tan fluida y agradable como estrenar una libreta nueva. Uso mi lado analítico para construir toda la arquitectura técnica de la tienda (con Java y Spring Boot) y asegurarme de que todo funcione a la perfección. Me encanta el orden, el trabajo en equipo y resolver problemas. Fuera del código, tengo dos grandes pasiones que me ayudan a mantener el equilibrio: sentir el viento rodando en mi motocicleta estilo chopper y consentir a mi perrita Kyra.",
+        foto: "assets/images/Fotos del equipo/Luis Enrique J.jpg",
         foto: "assets/team-photos/kikin.jpeg",
         Habilidad: [
             { habilidad: "Figma", color: "var(--menta-pastel)" },
@@ -120,7 +121,7 @@ const presentationcards = [
             { habilidad: "HTML5 & CSS3", color: "var(--rosa-pastel)" },
             { habilidad: "Bootstrap 5", color: "var(--lyla-pastel)" },
             { habilidad: "JavaScript", color: "var(--menta-pastel)" },
-            { habilidad: "Java", color: "var(--rosa-pastel)" },     
+            { habilidad: "Java", color: "var(--rosa-pastel)" },
         ],
         github: "https://github.com/KevinMartinezY",
         linkedin: "www.linkedin.com/in/kev-mtz",
@@ -142,7 +143,7 @@ const presentationcards = [
         linkedin: "https://www.linkedin.com/in/mariana-arleth-aquino-alarcon/",
         correoelectronico: "marianaalarcon519@gmail.com"
     },
-    {        
+    {
         nombre: "Erick Sebastian Cortes Tovar",
         rol: "Desarrollador Fullstack - frontend & UI/UX • Scrum Master - Product Owner - QA- Tester - DevOps",
         descripcion: "Vengo del mundo del soporte de TI, donde aprendí que la paciencia y el orden son la clave para resolver cualquier problema. Como Desarrollador Full Stack Jr, aplico ese mismo pensamiento estructurado para que la plataforma de Ajolote & Grulla sea escalable y súper confiable. Me apasiona armar soluciones utilizando ecosistemas modernos como Node.js, React, Java y Docker; de hecho, me gusta imaginar cada contenedor como un compartimento perfectamente organizado de nuestra papelería. Soy un fiel creyente del aprendizaje constante y disfruto sumar mi energía al equipo para superar juntos cualquier reto técnico.", 
@@ -168,7 +169,7 @@ export function renderTeamCards() {
     const container = document.getElementById("about-team");
     if (!container) return;
 
-    let allCardsHTML = `;
+    let allCardsHTML = `
         <div class="section-header-team">
                 <h2 class="section-title-main">Nuestro equipo</h2>
                 <p class="section-subtitle-main">Conoce a las personas detrás del proyecto.</p>
@@ -181,8 +182,8 @@ export function renderTeamCards() {
             skillsHTML += `<span class="skill-tag" style="background-color: ${habilidad.color}">${habilidad.habilidad}</span>`;
         });
 
-        const linkedinUrl = miembro.linkedin.startsWith('http') 
-            ? miembro.linkedin 
+        const linkedinUrl = miembro.linkedin.startsWith('http')
+            ? miembro.linkedin
             : `https://${miembro.linkedin}`;
 
         allCardsHTML += `
