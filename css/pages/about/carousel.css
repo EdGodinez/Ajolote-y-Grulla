@@ -1,0 +1,47 @@
+.prueba-carrusel {
+    background-image: url("/Ajolote-y-Grulla/assets/about-carrusel/fondo.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.imgs-carrusel img{
+    display: flex;
+    flex-flow: column wrap;
+    max-height: 500px;
+    margin: 50px auto 50px auto;
+
+}
+
+.text-prueba {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Tarjeta y texto en la misma celda: el texto toma el tamaño de la imagen */
+.carousel-item.active,
+.carousel-item-next,
+.carousel-item-prev {
+    display: grid;
+    justify-content: center;
+}
+
+.carousel-item > * {
+    grid-area: 1 / 1;
+}
+
+.texto-tarjeta {
+    container-type: inline-size;
+    align-self: center;
+    margin: 50px 0;
+    padding: 0 12% 0 16%;
+    text-align: center;
+}
+
+.texto-tarjeta .card-title {
+    font-size: clamp(1rem, 6cqw, 2rem);
+}
+
+.texto-tarjeta .card-text {
+    font-size: clamp(0.7rem, 3.6cqw, 1.1rem);
+}
