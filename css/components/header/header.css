@@ -23,6 +23,11 @@ background-color: #e8e8e8;
     border-color: transparent !important;
 }
 
+#nombreTienda:hover{
+    color: var(--lila);
+}
+
+
 .btn-busqueda-Collapse{
     color:var(--blanco-calido);
 }
