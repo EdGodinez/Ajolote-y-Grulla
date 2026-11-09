@@ -4,9 +4,9 @@
 
     /* Imágenes de tinta y letras japonesas */
     background-image:
-        url("../../../assets/images/about/salpicadura-arriba.png"),
-        url("../../../assets/images/about/salpicadura-izquierda.png"),
-        url("../../../assets/images/about/salpicadura-abajo.png");
+        url("../../../assets/about-hero/salpicadura-arriba.png"),
+        url("../../../assets/about-hero/salpicadura-izquierda.png"),
+        url("../../../assets/about-hero/salpicadura-abajo.png");
 
 
     background-position:
@@ -40,7 +40,7 @@
 /* Papel rosa  */
 
 .papel-nota {
-    background-image: url("../../../assets/images/about/papel-rosa.png");
+    background-image: url("../../../assets/about-hero/papel-rosa.png");
     background-size: 100% 100%;
     background-repeat: no-repeat;
 
