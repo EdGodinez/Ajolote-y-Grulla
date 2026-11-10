@@ -58,6 +58,27 @@
     opacity: 0.6;
 }
 
+
+.btn-agregar-producto {
+    background-color: var(--azul-marino-intenso);
+    color: var(--blanco-calido);
+    border-radius: 30px;
+    padding: 12px 24px;
+    font-weight: 600;
+}
+
+.btn-agregar-producto:hover {
+    background-color: var(--rosa-coral);
+    color: var(--blanco-calido);
+}
+
+@media (max-width: 576px) {
+    .btn-agregar-producto {
+        width: 100%;
+    }
+}
+
+
 /* Categorías */
 
 .filtro-categoria,
