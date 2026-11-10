@@ -38,11 +38,14 @@ export function renderHeader() {
         <i class="navbar-toggler-icon"></i>
     </button>
 </div>
-
-
                 <div class="d-none d-xl-flex text-nowrap" id="navbarTogglerPestañas">
-
                     <ul class="navbar-nav align-items-center me-auto mb-1 mb-xl-0">
+                    <li class="nav-item p-2 ms-auto">
+                        <a type="button" href="#" id="carritoCompra" class="btn rounded-pill px-3"><i class="bi bi-cart2"></i></a>
+                    </li>
+                    <li class="nav-item p-2 ms-auto">
+                        <a type="button" href="#" id="btnInicioSesion" class="btn rounded-pill px-3">Iniciar Sesión</i></a>
+                    </li>
                         <li class="nav-item p-2 ms-auto">
                             <a href="./index.html" class="nav-link ${
                               currentPage === "index.html"
@@ -73,12 +76,6 @@ export function renderHeader() {
                                     ? " activo"
                                     : " nav-link"
                                 }">Contáctanos</a>
-                        </li>
-                        <li class="nav-item p-2 ms-auto">
-                            <a type="button" href="#" id="carritoCompra" class="btn rounded-pill px-3"><i class="bi bi-cart2"></i></a>
-                        </li>
-                        <li class="nav-item p-2 ms-auto">
-                            <a type="button" href="#" id="btnInicioSesion" class="btn rounded-pill px-3">Iniciar Sesión</i></a>
                         </li>
                   </ul>    
                 </div>
