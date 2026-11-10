@@ -13,17 +13,19 @@
       margin: 0 auto;
     }
 
-  .card-carrusel {
-     background-image: url("../../../assets/about-carrusel/tarjeta-carrusel-1.png");
+  
+    .card-carrusel {
+     background-image: url("../../../assets/images/about/tarjeta-carrusel-1.png");
     }
 
     .card-vision {
-     background-image: url("../../../assets/about-carrusel/tarjeta-carrusel-2.png");
+     background-image: url("../../../assets/images/about/tarjeta-carrusel-2.png");
     }
 
     .card-valores {
-     background-image: url("../../../assets/about-carrusel/tarjeta-carrusel-3.png");
+     background-image: url("../../../assets/images/about/tarjeta-carrusel-3.png");
     }
+
     .card-title, .card-text {
       max-width: 400px; 
       margin-left: auto;
@@ -42,33 +44,7 @@
       align-items: center;
     }
 
-/* Carrusel */
-
-#slider-codersfree .carousel-item {
-    height: 400px;
-    padding: 40px 60px;
-}
-
-/* Tarjetas */
-#slider-codersfree .card {
-    max-width: 600px;
-    min-height: 300px;
-}
-
-#slider-codersfree .card-body {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 25px !important;
-}
-
-#slider-codersfree .carousel-icon {
-    font-size: 3rem;
-    color: var(--rosa-coral);;
-    margin-bottom: 10px;
-}
-
+  
 
 /* Tablets */
 @media (max-width: 992px) {
