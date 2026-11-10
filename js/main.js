@@ -1,4 +1,3 @@
-
 /* ==========================================
    COMPONENTES GLOBALES
    ========================================== */
@@ -59,5 +58,7 @@ if (document.getElementById("contact")) {
     renderContact();
 }
 
-initCatalogo();
-
+// Componentes exclusivos de products.html
+if (document.getElementById("lista-productos")) {
+    initCatalogo();
+}

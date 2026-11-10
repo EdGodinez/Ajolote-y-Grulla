@@ -58,64 +58,49 @@
     opacity: 0.6;
 }
 
+/* Filtros y etiquetas */
 
-.btn-agregar-producto {
-    background-color: var(--azul-marino-intenso);
-    color: var(--blanco-calido);
-    border-radius: 30px;
-    padding: 12px 24px;
-    font-weight: 600;
-}
-
-.btn-agregar-producto:hover {
-    background-color: var(--rosa-coral);
-    color: var(--blanco-calido);
-}
-
-@media (max-width: 576px) {
-    .btn-agregar-producto {
-        width: 100%;
-    }
-}
-
-
-/* Categorías */
-
-.filtro-categoria,
-.producto-categoria {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    align-self: flex-start;
-    border-radius: 50px;
-    font-family: var(--fuente-contenido);
+.filtros-titulo {
+    margin-bottom: 8px;
+    color: var(--azul-marino-intenso);
+    font-family: var(--fuente-encabezados);
+    font-size: 0.95rem;
     font-weight: 700;
 }
 
-.filtro-categoria {
-    box-sizing: border-box;
-    padding: 10px 20px;
-    border: 2px solid transparent;
+.filtro,
+.producto-etiqueta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 12px;
+    border-radius: 50px;
     color: var(--azul-marino-intenso);
-    font-size: 0.9rem;
-    cursor: pointer;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    font-family: var(--fuente-contenido);
+    font-size: 0.75rem;
+    font-weight: 700;
 }
 
-.filtro-categoria:hover {
+.filtro {
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.filtro:hover {
     transform: translateY(-2px);
 }
 
-.filtro-categoria.activo,
-.filtro-categoria.activo:focus,
-.filtro-categoria.activo:focus-visible {
+.filtro.activo,
+.filtro.activo:focus,
+.filtro.activo:focus-visible {
     outline: 2px solid var(--azul-marino-intenso);
-    outline-offset: 3px;
+    outline-offset: 2px;
 }
 
-.filtro-categoria:not(.activo):focus-visible {
-    outline: 2px solid var(--rosa-coral);
-    outline-offset: 4px;
+.filtro:not(.activo):focus-visible {
+    outline: 2px solid var(--lila);
+    outline-offset: 2px;
 }
 
 .filtro-todos {
@@ -123,38 +108,19 @@
     color: white;
 }
 
-.producto-categoria {
-    padding: 7px 16px;
-    color: var(--azul-marino-intenso);
-    font-size: 0.85rem;
-}
-
-.categoria-plumas {
-    background-color: var(--rosa-sakura);
-}
-
-.categoria-accesorios {
+.filtro-categoria {
     background-color: var(--lila);
 }
 
-.categoria-cintas {
+.filtro-caracteristica,
+.producto-etiqueta {
     background-color: var(--menta);
 }
 
-.categoria-utiles {
-    background-color: var(--rosa-coral);
-    color: white;
-}
-
-.categoria-marcadores {
-    background-color: var(--azul-marino-intenso);
-    color: white;
-}
-
-.categoria-default {
-    background-color: var(--blanco-calido);
-    color: var(--azul-marino-intenso);
-    border: 1px solid var(--azul-marino-intenso);
+.producto-etiquetas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
 }
 
 /* Tarjetas */
@@ -295,11 +261,6 @@
         font-size: 0.9rem;
     }
 
-    .filtro-categoria {
-        padding: 8px 12px;
-        font-size: 0.75rem;
-    }
-
     .producto-card {
         padding: 12px;
         border-radius: 18px;
@@ -309,9 +270,10 @@
         height: 150px;
     }
 
-    .producto-categoria {
-        padding: 5px 10px;
-        font-size: 0.7rem;
+    .filtro,
+    .producto-etiqueta {
+        padding: 4px 8px;
+        font-size: 0.65rem;
     }
 
     .producto-nombre {

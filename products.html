@@ -36,28 +36,22 @@
         productos únicos que combinan creatividad, diseño y funcionalidad.
       </p>
 
-
-      <!-- Boton agregar producto -->
-      <div class="d-flex justify-content-end mb-4">
-          <a href="./agregarProducto.html" class="btn btn-agregar-producto">
-              <i class="bi bi-plus-lg me-2"></i>
-              Agregar producto
-          </a>
-      </div>
-
-
       <!-- Barra de búsqueda -->
       <div class="buscador-productos mb-4">
 
         <i class="bi bi-search"></i>
 
-        <input type="search" id="buscar-producto" placeholder="Buscar productos por nombre o marca..."
+        <input type="search" id="buscar-producto" placeholder="Buscar por nombre, marca o característica..."
           aria-label="Buscar productos">
 
       </div>
 
-      <!-- Filtros de categoría -->
-      <div id="filtros-categorias" class="d-flex flex-wrap gap-2 mb-4"></div>
+      <!-- Filtros -->
+      <p class="filtros-titulo">Categorías</p>
+      <div id="filtros-categorias" class="d-flex flex-wrap gap-2 mb-3"></div>
+
+      <p class="filtros-titulo">Características</p>
+      <div id="filtros-characteristics" class="d-flex flex-wrap gap-2 mb-4"></div>
 
       <!-- Listado de productos -->
       <div class="row g-4" id="lista-productos"></div>

@@ -2,50 +2,28 @@ import { productos } from "./products.js";
 
 const TODOS = "Todos";
 
-// Cada valor apunta a una clase de color genérica definida en products.css
-const clasesCategorias = {
-  "Plumas y Lapiceros": "etiqueta-sakura",
-  "Accesorios": "etiqueta-lila",
-  "Cintas Adhesivas": "etiqueta-menta",
-  "Útiles": "etiqueta-coral",
-  "Marcadores": "etiqueta-marino"
-};
-
-// Agrupadas por color: estética, juego, funcionalidad e innovación
-const clasesCharacteristics = {
-  "Aesthetic": "etiqueta-sakura",
-  "Elegante": "etiqueta-sakura",
-  "Diseño minimalista": "etiqueta-sakura",
-  "Creativo": "etiqueta-lila",
-  "Divertido": "etiqueta-lila",
-  "Original": "etiqueta-lila",
-  "Práctico": "etiqueta-menta",
-  "Multifuncional": "etiqueta-menta",
-  "Ergonómico": "etiqueta-menta",
-  "Innovador": "etiqueta-marino",
-  "Diseño inteligente": "etiqueta-marino",
-  "No sabía que lo necesitaba": "etiqueta-marino"
-};
-
-function obtenerClase(clases, valor) {
-  return clases[valor] || "etiqueta-default";
-}
+const CARACTERISTICA_PRIORITARIA = "No sabía que lo necesitaba";
+const MAX_ETIQUETAS = 2;
 
 function normalizarTexto(texto) {
   return texto
     .normalize("NFD")
-    .replace(/[̀-ͯ]/g, "")
+    .replace(/[\u0300-\u036f]/g, "")
     .toLowerCase()
     .trim();
 }
 
+// Pone primero la característica prioritaria y se queda solo con las primeras
+function seleccionarEtiquetas(characteristics) {
+  const prioritarias = characteristics.filter(c => c === CARACTERISTICA_PRIORITARIA);
+  const resto = characteristics.filter(c => c !== CARACTERISTICA_PRIORITARIA);
+
+  return [...prioritarias, ...resto].slice(0, MAX_ETIQUETAS);
+}
+
 function crearEtiquetas(characteristics) {
-  return characteristics
-    .map(caracteristica => `
-      <span class="producto-etiqueta ${obtenerClase(clasesCharacteristics, caracteristica)}">
-        ${caracteristica}
-      </span>
-    `)
+  return seleccionarEtiquetas(characteristics)
+    .map(caracteristica => `<span class="producto-etiqueta">${caracteristica}</span>`)
     .join("");
 }
 
@@ -84,7 +62,7 @@ function crearTarjeta(producto) {
 }
 
 // Genera un grupo de botones de filtro; sirve para categorías y características
-function crearFiltros(contenedor, opciones, clases, alSeleccionar) {
+function crearFiltros(contenedor, opciones, claseFiltro, alSeleccionar) {
   [TODOS, ...opciones].forEach(opcion => {
     const boton = document.createElement("button");
     const esTodos = opcion === TODOS;
@@ -93,7 +71,7 @@ function crearFiltros(contenedor, opciones, clases, alSeleccionar) {
     boton.textContent = opcion;
     boton.className = esTodos
       ? "filtro filtro-todos activo"
-      : `filtro ${obtenerClase(clases, opcion)}`;
+      : `filtro ${claseFiltro}`;
     boton.setAttribute("aria-pressed", String(esTodos));
 
     boton.addEventListener("click", () => {
@@ -154,12 +132,12 @@ export function initCatalogo() {
     mostrarProductos(productosFiltrados);
   }
 
-  crearFiltros(filtrosCategorias, categorias, clasesCategorias, categoria => {
+  crearFiltros(filtrosCategorias, categorias, "filtro-categoria", categoria => {
     categoriaActiva = categoria;
     filtrarProductos();
   });
 
-  crearFiltros(filtrosCharacteristics, characteristics, clasesCharacteristics, caracteristica => {
+  crearFiltros(filtrosCharacteristics, characteristics, "filtro-caracteristica", caracteristica => {
     caracteristicaActiva = caracteristica;
     filtrarProductos();
   });

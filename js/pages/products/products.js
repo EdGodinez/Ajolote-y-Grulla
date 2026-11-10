@@ -118,5 +118,81 @@ export const productos = [
         detail: "Estos tiernos cúteres te serán indispensables en esta era de las compras en línea: qué mejor forma de abrir tus paquetes que con estos divertidos animalitos. Cuando no los uses, sirven de adorno en tu escritorio.",
         characteristics: ["Divertido", "Creativo", "Innovador", "No sabía que lo necesitaba", "Aesthetic"],
         price: 293
-    }
+    },
 ];
+
+    /*
+    {
+        id: 11,
+        productName: "Marcador KIRE-NA",
+        brand: "Pilot",
+        category: "Marcadores",
+        award: "Gran Premio 2025",
+        img: "./assets/productos/Marcador-KIRE-NA.jpg",
+        description: "Marcadores de doble punta: una traza líneas rectas para subrayar con más control y la otra es de punta fina; set de varios colores.",
+        detail: "Para los que siempre sacan una regla para irse derechito cuando marcan sus libros: este marcador es de secado rápido y tiene dos “patitas” que te ayudan a trazar líneas rectas; cuando las “patitas” tocan el papel, guían la punta para que vaya en línea recta. Además, en el otro extremo cuenta con un plumón de punta fina. El set incluye una variedad de colores.",
+        characteristics: ["Innovador", "Creativo", "Diseño inteligente", "Práctico"],
+        price: 35
+    },
+    {
+        id: 12,
+        productName: "Set de cuadernos de apertura plana Campus Kimochii",
+        brand: "KOKUYO",
+        category: "Libretas",
+        award: "Premio a la Funcionalidad 2024",
+        img: "./assets/productos/Cuadernos-Campus-Kimochii.jpg",
+        description: "Set de cuadernos que se abren planos para escribir con comodidad.",
+        detail: "Conoce la comodidad de escribir sin que te estorbe el espiral de un cuaderno o las hojas abultadas en el centro. Sus hojas son punteadas y puedes escribir con cualquier tipo de pluma, incluso pluma fuente.",
+        characteristics: ["Innovador", "Diseño inteligente", "Práctico"],
+        price: 170
+    },
+    {
+        id: 13,
+        productName: "Portaminas Sindbat de 0.5 mm",
+        brand: "Sun-Star",
+        category: "Plumas y Lapiceros",
+        award: "Gran Premio",
+        img: "./assets/productos/Portaminas-Sindbat.jpg",
+        description: "Lapiceros de colores de 0.5 mm con almacenamiento interno para 40 puntillas, en 8 colores.",
+        detail: "¿Alguna vez se te acabó la puntilla de tu lapicero y olvidaste llevar tu cajita de puntillas? Con este lapicero eso no te pasará: puedes guardar hasta 40 puntillas dentro del mismo.",
+        characteristics: ["Innovador", "Diseño inteligente", "Práctico"],
+        price: 188
+    },
+    {
+        id: 14,
+        productName: "Tijeras Stickyle TSUMAMUNO",
+        brand: "Sun-Star",
+        category: "Útiles",
+        award: "Premio Cortar, Pegar y Encuadernar (también Tendencia en ISOT)",
+        img: "./assets/productos/Tijeras-Stickyle-TSUMAMUNO.jpg",
+        description: "Tijeras retráctiles con pinzas, en 4 colores.",
+        detail: "Estas tijeras serán tus mejores aliadas para hacer tu scrapbook: no solo recortan como tijeras normales, también sus puntas sirven como pinzas para tomar stickers y pegarlos. Las puedes transportar de forma segura porque son retráctiles.",
+        characteristics: ["Multifuncional", "Diseño inteligente", "Innovador"],
+        price: 258
+    },
+    {
+        id: 15,
+        productName: "Clip separador de libros PATAP",
+        brand: "Nakabayashi",
+        category: "Accesorios",
+        award: "Premio Reskilling",
+        img: "./assets/productos/Clip-separador-PATAP.jpg",
+        description: "Separador de libros, en 3 colores.",
+        detail: "Este divertido separador de libros tiene un diseño de color traslúcido que, al marcar tu página, parece que está abduciendo el texto, junto con una vaca que forma parte del diseño.",
+        characteristics: ["Divertido", "Creativo"],
+        price: 100
+    },
+    {
+        id: 16,
+        productName: "Estuche con temporizador para celular Digitox The Routine",
+        brand: "Sonic",
+        category: "Accesorios",
+        award: "Premio Tendencia",
+        img: "./assets/productos/Estuche-Digitox-The-Routine.jpg",
+        description: "Estuche con temporizador para guardar el celular y evitar distracciones.",
+        detail: "¿Usas tanto tu celular que quieres un descanso, pero necesitas un empujoncito? En este estuche lo guardas, se cierra y no se abre hasta que termina el temporizador; es como una pequeña cárcel para tu teléfono. ¡Nunca habías sido tan productivo!",
+        characteristics: ["Innovador", "No sabía que lo necesitaba"],
+        price: 1161
+    }
+
+*/
