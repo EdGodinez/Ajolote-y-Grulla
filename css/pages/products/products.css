@@ -73,19 +73,18 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    padding: 5px 12px;
     border-radius: 50px;
+    color: var(--azul-marino-intenso);
     font-family: var(--fuente-contenido);
+    font-size: 0.75rem;
     font-weight: 700;
 }
 
 .filtro {
-    box-sizing: border-box;
-    padding: 10px 20px;
-    border: 2px solid transparent;
-    color: var(--azul-marino-intenso);
-    font-size: 0.9rem;
+    border: none;
     cursor: pointer;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: transform 0.2s ease;
 }
 
 .filtro:hover {
@@ -96,12 +95,12 @@
 .filtro.activo:focus,
 .filtro.activo:focus-visible {
     outline: 2px solid var(--azul-marino-intenso);
-    outline-offset: 3px;
+    outline-offset: 2px;
 }
 
 .filtro:not(.activo):focus-visible {
-    outline: 2px solid var(--rosa-coral);
-    outline-offset: 4px;
+    outline: 2px solid var(--lila);
+    outline-offset: 2px;
 }
 
 .filtro-todos {
@@ -109,46 +108,19 @@
     color: white;
 }
 
+.filtro-categoria {
+    background-color: var(--lila);
+}
+
+.filtro-caracteristica,
+.producto-etiqueta {
+    background-color: var(--menta);
+}
+
 .producto-etiquetas {
     display: flex;
     flex-wrap: wrap;
     gap: 6px;
-}
-
-.producto-etiqueta {
-    padding: 5px 12px;
-    color: var(--azul-marino-intenso);
-    font-size: 0.75rem;
-}
-
-/* Colores de etiqueta reutilizables (categorías y características) */
-
-.etiqueta-sakura {
-    background-color: var(--rosa-sakura);
-}
-
-.etiqueta-lila {
-    background-color: var(--lila);
-}
-
-.etiqueta-menta {
-    background-color: var(--menta);
-}
-
-.etiqueta-coral {
-    background-color: var(--rosa-coral);
-    color: white;
-}
-
-.etiqueta-marino {
-    background-color: var(--azul-marino-intenso);
-    color: white;
-}
-
-.etiqueta-default {
-    background-color: var(--blanco-calido);
-    color: var(--azul-marino-intenso);
-    border: 1px solid var(--azul-marino-intenso);
 }
 
 /* Tarjetas */
@@ -289,11 +261,6 @@
         font-size: 0.9rem;
     }
 
-    .filtro {
-        padding: 8px 12px;
-        font-size: 0.75rem;
-    }
-
     .producto-card {
         padding: 12px;
         border-radius: 18px;
@@ -303,6 +270,7 @@
         height: 150px;
     }
 
+    .filtro,
     .producto-etiqueta {
         padding: 4px 8px;
         font-size: 0.65rem;
