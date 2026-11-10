@@ -1,4 +1,3 @@
-
 export const productos = [
     {
         id: 1,
@@ -8,6 +7,8 @@ export const productos = [
         premio: "Gran Premio 2026",
         img: "./assets/productos/P1-Lápiz-sólido de-escritura.jpg",
         description: "Portaminas de 0.5 mm cuidadosamente diseñado para brindar una experiencia de escritura extraordinaria.",
+        detail: "Este portaminas fue elegido como el mejor producto del año 2026 por su impecable diseño funcional y minimalista. Pero todos se preguntan: si solo es un portaminas, ¿qué lo hace tan especial? Te lo contamos: tiene el peso perfecto para facilitar la escritura sin hacer esfuerzo, su recubrimiento de goma suave brinda comodidad en el agarre y su diseño es ergonómico. A veces lo que parece más sencillo es lo que termina haciendo la diferencia en tu día a día.",
+        characteristics: ["Elegante", "Ergonómico", "Diseño inteligente", "Aesthetic", "Diseño minimalista"],
         price: 1300
     },
     {
@@ -18,6 +19,8 @@ export const productos = [
         premio: "Premio a la Funcionalidad 2026",
         img: "./assets/productos/P3-FriXion-Synergy.jpg",
         description: "Bolígrafo borrable de tres colores con punta de 0.4 mm.",
+        detail: "No cargues con todas tus plumas y lápices: solo necesitas esta, que tiene tres colores, punta fina y, además, es borrable.",
+        characteristics: ["Multifuncional", "Práctico", "Diseño inteligente"],
         price: 370
     },
     {
@@ -28,6 +31,8 @@ export const productos = [
         premio: "Premio a la Idea 2026",
         img: "./assets/productos/P4-Estuchera-voladora-no-identificada.jpg",
         description: "Estuche plano con diseño de platillo volador, disponible en 4 colores.",
+        detail: "Cuelga en tu mochila este divertido estuche que, cada vez que abres y cierras el cierre, abduce a la vaca. Fue premiado por su diseño tanto divertido como funcional, ya que su forma plana lo hace compacto y lo puedes llevar a todos lados.",
+        characteristics: ["Divertido", "Original", "Diseño inteligente"],
         price: 293
     },
     {
@@ -38,6 +43,8 @@ export const productos = [
         premio: "Premio Notas Adhesivas 2026",
         img: "./assets/productos/P7-Etiquetas-en-rollo-y-recambios.jpg",
         description: "Notas adhesivas traslúcidas en rollo para hacer anotaciones, disponibles en 2 colores.",
+        detail: "Haz anotaciones sin modificar tus libros o apuntes de forma permanente con estas cintas: no maltratan la hoja y pueden ser del largo que quieras. Al venir en rollo, no se maltratan en tu mochila o bolsa.",
+        characteristics: ["Práctico", "Diseño inteligente"],
         price: 105
     },
     {
@@ -48,6 +55,8 @@ export const productos = [
         premio: "Premio Clip 2026",
         img: "./assets/productos/P8-clips-para-libros.jpg",
         description: "Clips compactables para mantener tus libros abiertos sin maltratar las hojas, disponibles en 3 colores.",
+        detail: "Estos clips mantienen abierto tu libro o cuaderno sin maltratar las hojas. La pinza es traslúcida para no tapar el texto y se compacta para que la lleves en cualquier bolsa.",
+        characteristics: ["Práctico", "Aesthetic", "Diseño inteligente", "Innovador", "No sabía que lo necesitaba"],
         price: 117
     },
     {
@@ -58,6 +67,8 @@ export const productos = [
         premio: "Premio Tijeras 2026",
         img: "./assets/productos/P9-ZACCC-Tijeras.jpg",
         description: "Tijeras multifuncionales con imán, filo recubierto de titanio y herramientas para cortar cinta adhesiva y cartón, disponibles en 4 colores.",
+        detail: "Estas tijeras tienen una punta especial para cortar la cinta adhesiva de los paquetes, una sierra que corta cartón y marcadores de 1 cm para cortar con precisión. ¡Su filo recubierto de titanio es resistente a los residuos pegajosos! Además, tienen un imán para colocarlas en cualquier superficie de metal.",
+        characteristics: ["Multifuncional", "Innovador", "Práctico", "Diseño inteligente", "No sabía que lo necesitaba"],
         price: 399
     },
     {
@@ -68,6 +79,8 @@ export const productos = [
         premio: "Premio Pluma de Color 2026",
         img: "./assets/productos/P12-Marcador-LAMECO-purpurina.jpg",
         description: "Marcadores transparentes con glitter que permiten resaltar textos sin dificultar su lectura. Set de 3 colores.",
+        detail: "Tus apuntes nunca se habían visto tan bonitos como con estos marcadores. Puedes usarlos solos para resaltar sutilmente el texto, y su glitter no tapa la visibilidad, pero le da un toque brillante.",
+        characteristics: ["Aesthetic", "Creativo"],
         price: 516
     },
     {
@@ -78,6 +91,8 @@ export const productos = [
         premio: "Premio Goma de Borrar 2026",
         img: "./assets/productos/P13-Borrador-KADOLOOP.jpg",
         description: "Goma de borrar remoldeable que recupera su forma al calentarla, permitiendo mantener sus esquinas para borrar con precisión.",
+        detail: "No volverás a batallar con una goma deformada y chata: esta goma se remoldea remojándola en agua caliente o calentándola con una secadora. Vuelve a quedar como nueva, con sus esquinas formadas para borrar con precisión.",
+        characteristics: ["No sabía que lo necesitaba", "Innovador", "Práctico"],
         price: 70
     },
     {
@@ -88,6 +103,8 @@ export const productos = [
         premio: "Premio Cinta Adhesiva 2026",
         img: "./assets/productos/P15-Cintas-Washi.jpg",
         description: "Cintas washi decorativas sobre las que puedes escribir con cualquier pluma o plumón, disponibles en distintos diseños.",
+        detail: "Dale un toque especial a tus cartitas y regalos con estas cintas washi en las que puedes escribir con cualquier pluma o plumón. Los diseños pueden incluir textos como “Gracias”.",
+        characteristics: ["Divertido", "Aesthetic", "Creativo"],
         price: 111
     },
     {
@@ -98,6 +115,8 @@ export const productos = [
         premio: "Premio Cutters 2026",
         img: "./assets/productos/P16-Cortador-Pingüino.jpg",
         description: "Cúter para abrir cajas con divertidos diseños de animalitos. Disponible en 3 modelos que también sirven como decoración de escritorio.",
+        detail: "Estos tiernos cúteres te serán indispensables en esta era de las compras en línea: qué mejor forma de abrir tus paquetes que con estos divertidos animalitos. Cuando no los uses, sirven de adorno en tu escritorio.",
+        characteristics: ["Divertido", "Creativo", "Innovador", "No sabía que lo necesitaba", "Aesthetic"],
         price: 293
     }
 ];
