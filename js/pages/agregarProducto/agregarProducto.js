@@ -7,7 +7,18 @@ function validarName(name) {
 }
 
 function validarBrand(brand) {
-
+    const textoLimpio = brand.trim();
+    
+    // REGEX: Letras (incluyendo acentos), números, espacios, guiones y ampersand (&)
+    const regexValido = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ0-9\s\-\&]+$/;
+    
+    // Evalua longitud mínima, máxima y que cumpla el regex
+    if (textoLimpio.length >= 2 && textoLimpio.length <= 50 && regexValido.test(textoLimpio)) {
+        return true;
+    }
+    alert("La Marca ingresada no es valida. Debe tener entre 2 y 50 caracteres y no contener simbolos especiales.");
+    
+    return false;
 }
 
 function validarAward(award) {
@@ -41,7 +52,26 @@ function validarCategory(category) {
 }
 
 function validarPrice(price) {
+    
+    if (price.trim() == "") {
+        return false ;
+    }
 
+    let precioNumero = Number(price)
+    if (Number.isNaN(precioNumero)) {
+        return false ;
+    }
+
+    if (precioNumero < 0.01) {
+        return false ;
+    }
+
+     if (price.includes(".") && precioTexto.split(".")[1].length > 2) {
+        return false;
+    }
+
+    return true;
+    
 }
 
 function validarImg(img) {
