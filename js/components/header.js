@@ -38,74 +38,11 @@ export function renderHeader() {
         <i class="navbar-toggler-icon"></i>
     </button>
 </div>
-                <div class="d-none d-xl-flex text-nowrap" id="navbarTogglerPestañas">
-                    <ul class="navbar-nav align-items-center me-auto mb-1 mb-xl-0">
-                    <li class="nav-item p-2 ms-auto">
-                        <a type="button" href="#" id="carritoCompra" class="btn rounded-pill px-3"><i class="bi bi-cart2"></i></a>
-                    </li>
-                    <li class="nav-item p-2 ms-auto">
-                        <a type="button" href="#" id="btnInicioSesion" class="btn rounded-pill px-3">Iniciar Sesión</i></a>
-                    </li>
-                        <li class="nav-item p-2 ms-auto">
-                            <a href="./index.html" class="nav-link ${
-                              currentPage === "index.html"
-                                ? " activo"
-                                : " nav-link"
-                            }">Inicio</a>
-                        </li>
-                        <li class="nav-item p-2 ms-auto">
-                            <a href="./products.html" class="nav-link 
-                                ${
-                                  currentPage === "products.html"
-                                    ? "activo"
-                                    : " nav-link"
-                                }">Catálogo</a>
-                        </li>
-                        <li class="nav-item p-2 ms-auto">
-                            <a href="./about.html" class="nav-link 
-                                ${
-                                  currentPage === "about.html"
-                                    ? "activo"
-                                    : " nav-link"
-                                }">Sobre Nosotros</a>
-                        </li>
-                        <li class="nav-item p-2 ms-auto">
-                            <a href="./contact.html" class="nav-link 
-                                ${
-                                  currentPage === "contact.html"
-                                    ? " activo"
-                                    : " nav-link"
-                                }">Contáctanos</a>
-                        </li>
-                  </ul>    
-                </div>
-                </div>
-            </div>
-        </nav>
-<!-- Offcanvas de busqueda -->
-        <div class="offcanvas offcanvas-top" data-bs-scroll="true" tabindex="-1" id="offcanvasBusqueda" aria-labelledby="offcanvasBusquedaLabel">
-  <div class="offcanvas-header">
-    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-  </div>
-  <div class="offcanvas-body">
-    <div class="input-group justify-content-center">
-    <form id="formBusqueda" class="rounded-5 ">
-    <div class="input-group barra-encabezado">
-        <input class="form control" type="search" placeholder="Busca tu producto" aria-label="Buscar">
-        <button class="btn btn-busqueda" type="button"><i class="bi bi-search"></i></button>
-        </div>
-        </form>
-    </div>
-  </div>
-</div>
-<!-- Offcanvas de navegacion -->
 
-<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasMenu" aria-labelledby="offcanvasMenu">
-<div class="offcanvas-header">
-    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-  </div>
-  <div class="offcanvas-body">
-     <ul class="navbar-nav align-items-start me-auto mb-1 mb-xl-0">
+
+                <div class="d-none d-xl-flex text-nowrap" id="navbarTogglerPestañas">
+
+                    <ul class="navbar-nav align-items-center me-auto mb-1 mb-xl-0">
                         <li class="nav-item p-2 ms-auto">
                             <a href="./index.html" class="nav-link ${
                               currentPage === "index.html"
@@ -142,6 +79,72 @@ export function renderHeader() {
                         </li>
                         <li class="nav-item p-2 ms-auto">
                             <a type="button" href="#" id="btnInicioSesion" class="btn rounded-pill px-3">Iniciar Sesión</i></a>
+                        </li>
+                  </ul>    
+                </div>
+                </div>
+            </div>
+        </nav>
+<!-- Offcanvas de busqueda -->
+        <div class="offcanvas offcanvas-top" data-bs-scroll="true" tabindex="-1" id="offcanvasBusqueda" aria-labelledby="offcanvasBusquedaLabel">
+  <div class="offcanvas-header">
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <div class="input-group justify-content-center">
+    <form id="formBusqueda" class="rounded-5 ">
+    <div class="input-group barra-encabezado">
+        <input class="form control" type="search" placeholder="Busca tu producto" aria-label="Buscar">
+        <button class="btn btn-busqueda" type="button"><i class="bi bi-search"></i></button>
+        </div>
+        </form>
+    </div>
+  </div>
+</div>
+<!-- Offcanvas de navegacion -->
+
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasMenu" aria-labelledby="offcanvasMenu">
+<div class="offcanvas-header">
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+     <ul class="navbar-nav  me-auto mb-1 mb-xl-0">
+     <li class="nav-item p-2 ms-auto">
+         <a type="button" href="#" id="carritoCompra" class="btn rounded-pill px-3"><i class="bi bi-cart2"></i></a>
+     </li>
+     <li class="nav-item p-2 ms-auto">
+         <a type="button" href="#" id="btnInicioSesion" class="btn rounded-pill px-3">Iniciar Sesión</i></a>
+     </li>
+                        <li class="nav-item p-2 ms-auto">
+                            <a href="./index.html" class="nav-link ${
+                              currentPage === "index.html"
+                                ? " activo"
+                                : " nav-link"
+                            }">Inicio</a>
+                        </li>
+                        <li class="nav-item p-2 ms-auto">
+                            <a href="./products.html" class="nav-link 
+                                ${
+                                  currentPage === "products.html"
+                                    ? "activo"
+                                    : " nav-link"
+                                }">Catálogo</a>
+                        </li>
+                        <li class="nav-item p-2 ms-auto">
+                            <a href="./about.html" class="nav-link 
+                                ${
+                                  currentPage === "about.html"
+                                    ? "activo"
+                                    : " nav-link"
+                                }">Sobre Nosotros</a>
+                        </li>
+                        <li class="nav-item p-2 ms-auto">
+                            <a href="./contact.html" class="nav-link 
+                                ${
+                                  currentPage === "contact.html"
+                                    ? " activo"
+                                    : " nav-link"
+                                }">Contáctanos</a>
                         </li>
                   </ul>    
    </div>

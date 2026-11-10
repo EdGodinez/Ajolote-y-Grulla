@@ -63,7 +63,7 @@ background-color: #e8e8e8;
 
 #btnInicioSesion{
     background-color: var(--rosa-sakura);
-    color: var(--blanco-calido);
+    color: var(--azul-marino-intenso);
 }
 
 .navbar-toggler-icon{
@@ -148,6 +148,7 @@ header #offcanvasMenu{
     
 }
 
-header #offcanvasMenu .offcanvas-body{
-    align-items:self-start;
+header #offcanvasMenu ul{
+    display: block;
+        align-items:flex-start;
 }
