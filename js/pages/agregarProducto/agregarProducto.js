@@ -40,7 +40,26 @@ function validarCategory(category) {
 }
 
 function validarPrice(price) {
+    
+    if (price.trim() == "") {
+        return false ;
+    }
 
+    let precioNumero = Number(price)
+    if (Number.isNaN(precioNumero)) {
+        return false ;
+    }
+
+    if (precioNumero < 0.01) {
+        return false ;
+    }
+
+     if (price.includes(".") && precioTexto.split(".")[1].length > 2) {
+        return false;
+    }
+
+    return true;
+    
 }
 
 function validarImg(img) {
