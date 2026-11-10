@@ -1,10 +1,10 @@
 export function renderCarrusel() {
-    const container = document.getElementById("about-carrusel");
+  const container = document.getElementById("about-carrusel");
 
-    if (!container) return;
+  if (!container) return;
 
     container.innerHTML = `
-        <div class="container-fluid py-4" style="background-image:url(../../../assets/images/about/fondo.png) ; background-size: 1000px;">
+    <div class="container-fluid py-4" style="background-image:url(../../../assets/images/about/fondo.png) ; background-size: 1000px;">
     <div id="slider-codersfree" class="carousel slide" data-bs-ride="carousel">
 
       <div class="carousel-indicators">
@@ -55,6 +55,7 @@ export function renderCarrusel() {
         <span class="carousel-control-next-icon bg-dark rounded-circle p-2" aria-hidden="true"></span>
         <span class="visually-hidden">Siguiente</span>
       </button>
+
 
     </div>
   </div>

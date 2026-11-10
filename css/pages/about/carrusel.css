@@ -1,4 +1,5 @@
 
+
 .carousel-item {
       padding: 60px 20px;
     }
@@ -13,7 +14,8 @@
       margin: 0 auto;
     }
 
-  .card-carrusel {
+  
+    .card-carrusel {
      background-image: url("../../../assets/images/about/tarjeta-carrusel-1.png");
     }
 
@@ -24,6 +26,7 @@
     .card-valores {
      background-image: url("../../../assets/images/about/tarjeta-carrusel-3.png");
     }
+
     .card-title, .card-text {
       max-width: 400px; 
       margin-left: auto;
@@ -42,7 +45,7 @@
       align-items: center;
     }
 
-
+  
 
 /* Tablets */
 @media (max-width: 992px) {
