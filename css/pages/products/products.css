@@ -58,6 +58,30 @@
     opacity: 0.6;
 }
 
+<<<<<<< HEAD
+=======
+
+.btn-agregar-producto {
+    background-color: var(--azul-marino-intenso);
+    color: var(--blanco-calido);
+    border-radius: 30px;
+    padding: 12px 24px;
+    font-weight: 600;
+}
+
+.btn-agregar-producto:hover {
+    background-color: var(--rosa-coral);
+    color: var(--blanco-calido);
+}
+
+@media (max-width: 576px) {
+    .btn-agregar-producto {
+        width: 100%;
+    }
+}
+
+
+>>>>>>> bbaa0528a4c84e641c257eded6f762b3b4da6d67
 /* Filtros y etiquetas */
 
 .filtros-titulo {

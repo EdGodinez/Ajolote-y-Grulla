@@ -2,6 +2,9 @@
 .hero-about {
     background-color: var(--blanco-calido);
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> bbaa0528a4c84e641c257eded6f762b3b4da6d67
 
     /* Imágenes de tinta y letras japonesas */
     background-image:
@@ -21,8 +24,11 @@
         clamp(120px, 13%, 230px) auto;   /* abajo */
 
     background-repeat: no-repeat;
+<<<<<<< HEAD
 =======
 >>>>>>> fc8b0e18771f57a5fd9e528c1acc8932819bb160
+=======
+>>>>>>> bbaa0528a4c84e641c257eded6f762b3b4da6d67
 }
 
 .hero-about__titulo {
@@ -41,6 +47,9 @@
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> bbaa0528a4c84e641c257eded6f762b3b4da6d67
 /* Papel rosa  */
 
 .papel-nota {
@@ -72,5 +81,8 @@
     font-size: clamp(0.75rem, 4cqi, 1.05rem);
 }
 
+<<<<<<< HEAD
 =======
 >>>>>>> fc8b0e18771f57a5fd9e528c1acc8932819bb160
+=======
+>>>>>>> bbaa0528a4c84e641c257eded6f762b3b4da6d67

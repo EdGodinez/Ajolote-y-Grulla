@@ -85,9 +85,11 @@ a {
   font-size: clamp(58px, 7vw, 96px);
 }
 
+/*
 button {
    all: unset; 
 }
+*/
 
 h1 i,
 h2 i {

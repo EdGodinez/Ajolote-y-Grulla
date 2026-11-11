@@ -4,10 +4,14 @@ const presentationcards = [
         rol: "Desarrollador Fullstack - frontend & UI/UX • Scrum Master - Product Owner - QA- Tester - DevOps",
         descripcion: "Como Desarrollador Full Stack, mi misión es que tu experiencia en Ajolote & Grulla sea tan fluida y agradable como estrenar una libreta nueva. Uso mi lado analítico para construir toda la arquitectura técnica de la tienda (con Java y Spring Boot) y asegurarme de que todo funcione a la perfección. Me encanta el orden, el trabajo en equipo y resolver problemas. Fuera del código, tengo dos grandes pasiones que me ayudan a mantener el equilibrio: sentir el viento rodando en mi motocicleta estilo chopper y consentir a mi perrita Kyra.",
 <<<<<<< HEAD
+<<<<<<< HEAD
         foto: "assets/team-photos/Luis Enrique J.jpg",
 =======
         foto: "assets/images/Fotos del equipo/Luis Enrique J.jpg",
 >>>>>>> fc8b0e18771f57a5fd9e528c1acc8932819bb160
+=======
+        foto: "assets/team-photos/Luis Enrique J.jpg",
+>>>>>>> bbaa0528a4c84e641c257eded6f762b3b4da6d67
         foto: "assets/team-photos/kikin.jpeg",
         Habilidad: [
             { habilidad: "Figma", color: "var(--menta-pastel)" },

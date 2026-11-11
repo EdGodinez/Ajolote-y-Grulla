@@ -4,12 +4,21 @@ export function renderCarrusel() {
   if (!container) return;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     container.innerHTML = `
     <div class="container-fluid py-4" style="background-image:url(../../../assets/images/about/fondo.png) ; background-size: 1000px;">
 =======
   container.innerHTML = `
         <div class="container-fluid py-4" style="background-color: #c9b7f0;">
 >>>>>>> fc8b0e18771f57a5fd9e528c1acc8932819bb160
+=======
+    container.innerHTML = `
+<<<<<<< HEAD
+        <div class="container-fluid py-4" style="background-color: #c9b7f0;">
+=======
+    <div class="container-fluid py-4" style="background-image:url(../../../assets/images/about/fondo.png) ; background-size: 1000px;">
+>>>>>>> 6296ee3449c209426a62bf6da8335d14bbe435a0
+>>>>>>> bbaa0528a4c84e641c257eded6f762b3b4da6d67
     <div id="slider-codersfree" class="carousel slide" data-bs-ride="carousel">
 
       <div class="carousel-indicators">
@@ -21,6 +30,9 @@ export function renderCarrusel() {
       <div class="carousel-inner">
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> bbaa0528a4c84e641c257eded6f762b3b4da6d67
         <!-- Tarjeta 1: Misión -->
          <div class="carousel-item active">
          <div class="card mx-auto shadow-sm border-0 shadow-none rounded-9 bg-transparent card-carrusel">
@@ -29,6 +41,7 @@ export function renderCarrusel() {
         <p class="card-text">Brindar a nuestros clientes en México acceso exclusivo a papelería japonesa de alta calidad, diseño único y funcionalidad destacada, transformando la rutina diaria de organización y creatividad en una experiencia inspiradora. Nos diferenciamos al acercar artículos innovadores y de creadores independientes que promueven la expresión personal y el amor por los detalles.</p>
         </div>
         </div>
+<<<<<<< HEAD
         </div>
         
         <!-- Tarjeta 2: Visión -->
@@ -51,6 +64,14 @@ export function renderCarrusel() {
             <div class="card-body text-center p-5">
               <i class="bx bx-show carousel-icon" aria-hidden="true"></i>
 >>>>>>> fc8b0e18771f57a5fd9e528c1acc8932819bb160
+=======
+        </div>
+        
+        <!-- Tarjeta 2: Visión -->
+        <div class="carousel-item ">
+         <div class="card mx-auto shadow-sm border-0 shadow-none rounded-9 bg-transparent card-vision">
+         <div class="card-body text-center p-5 d-flex flex-column  align-items-center">
+>>>>>>> bbaa0528a4c84e641c257eded6f762b3b4da6d67
               <h3 class="card-title mb-3">Visión</h3>
               <p class="card-text">Ser el e-commerce referente en México de papelería estética y japonesa de nicho, reconocido por nuestra cuidada selección y una plataforma interactiva con perfilamiento dinámico. Buscamos conectar a una comunidad apasionada de creadores, estudiantes y profesionales con productos auténticos que inspiren sus ideas y proyectos cotidianos.</p>
             </div>
@@ -58,16 +79,22 @@ export function renderCarrusel() {
         </div>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> bbaa0528a4c84e641c257eded6f762b3b4da6d67
         <!-- Tarjeta 3: Valores -->
        <div class="carousel-item ">
          <div class="card mx-auto shadow-sm border-0 shadow-none rounded-9 bg-transparent card-valores">
          <div class="card-body text-center p-5 d-flex flex-column  align-items-center">
+<<<<<<< HEAD
 =======
         <div class="carousel-item">
           <div class="card mx-auto shadow-sm border-0 rounded-9" style="max-width: 600px;  background-color: #B7E6DB;">
             <div class="card-body text-center p-5">
               <i class="bx bx-heart carousel-icon" aria-hidden="true"></i>
 >>>>>>> fc8b0e18771f57a5fd9e528c1acc8932819bb160
+=======
+>>>>>>> bbaa0528a4c84e641c257eded6f762b3b4da6d67
               <h3 class="card-title mb-3">Valores</h3>
               <p class="card-text">Nos regimos por la originalidad, la creatividad y la responsabilidad hacia nuestros clientes ofreciendo productos excepcionales de papelería japonesa y un servicio centrado en enriquecer la experiencia de nuestros clientes.</p>
             </div>
@@ -86,9 +113,13 @@ export function renderCarrusel() {
       </button>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> fc8b0e18771f57a5fd9e528c1acc8932819bb160
+=======
+
+>>>>>>> bbaa0528a4c84e641c257eded6f762b3b4da6d67
     </div>
   </div>
     `;
