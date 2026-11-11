@@ -1,4 +1,3 @@
-// Carga segura del catálogo sin bloquear el funcionamiento del formulario
 let catalogoProductos = [];
 import("../products/products.js")
     .then((modulo) => {
@@ -37,7 +36,6 @@ document.addEventListener("DOMContentLoaded", () => {
             return { esValido: false, codigoError: "vacio", mensaje: "El nombre no puede estar vacío." };
         }
 
-        // 2. Validar que primero sea una palabra
         if (!regexIniciaConPalabra.test(nombreSinEspacios)) {
             return { esValido: false, codigoError: "formato", mensaje: "El nombre debe comenzar con una palabra válida (mínimo 2 letras)." };
         }
