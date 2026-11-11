@@ -7,6 +7,7 @@ export function renderFooter() {
 
     footer.innerHTML = `
         <div class="main-container-footer">
+<<<<<<< HEAD
 
          <!--Logotipo-->
             <img src="./assets/logos/Positivo.png" class="item-footer" style="padding-top: 20px; max-width: 180px">
@@ -50,6 +51,61 @@ export function renderFooter() {
 
 
 
+=======
+         
+         <!--Logotipo-->
+            <img src="./assets/footer/Logo.png" class="item-footer" style="padding-top: 20px;">
+
+
+         <!--Redes Sociales-->
+            <div class="item-footer" style="display: flex; flex-direction: column;">
+                <h5 class="header-text-footer item-footer" style="padding-bottom: 10px; padding-top: 20px;">Redes Sociales</h5>
+                <div class="social-icons">
+                    <a 
+                    href="https://www.facebook.com/profile.php?id=61596419964468"
+                    target="_blank">
+                    <img src="./assets/footer/FB.png" 
+                    alt="Link a Facebook de Ajolote y Grulla"
+                    class="">
+                    </a>
+
+                    <a 
+                    href="https://www.instagram.com/ajogru/"
+                    target="_blank">
+                    <img src="./assets/footer/IG.png" 
+                    alt="Link a Instagram de Ajolote y Grulla"
+                    class="">
+                    </a>
+
+                    <a 
+                    href="https://www.whatsapp.com/"
+                    target="_blank">
+                    <img src="./assets/footer/WA.png" 
+                    alt="Link a Whatsapp de Ajolote y Grulla"
+                    class="">
+                    </a>
+
+                    <a 
+                    href="https://www.tiktok.com/@ajoygru"
+                    target="_blank">
+                    <img src="./assets/footer/TK.png" 
+                    alt="Link a TikTok de Ajolote y Grulla"
+                    class="">
+                    </a>
+
+                    <a 
+                    href="https://x.com/AjoloteGrulla"
+                    target="_blank">
+                    <img src="./assets/footer/X.png" 
+                    alt="Link a X de Ajolote y Grulla"
+                    class="">
+                    </a>
+                </div>
+        
+            </div>
+         
+        
+>>>>>>> fc8b0e18771f57a5fd9e528c1acc8932819bb160
          <!--Navegación -->
             <div class="only-nav-footer" class="item-footer">
                 <h5 class="header-text-footer" class="item-footer" style="padding-top: 40px;">Navegación</h5>
@@ -73,7 +129,11 @@ export function renderFooter() {
                 </address>
             </div>
 
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> fc8b0e18771f57a5fd9e528c1acc8932819bb160
          <!--Linea Rosa-->
             <img src="./assets/footer/Vector.png" alt="Línea decorativa Ajolote y Grulla" class="footer-line-img">
 

@@ -1,6 +1,7 @@
 /* hero.css */
 .hero-about {
     background-color: var(--blanco-calido);
+<<<<<<< HEAD
 
     /* Imágenes de tinta y letras japonesas */
     background-image:
@@ -20,6 +21,8 @@
         clamp(120px, 13%, 230px) auto;   /* abajo */
 
     background-repeat: no-repeat;
+=======
+>>>>>>> fc8b0e18771f57a5fd9e528c1acc8932819bb160
 }
 
 .hero-about__titulo {
@@ -37,6 +40,7 @@
     background-color: var(--rosa-coral);
 }
 
+<<<<<<< HEAD
 /* Papel rosa  */
 
 .papel-nota {
@@ -68,3 +72,5 @@
     font-size: clamp(0.75rem, 4cqi, 1.05rem);
 }
 
+=======
+>>>>>>> fc8b0e18771f57a5fd9e528c1acc8932819bb160
