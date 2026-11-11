@@ -6,13 +6,10 @@ import { renderHeader } from "./components/header.js";
 import { renderFooter } from "./components/footer.js";
 
 /* ==========================================
-   COMPONENTES DE INICIO
+   COMPONENTE DE INICIO
    ========================================== */
 
-import { renderIndexHero } from "./pages/index/hero.js";
-import { renderCategories } from "./pages/index/categories.js";
-import { renderProducts } from "./pages/index/products.js";
-import { renderIndexAboutUs } from "./pages/index/aboutus.js";
+import { renderIndex } from "./pages/index/index-index.js";
 
 /* ==========================================
    COMPONENTE DE ABOUT
@@ -42,10 +39,7 @@ renderFooter();
 
 // Componentes exclusivos de index.html
 if (document.getElementById("productSection")) {
-    renderIndexHero();
-    renderCategories();
-    renderProducts();
-    renderIndexAboutUs();
+    renderIndex()
 }
 
 // Componentes exclusivos de about.html
