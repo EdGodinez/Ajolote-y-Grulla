@@ -129,7 +129,7 @@ function renderProductGrill(categoriaSeleccionada = "Todos") {
                     alt=""
                     class="w-100"
                   />
-                  <div class="position-absolute bottom-0 start-0 end-0 p-3">
+                  <div class="position-absolute bottom-0 start-0 end-0 p-3 d-flex justify-content-center">
                     <button
                       class="btn btn-outline-secondary rounded-pill shadow fw-bold w-100 py-2 purchase-btn glass-effect"
                       onclick=""

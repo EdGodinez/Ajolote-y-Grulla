@@ -1,3 +1,4 @@
+
 nav{
     background-color: var(--azul-marino-intenso);
     font-family: var(--fuente-encabezados);
@@ -21,21 +22,34 @@ background-color: #e8e8e8;
     box-shadow: none !important;
     border-color: transparent !important;
 }
-.form-control:focus, .btn-busqueda:focus-visible, .btn-busqueda:focus,.btn-busqueda:active, #btnMenu{
+
+#nombreTienda:hover{
+    color: var(--lila);
+}
+
+
+.btn-busqueda-Collapse{
+    color:var(--blanco-calido);
+}
+
+
+.barra-encabezado .form-control:focus, .btn-busqueda:focus-visible, .btn-busqueda:focus,.btn-busqueda:active, #btnMenu{
     box-shadow: none;
     border-color: transparent;
     border: 0;
 }
 
 .navbar-brand, nav .nav-item a{
-    color:var(--blanco-calido)
+    color:var(--blanco-calido);
+    padding:auto;
 }
 
-nav .nav-item a:hover{
+
+.nav-item a:hover{
     color:var(--lila);
 }
 
-.input-group .nav-item .activo{
+.nav-item .activo{
        color: var(--rosa-coral);
 }
 
@@ -49,7 +63,7 @@ nav .nav-item a:hover{
 
 #btnInicioSesion{
     background-color: var(--rosa-sakura);
-    color: var(--blanco-calido);
+    color: var(--azul-marino-intenso);
 }
 
 .navbar-toggler-icon{
@@ -65,13 +79,13 @@ nav .nav-item a:hover{
 #formBusqueda {
     background-color: #e8e8e8;
     border: none;
-    padding: 8px 16px;
+   
 }
 
-#formBusqueda input.form-control {
+#formBusqueda .barra-encabezado input{
+    padding:.375rem .75rem;
     background-color: transparent;
     border: none;
-    padding: 8px 12px;
     color: var(--azul-marino-intenso);
     box-shadow: none;
 }
@@ -83,6 +97,58 @@ nav .nav-item a:hover{
 
 #formBusqueda .btn-busqueda {
     border: none;
-    padding: 8px;
     color: var(--azul-marino-intenso);
+}
+
+/* offcanvas */
+header #offcanvasBusqueda{
+    background-color: var(--azul-marino-intenso);
+    --bs-offcanvas-height: 15vh !important; 
+    flex-direction: row-reverse;
+    align-items: center;
+}
+
+header #offcanvasBusqueda form{
+   width: 100vh;
+}
+
+header #offcanvasBusqueda input{
+    width: 85%;
+}
+
+@media (max-width: 1200px) {
+    /* estilo de links colapsados dentro del menu */
+.navbar-collapse {
+    padding:10px;
+    position: absolute;
+    text-align: center;
+    background-color: var(--azul-marino-intenso);
+    left: auto;
+  right: 0.5%;
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+}
+
+.navbar-collapse .navbar-nav {
+    margin: 0 !important;          
+    align-items: center;
+  }
+
+  .navbar-collapse .nav-item {
+    margin-left: 0 !important;    
+    margin-right: 0 !important;
+  }
+
+}
+
+header #offcanvasMenu{
+    color: var(--blanco-calido);
+    background-color: var(--azul-marino-intenso);
+    --bs-offcanvas-width: 300px !important; 
+    
+}
+
+header #offcanvasMenu ul{
+    display: block;
+        align-items:flex-start;
 }

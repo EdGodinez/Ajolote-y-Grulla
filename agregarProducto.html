@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Agregar producto | Ajolote & Grulla</title>
 
     <!-- Bootstrap CSS -->
@@ -110,19 +110,19 @@
                                            name="caracteristicas" value="Ergonómico" id="ergonomico">
                                     <label class="form-check-label" for="ergonomico">Ergonómico</label>
                                 </div>
-                                 
+
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox"
                                            name="caracteristicas" value="Innovador" id="innovador">
                                     <label class="form-check-label" for="innovador">Innovador</label>
                                 </div>
-                                
+
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox"
                                            name="caracteristicas" value="Multifuncional" id="multifuncional">
                                     <label class="form-check-label" for="multifuncional">Multifuncional</label>
                                 </div>
-                                
+
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox"
                                            name="caracteristicas" value="No sabía que lo necesitaba" id="no-sabiia">
@@ -175,8 +175,12 @@
                             <textarea class="form-control" id="detail" name="detail" rows="5"></textarea>
                         </div>
 
-                        <!-- Botón -->
+                        <!-- Botones -->
                         <div class="col-12">
+                            <button type="button" class="btn btn-secondary mt-3" id="btn-limpiarFormulario">
+                                Limpiar
+                            </button>
+
                             <button type="submit" class="btn btn-primary contact-button mt-3" id="btn-agregar-producto">
                                 Agregar producto
                             </button>
@@ -205,4 +209,5 @@
     <script type="module" src="./js/pages/agregarProducto/agregarProducto.js"></script>
 
 </body>
+
 </html>
