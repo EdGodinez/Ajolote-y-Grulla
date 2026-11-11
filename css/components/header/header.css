@@ -23,6 +23,11 @@ background-color: #e8e8e8;
     border-color: transparent !important;
 }
 
+#nombreTienda:hover{
+    color: var(--lila);
+}
+
+
 .btn-busqueda-Collapse{
     color:var(--blanco-calido);
 }
@@ -58,7 +63,7 @@ background-color: #e8e8e8;
 
 #btnInicioSesion{
     background-color: var(--rosa-sakura);
-    color: var(--blanco-calido);
+    color: var(--azul-marino-intenso);
 }
 
 .navbar-toggler-icon{
@@ -96,21 +101,20 @@ background-color: #e8e8e8;
 }
 
 /* offcanvas */
-header .offcanvas{
+header #offcanvasBusqueda{
     background-color: var(--azul-marino-intenso);
     --bs-offcanvas-height: 15vh !important; 
     flex-direction: row-reverse;
     align-items: center;
 }
 
-header .offcanvas form{
+header #offcanvasBusqueda form{
    width: 100vh;
 }
 
-header .offcanvas input{
+header #offcanvasBusqueda input{
     width: 85%;
 }
-
 
 @media (max-width: 1200px) {
     /* estilo de links colapsados dentro del menu */
@@ -135,4 +139,16 @@ header .offcanvas input{
     margin-right: 0 !important;
   }
 
+}
+
+header #offcanvasMenu{
+    color: var(--blanco-calido);
+    background-color: var(--azul-marino-intenso);
+    --bs-offcanvas-width: 300px !important; 
+    
+}
+
+header #offcanvasMenu ul{
+    display: block;
+        align-items:flex-start;
 }
