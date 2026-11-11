@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
 
 .carousel-item {
       padding: 60px 20px;
@@ -47,61 +45,6 @@
     }
 
   
-=======
-/* Carrusel */
-=======
->>>>>>> bbaa0528a4c84e641c257eded6f762b3b4da6d67
-
-.carousel-item {
-      padding: 60px 20px;
-    }
-
-    .card-carrusel, .card-vision, .card-valores {
-      max-width: 700px; 
-      width: 100%;
-      height: 380px; 
-      background-size: 100% 100%; 
-      background-position: center;
-      background-repeat: no-repeat;
-      margin: 0 auto;
-    }
-
-  
-    .card-carrusel {
-     background-image: url("../../../assets/images/about/tarjeta-carrusel-1.png");
-    }
-
-    .card-vision {
-     background-image: url("../../../assets/images/about/tarjeta-carrusel-2.png");
-    }
-
-<<<<<<< HEAD
->>>>>>> fc8b0e18771f57a5fd9e528c1acc8932819bb160
-=======
-    .card-valores {
-     background-image: url("../../../assets/images/about/tarjeta-carrusel-3.png");
-    }
-
-    .card-title, .card-text {
-      max-width: 400px; 
-      margin-left: auto;
-      margin-right: auto;
-      text-align: justify;
-      font-size: 19px;
-    }
-
-    #slider-codersfree .carousel-inner {
-      height: 520px; 
-    }
-
-    #slider-codersfree .carousel-item .card {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-  
->>>>>>> bbaa0528a4c84e641c257eded6f762b3b4da6d67
 
 /* Tablets */
 @media (max-width: 992px) {

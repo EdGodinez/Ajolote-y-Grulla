@@ -36,6 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
             return { esValido: false, codigoError: "vacio", mensaje: "El nombre no puede estar vacío." };
         }
 
+
         if (!regexIniciaConPalabra.test(nombreSinEspacios)) {
             return { esValido: false, codigoError: "formato", mensaje: "El nombre debe comenzar con una palabra válida (mínimo 2 letras)." };
         }
@@ -128,16 +129,48 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
+const CATEGORIAS_VALIDAS = ["Plumas y Lapiceros", "Accesorios", "Cintas Adhesivas", "Útiles", "Marcadores"];
+
 function validarBrand(brand) {
+    const textoLimpio = brand.trim();
     
+    // REGEX: Letras (incluyendo acentos), números, espacios, guiones y ampersand (&)
+    const regexValido = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ0-9\s\-\&]+$/;
+    
+    // Evalua longitud mínima, máxima y que cumpla el regex
+    if (textoLimpio.length >= 2 && textoLimpio.length <= 50 && regexValido.test(textoLimpio)) {
+        return true;
+    }
+    alert("La Marca ingresada no es valida. Debe tener entre 2 y 50 caracteres y no contener simbolos especiales.");
+    
+    return false;
 }
 
 function validarAward(award) {
-
+    const valor = award.value.trim();
+    console.log(valor);
+    if (valor != "") {
+        // Reglas de validacion, minimo 10 caracteres reales 
+        const reglas = /^(?=(?:.*\S){10}).+$/;
+        if (reglas.test(valor)) {
+            console.log("ok");
+            return true;
+        } else {
+            return false;
+        }
+    } else {
+        return true;      
+    }
 }
 
 function validarDescription(description) {
-
+    const texto = (description ?? "").trim();
+    let error = "";
+    if (texto === "") error = "La descripción es obligatoria.";
+    else if (texto.length < 10) error = "La descripción debe tener al menos 10 caracteres.";
+    else if (texto.length > 500) error = "La descripción no puede superar 500 caracteres.";
+    else if (!/[a-zA-ZáéíóúÁÉÍÓÚñÑ]/.test(texto)) error = "La descripción debe incluir letras, no solo números o símbolos.";
+    return resolverCampo("descripcion", error);
 }
 
 function validarDetail(detail) {
@@ -145,15 +178,51 @@ function validarDetail(detail) {
 }
 
 function validarCharacteristics(characteristics) {
-
+    const seleccionadas = document.querySelectorAll('#caracteristicas .form-check-input:checked');
+    
+    if (seleccionadas.length === 0) {
+        return false;
+    } else {
+        return true;
+    }
 }
 
-function validarCategory(category) {
 
+function validarCategory(category) {
+    if (typeof category !== "string" || category.trim() === "") {
+        alert("Selecciona una categoría.");
+        return false;
+    }
+
+    if (!CATEGORIAS_VALIDAS.includes(category.trim())) {
+        alert("La categoría seleccionada no es válida.");
+        return false;
+    }
+
+    return true;
 }
 
 function validarPrice(price) {
+    
+    if (price.trim() == "") {
+        return false ;
+    }
 
+    let precioNumero = Number(price)
+    if (Number.isNaN(precioNumero)) {
+        return false ;
+    }
+
+    if (precioNumero < 0.01) {
+        return false ;
+    }
+
+     if (price.includes(".") && precioTexto.split(".")[1].length > 2) {
+        return false;
+    }
+
+    return true;
+    
 }
 
 function validarImg(img) {
@@ -166,8 +235,15 @@ function agregarProducto(producto) {
 
 const formulario = document.getElementById("form-agregar-producto");
 
+
 formulario.addEventListener("submit", (event) => {
     event.preventDefault();
+    let award = document.getElementById("premio");
+    validarAward(award);
 
 });
 
+document.getElementById("btn-limpiarFormulario").addEventListener("click", e => (
+    formulario.reset()
+)
+);        
