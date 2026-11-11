@@ -39,7 +39,13 @@ function validarAward(award) {
 }
 
 function validarDescription(description) {
-
+    const texto = (description ?? "").trim();
+    let error = "";
+    if (texto === "") error = "La descripción es obligatoria.";
+    else if (texto.length < 10) error = "La descripción debe tener al menos 10 caracteres.";
+    else if (texto.length > 500) error = "La descripción no puede superar 500 caracteres.";
+    else if (!/[a-zA-ZáéíóúÁÉÍÓÚñÑ]/.test(texto)) error = "La descripción debe incluir letras, no solo números o símbolos.";
+    return resolverCampo("descripcion", error);
 }
 
 function validarDetail(detail) {
