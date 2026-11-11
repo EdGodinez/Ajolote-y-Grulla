@@ -1,0 +1,70 @@
+/* hero.css */
+.hero-about {
+    background-color: var(--blanco-calido);
+
+    /* Imágenes de tinta y letras japonesas */
+    background-image:
+        url("../../../assets/about-hero/salpicadura-arriba.png"),
+        url("../../../assets/about-hero/salpicadura-izquierda.png"),
+        url("../../../assets/about-hero/salpicadura-abajo.png");
+
+
+    background-position:
+        right top,
+        left center,
+        right bottom;
+    
+    background-size:    
+        clamp(260px, 38%, 600px) auto,   /* arriba */
+        clamp(70px, 8%, 150px) auto,     /* izquierda */
+        clamp(120px, 13%, 230px) auto;   /* abajo */
+
+    background-repeat: no-repeat;
+}
+
+.hero-about__titulo {
+    color: var(--rosa-coral);
+    line-height: 0.9;
+}
+
+.hero-about__img {
+    max-width: 330px;
+}
+
+.hero-about__linea {
+    width: 115px;
+    height: 6px;
+    background-color: var(--rosa-coral);
+}
+
+/* Papel rosa  */
+
+.papel-nota {
+    background-image: url("../../../assets/about-hero/papel-rosa.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+
+    /* Mantiene la proporción original de la imagen (1280 x 1030 px).*/
+    aspect-ratio: 1280 / 1030;
+
+    /* Acomodar el texto dentro de la zona rosa */
+    padding: 14% 16% 11% 10%;
+
+    /* Contenedor de referencia para que la letra se adapte al tamaño del papel */
+    container-type: inline-size;
+
+    display: flex;
+    align-items: center;
+    max-width: 560px;
+
+    color: var(--azul-marino-intenso);
+    font-family: var(--fuente-encabezados);
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.papel-nota p {
+    /* La letra mide 3.3% del ancho del papel, pero nunca menos de 12px ni más de ~17px */
+    font-size: clamp(0.75rem, 4cqi, 1.05rem);
+}
+

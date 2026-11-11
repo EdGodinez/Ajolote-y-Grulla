@@ -1,0 +1,14 @@
+
+/* ==========================================
+   AJOLOTE & GRULLA
+   Estilos de la página About
+   ========================================== */
+
+/* Hero */
+@import url("./hero.css");
+
+/* Carrusel: misión, visión y valores */
+@import url("./carrusel.css");
+
+/* Nuestro equipo */
+@import url("./team.css");
