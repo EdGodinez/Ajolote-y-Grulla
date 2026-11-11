@@ -22,6 +22,7 @@ function validarDetail(detail) {
 
 function validarCharacteristics(characteristics) {
 
+
 }
 
 function validarCategory(category) {
