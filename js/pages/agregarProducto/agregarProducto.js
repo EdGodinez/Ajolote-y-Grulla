@@ -47,8 +47,15 @@ function validarDetail(detail) {
 }
 
 function validarCharacteristics(characteristics) {
-
+    const seleccionadas = document.querySelectorAll('#caracteristicas .form-check-input:checked');
+    
+    if (seleccionadas.length === 0) {
+        return false;
+    } else {
+        return true;
+    }
 }
+
 
 function validarCategory(category) {
     if (typeof category !== "string" || category.trim() === "") {

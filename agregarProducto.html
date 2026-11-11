@@ -1,222 +1,213 @@
 <!doctype html>
 <html lang="es">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Agregar producto | Ajolote & Grulla</title>
 
-    <!-- Estilos Bootstrap -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 
-    <!-- Estilos del formulario -->
-    <link
-      rel="stylesheet"
-      href="./css/pages/agregarProducto/agregarProducto.css"
-    />
-  </head>
+    <!-- Boxicons -->
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
 
-  <body>
-    <main class="container py-5">
-      <!-- BUTTON QUE RETROCEDE A LA ANTERIOR PAGINA EN EL HISTORIAL -->
-      <div class="pb-4">
-        <button
-          class="btn btn-danger px-5 d-flex align-items-center"
-          onclick="history.back()"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-square-arrow-left-exit preview-icon"
-          >
-            <path d="M13 12H3" />
-            <path
-              d="M3 17.67V19a2 2 0 002 2h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v1.33"
-            />
-            <path d="m7 8-4 4 4 4" />
-          </svg>
-        </button>
-      </div>
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 
-      <h1 class="mb-3">Agregar producto</h1>
-      <p class="mb-4">Completa los datos para registrar un nuevo producto.</p>
+    <!-- Estilos globales -->
+    <link rel="stylesheet" href="./css/style.css">
 
-      <form id="form-agregar-producto" novalidate>
-        <div class="row g-3">
-          <!-- Nombre -->
-          <div class="col-md-6">
-            <label for="nombre" class="form-label">Nombre</label>
-            <input
-              type="text"
-              class="form-control"
-              id="brand"
-              name="brand"
-              required
-            />
-          </div>
+    <!-- Estilos específicos del formulario -->
+    <link rel="stylesheet" href="./css/pages/agregarProducto/agregarProducto.css">
+</head>
 
-          <!-- Marca -->
-          <div class="col-md-6">
-            <label for="marca" class="form-label">Marca</label>
-            <input
-              type="text"
-              class="form-control"
-              id="marca"
-              name="marca"
-              required
-            />
-          </div>
+<body>
 
-          <!-- Categoría -->
-          <div class="col-md-6">
-            <label for="categoria" class="form-label">Categoría</label>
-            <select
-              class="form-select"
-              id="categoria"
-              name="categoria"
-              required
-            >
-              <option value="">Selecciona una categoría</option>
-              <option value="Plumas y Lapiceros">Plumas y Lapiceros</option>
-              <option value="Accesorios">Accesorios</option>
-              <option value="Cintas Adhesivas">Cintas Adhesivas</option>
-              <option value="Útiles">Útiles</option>
-              <option value="Marcadores">Marcadores</option>
-            </select>
-          </div>
+    <!-- Componente Navbar -->
+    <header id="header"></header>
 
-          <!-- Características -->
-          <div class="col-md-6">
-            <label class="form-label">Características</label>
+    <main class="product-section py-5">
+        <div class="container">
+            <div class="product-container">
 
-            <div id="caracteristicas">
-              <div class="form-check">
-                <input
-                  class="form-check-input"
-                  type="checkbox"
-                  name="caracteristicas"
-                  value="Divertido"
-                  id="divertido"
-                />
-                <label class="form-check-label" for="divertido"
-                  >Divertido</label
-                >
-              </div>
+                <h1 class="product-title mb-3">Agregar producto</h1>
+                <p class="contact-description mb-4">Completa los datos para registrar un nuevo producto.</p>
 
-              <div class="form-check">
-                <input
-                  class="form-check-input"
-                  type="checkbox"
-                  name="caracteristicas"
-                  value="Funcional"
-                  id="funcional"
-                />
-                <label class="form-check-label" for="funcional"
-                  >Funcional</label
-                >
-              </div>
+                <form id="form-agregar-producto" novalidate>
 
-              <div class="form-check">
-                <input
-                  class="form-check-input"
-                  type="checkbox"
-                  name="caracteristicas"
-                  value="Elegante"
-                  id="elegante"
-                />
-                <label class="form-check-label" for="elegante">Elegante</label>
-              </div>
+                    <div class="row g-3">
+
+                        <!-- Nombre -->
+                        <div class="col-md-6">
+                            <label for="nombre" class="form-label">Nombre</label>
+                            <input type="text" class="form-control" id="nombre" name="nombre" required>
+                        </div>
+
+                        <!-- Marca -->
+                        <div class="col-md-6">
+                            <label for="marca" class="form-label">Marca</label>
+                            <input type="text" class="form-control" id="marca" name="marca" required>
+                        </div>
+
+                        <!-- Categoría -->
+                        <div class="col-md-6">
+                            <label for="categoria" class="form-label">Categoría</label>
+                            <select class="form-select" id="categoria" name="categoria" required>
+                                <option value="">Selecciona una categoría</option>
+                                <option value="Plumas y Lapiceros">Plumas y Lapiceros</option>
+                                <option value="Accesorios">Accesorios</option>
+                                <option value="Cintas Adhesivas">Cintas Adhesivas</option>
+                                <option value="Útiles">Útiles</option>
+                                <option value="Marcadores">Marcadores</option>
+                            </select>
+                        </div>
+
+                        <!-- Características -->
+                        <div class="col-md-6">
+                            <label class="form-label">Características</label>
+
+                            <div id="caracteristicas">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox"
+                                           name="caracteristicas" value="Aesthetic" id="aesthetic">
+                                    <label class="form-check-label" for="aesthetic">Aesthetic</label>
+                                </div>
+
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox"
+                                           name="caracteristicas" value="Creativo" id="creativo">
+                                    <label class="form-check-label" for="creativo">Creativo</label>
+                                </div>
+
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox"
+                                           name="caracteristicas" value="Diseño inteligente" id="diseno-inteligente">
+                                    <label class="form-check-label" for="diseno-inteligente">Diseño inteligente</label>
+                                </div>
+
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox"
+                                           name="caracteristicas" value="Diseño minimalista" id="diseno-minimalista">
+                                    <label class="form-check-label" for="diseno-minimalista">Diseño minimalista</label>
+                                </div>
+
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox"
+                                           name="caracteristicas" value="Divertido" id="divertido">
+                                    <label class="form-check-label" for="divertido">Divertido</label>
+                                </div>
+
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox"
+                                           name="caracteristicas" value="Elegante" id="elegante">
+                                    <label class="form-check-label" for="elegante">Elegante</label>
+                                </div>
+
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox"
+                                           name="caracteristicas" value="Ergonómico" id="ergonomico">
+                                    <label class="form-check-label" for="ergonomico">Ergonómico</label>
+                                </div>
+
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox"
+                                           name="caracteristicas" value="Innovador" id="innovador">
+                                    <label class="form-check-label" for="innovador">Innovador</label>
+                                </div>
+
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox"
+                                           name="caracteristicas" value="Multifuncional" id="multifuncional">
+                                    <label class="form-check-label" for="multifuncional">Multifuncional</label>
+                                </div>
+
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox"
+                                           name="caracteristicas" value="No sabía que lo necesitaba" id="no-sabiia">
+                                    <label class="form-check-label" for="no-sabiia">No sabía que lo necesitaba</label>
+                                </div>
+
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox"
+                                           name="caracteristicas" value="Original" id="original">
+                                    <label class="form-check-label" for="original">Original</label>
+                                </div>
+
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox"
+                                           name="caracteristicas" value="Practico" id="practico">
+                                    <label class="form-check-label" for="practico">Practico</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Premio -->
+                        <div class="col-md-6">
+                            <label for="premio" class="form-label">Premio (opcional)</label>
+                            <input type="text" class="form-control" id="premio" name="premio">
+                        </div>
+
+                        <!-- Precio -->
+                        <div class="col-md-6">
+                            <label for="precio" class="form-label">Precio</label>
+                            <input type="number" class="form-control" id="precio"
+                                   name="precio" min="0.01" step="0.01" required>
+                        </div>
+
+                        <!-- Imagen -->
+                        <div class="col-12">
+                            <label for="imagen" class="form-label">Imagen (ruta o URL)</label>
+                            <input type="text" class="form-control" id="imagen"
+                                   name="imagen" placeholder="./assets/productos/img.jpg" required>
+                        </div>
+
+                        <!-- Descripción -->
+                        <div class="col-12">
+                            <label for="descripcion" class="form-label">Descripción</label>
+                            <textarea class="form-control" id="descripcion" name="descripcion" rows="2" required></textarea>
+                        </div>
+
+                        <!-- Detalle -->
+                        <div class="col-12">
+                            <label for="detail" class="form-label">Detalle</label>
+                            <textarea class="form-control" id="detail" name="detail" rows="5"></textarea>
+                        </div>
+
+                        <!-- Botones -->
+                        <div class="col-12">
+                            <button type="button" class="btn btn-secondary mt-3" id="btn-limpiarFormulario">
+                                Limpiar
+                            </button>
+
+                            <button type="submit" class="btn btn-primary contact-button mt-3" id="btn-agregar-producto">
+                                Agregar producto
+                            </button>
+                        </div>
+
+                    </div>
+
+                </form>
+
             </div>
-          </div>
-
-          <!-- Premio -->
-          <div class="col-md-6">
-            <label for="premio" class="form-label">Premio (opcional)</label>
-            <input type="text" class="form-control" id="premio" name="premio" />
-          </div>
-
-          <!-- Precio -->
-          <div class="col-md-6">
-            <label for="precio" class="form-label">Precio</label>
-            <input
-              type="number"
-              class="form-control"
-              id="precio"
-              name="precio"
-              min="0.01"
-              step="0.01"
-              required
-            />
-          </div>
-
-          <!-- Imagen -->
-          <div class="col-12">
-            <label for="imagen" class="form-label">Imagen (ruta o URL)</label>
-            <input
-              type="text"
-              class="form-control"
-              id="imagen"
-              name="imagen"
-              placeholder="./assets/productos/img.jpg"
-              required
-            />
-          </div>
-
-          <!-- Descripción -->
-          <div class="col-12">
-            <label for="descripcion" class="form-label">Descripción</label>
-            <textarea
-              class="form-control"
-              id="descripcion"
-              name="descripcion"
-              rows="2"
-              required
-            ></textarea>
-          </div>
-
-          <!-- Detalle-->
-          <div class="col-12">
-            <label for="detail" class="form-label">Detalle</label>
-            <textarea
-              class="form-control"
-              id="detail"
-              name="detail"
-              rows="5"
-            ></textarea>
-          </div>
-
-          <!-- Botones -->
-          <div class="col-12">
-              <button
-                  type="button"
-                  class="btn btn-secondary"
-                  id="btn-limpiarFormulario">
-                  Limpiar
-              </button>
-
-              <button
-                  type="submit"
-                  class="btn btn-primary"
-                  id="btn-agregar-producto">
-                  Agregar producto
-              </button>
-          </div>
         </div>
-      </form>
     </main>
 
-    <script
-      type="module"
-      src="./js/pages/agregarProducto/agregarProducto.js"
-    ></script>
-  </body>
+    <!-- Componente Footer -->
+    <footer id="footer"></footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+
+    <!-- Componentes globales (Para cargar el header y footer) -->
+    <script type="module" src="./js/main.js"></script>
+
+    <!-- Lógica de la página -->
+    <script type="module" src="./js/pages/agregarProducto/agregarProducto.js"></script>
+
+</body>
+
 </html>
