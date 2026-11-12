@@ -1,67 +1,74 @@
-export function renderCarrusel() {
-  const container = document.getElementById("about-carrusel");
 
-  if (!container) return;
+export function renderCarrusel() {
+    const container = document.getElementById("about-carrusel");
+
+    if (!container) return;
 
     container.innerHTML = `
+<<<<<<< HEAD
 <<<<<<< HEAD
         <div class="container-fluid py-4" style="background-color: #c9b7f0;">
 =======
     <div class="container-fluid py-4" style="background-image:url(../../../assets/images/about/fondo.png) ; background-size: 1000px;">
 >>>>>>> 6296ee3449c209426a62bf6da8335d14bbe435a0
     <div id="slider-codersfree" class="carousel slide" data-bs-ride="carousel">
+=======
+        <div class="container-fluid py-4" style="background-color: #c9b7f0; background-image: url('./assets/images/about/fondo.png'); background-size: 1000px; background-repeat: repeat;">
+>>>>>>> 35b15cbcc40ecf83bea729605a69dbb2aca352f1
 
-      <div class="carousel-indicators">
-        <button type="button" class="active" data-bs-target="#slider-codersfree" data-bs-slide-to="0" aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#slider-codersfree" data-bs-slide-to="1" aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#slider-codersfree" data-bs-slide-to="2" aria-label="Slide 3"></button>
-      </div>
-      
-      <div class="carousel-inner">
+            <div id="slider-codersfree" class="carousel slide" data-bs-ride="carousel">
 
-        <!-- Tarjeta 1: Misión -->
-         <div class="carousel-item active">
-         <div class="card mx-auto shadow-sm border-0 shadow-none rounded-9 bg-transparent card-carrusel">
-         <div class="card-body text-center p-5 d-flex flex-column  align-items-center">
-         <h3 class="card-title mb-3">Misión</h3>
-        <p class="card-text">Brindar a nuestros clientes en México acceso exclusivo a papelería japonesa de alta calidad, diseño único y funcionalidad destacada, transformando la rutina diaria de organización y creatividad en una experiencia inspiradora. Nos diferenciamos al acercar artículos innovadores y de creadores independientes que promueven la expresión personal y el amor por los detalles.</p>
-        </div>
-        </div>
-        </div>
-        
-        <!-- Tarjeta 2: Visión -->
-        <div class="carousel-item ">
-         <div class="card mx-auto shadow-sm border-0 shadow-none rounded-9 bg-transparent card-vision">
-         <div class="card-body text-center p-5 d-flex flex-column  align-items-center">
-              <h3 class="card-title mb-3">Visión</h3>
-              <p class="card-text">Ser el e-commerce referente en México de papelería estética y japonesa de nicho, reconocido por nuestra cuidada selección y una plataforma interactiva con perfilamiento dinámico. Buscamos conectar a una comunidad apasionada de creadores, estudiantes y profesionales con productos auténticos que inspiren sus ideas y proyectos cotidianos.</p>
+                <div class="carousel-indicators">
+                    <button type="button" class="active" data-bs-target="#slider-codersfree" data-bs-slide-to="0" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#slider-codersfree" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#slider-codersfree" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+
+                <div class="carousel-inner">
+
+                    <!-- Tarjeta 1: Misión -->
+                    <div class="carousel-item active">
+                        <div class="card mx-auto border-0 rounded-9 bg-transparent card-carrusel">
+                            <div class="card-body text-center p-5 d-flex flex-column align-items-center">
+                                <h3 class="card-title mb-3">Misión</h3>
+                                <p class="card-text">Brindar a nuestros clientes en México acceso exclusivo a papelería japonesa de alta calidad, diseño único y funcionalidad destacada, transformando la rutina diaria de organización y creatividad en una experiencia inspiradora. Nos diferenciamos al acercar artículos innovadores y de creadores independientes que promueven la expresión personal y el amor por los detalles.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tarjeta 2: Visión -->
+                    <div class="carousel-item">
+                        <div class="card mx-auto border-0 rounded-9 bg-transparent card-vision">
+                            <div class="card-body text-center p-5 d-flex flex-column align-items-center">
+                                <h3 class="card-title mb-3">Visión</h3>
+                                <p class="card-text">Ser el e-commerce referente en México de papelería estética y japonesa de nicho, reconocido por nuestra cuidada selección y una plataforma interactiva con perfilamiento dinámico. Buscamos conectar a una comunidad apasionada de creadores, estudiantes y profesionales con productos auténticos que inspiren sus ideas y proyectos cotidianos.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tarjeta 3: Valores -->
+                    <div class="carousel-item">
+                        <div class="card mx-auto border-0 rounded-9 bg-transparent card-valores">
+                            <div class="card-body text-center p-5 d-flex flex-column align-items-center">
+                                <h3 class="card-title mb-3">Valores</h3>
+                                <p class="card-text">Nos regimos por la originalidad, la creatividad y la responsabilidad hacia nuestros clientes ofreciendo productos excepcionales de papelería japonesa y un servicio centrado en enriquecer la experiencia de nuestros clientes.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <button class="carousel-control-prev" type="button" data-bs-target="#slider-codersfree" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon bg-dark rounded-circle p-2" aria-hidden="true"></span>
+                    <span class="visually-hidden">Anterior</span>
+                </button>
+
+                <button class="carousel-control-next" type="button" data-bs-target="#slider-codersfree" data-bs-slide="next">
+                    <span class="carousel-control-next-icon bg-dark rounded-circle p-2" aria-hidden="true"></span>
+                    <span class="visually-hidden">Siguiente</span>
+                </button>
+
             </div>
-          </div>
         </div>
-
-        <!-- Tarjeta 3: Valores -->
-       <div class="carousel-item ">
-         <div class="card mx-auto shadow-sm border-0 shadow-none rounded-9 bg-transparent card-valores">
-         <div class="card-body text-center p-5 d-flex flex-column  align-items-center">
-              <h3 class="card-title mb-3">Valores</h3>
-              <p class="card-text">Nos regimos por la originalidad, la creatividad y la responsabilidad hacia nuestros clientes ofreciendo productos excepcionales de papelería japonesa y un servicio centrado en enriquecer la experiencia de nuestros clientes.</p>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-      <button class="carousel-control-prev" type="button" data-bs-target="#slider-codersfree" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon bg-dark rounded-circle p-2" aria-hidden="true"></span>
-        <span class="visually-hidden">Anterior</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#slider-codersfree" data-bs-slide="next">
-        <span class="carousel-control-next-icon bg-dark rounded-circle p-2" aria-hidden="true"></span>
-        <span class="visually-hidden">Siguiente</span>
-      </button>
-
-
-    </div>
-  </div>
     `;
 }
