@@ -23,14 +23,13 @@ function validarAward() {
                 valid.className = "valid-feedback";
                 feedback.append(valid);
                 award.classList.add("is-valid");
-                // return true;
-            } else {
+               } else {
                 award.classList.replace(award.classList[1],"is-valid");
                 const valid = feedback.querySelector("div");
                 valid.textContent = "Correcto";
                 valid.className = "valid-feedback";
-                // return true;
             }
+            return true;
         } else {
             const val = feedback.querySelector("div");
             console.log(val);
@@ -45,7 +44,7 @@ function validarAward() {
                 valid.className = "invalid-feedback";
                 feedback.append(valid);
             }
-            // return false;
+            return false;
         }
     } else {
         const val = feedback.querySelector("div");
@@ -53,9 +52,7 @@ function validarAward() {
             val.remove();
         }
         award.classList.remove(award.classList[1]);
-        
-
-        // return true;
+        return true;
     }
 }
 
