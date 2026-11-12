@@ -1,6 +1,25 @@
+
 /* hero.css */
 .hero-about {
     background-color: var(--blanco-calido);
+
+    /* Imágenes de tinta y letras japonesas */
+    background-image:
+        url("../../../assets/about-hero/salpicadura-arriba.png"),
+        url("../../../assets/about-hero/salpicadura-izquierda.png"),
+        url("../../../assets/about-hero/salpicadura-abajo.png");
+
+    background-position:
+        right top,
+        left center,
+        right bottom;
+
+    background-size:
+        clamp(260px, 38%, 600px) auto,
+        clamp(70px, 8%, 150px) auto,
+        clamp(120px, 13%, 230px) auto;
+
+    background-repeat: no-repeat;
 }
 
 .hero-about__titulo {
@@ -18,3 +37,30 @@
     background-color: var(--rosa-coral);
 }
 
+/* Papel rosa */
+.papel-nota {
+    background-image: url("../../../assets/about-hero/papel-rosa.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+
+    /* Mantiene la proporción original de la imagen */
+    aspect-ratio: 1280 / 1030;
+
+    /* Acomoda el texto dentro del papel */
+    padding: 14% 16% 11% 10%;
+
+    container-type: inline-size;
+
+    display: flex;
+    align-items: center;
+    max-width: 560px;
+
+    color: var(--azul-marino-intenso);
+    font-family: var(--fuente-encabezados);
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.papel-nota p {
+    font-size: clamp(0.75rem, 4cqi, 1.05rem);
+}

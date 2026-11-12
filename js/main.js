@@ -7,13 +7,10 @@ import { renderHeader } from "./components/header.js";
 import { renderFooter } from "./components/footer.js";
 
 /* ==========================================
-   COMPONENTES DE INICIO
+   COMPONENTE DE INICIO
    ========================================== */
 
-import { renderIndexHero } from "./pages/index/hero.js";
-import { renderCategories } from "./pages/index/categories.js";
-import { renderProducts } from "./pages/index/products.js";
-import { renderIndexAboutUs } from "./pages/index/aboutus.js";
+import { renderIndex } from "./pages/index/index-index.js";
 
 /* ==========================================
    COMPONENTE DE ABOUT
@@ -27,6 +24,11 @@ import { renderAbout } from "./pages/about/index-about.js";
 
 import { renderContact } from "./pages/contact/index-contact.js";
 
+/* ==========================================
+   COMPONENTE CATALOGO
+   ========================================== */
+
+import { initCatalogo } from "./pages/products/catalogo.js";
 
 /* ==========================================
    INICIALIZACIÓN
@@ -38,10 +40,7 @@ renderFooter();
 
 // Componentes exclusivos de index.html
 if (document.getElementById("productSection")) {
-    renderIndexHero();
-    renderCategories();
-    renderProducts();
-    renderIndexAboutUs();
+    renderIndex();
 }
 
 // Componentes exclusivos de about.html
@@ -54,3 +53,7 @@ if (document.getElementById("contact")) {
     renderContact();
 }
 
+// Componentes exclusivos de products.html
+if (document.getElementById("lista-productos")) {
+    initCatalogo();
+}
