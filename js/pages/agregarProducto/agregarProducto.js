@@ -9,7 +9,7 @@ function validarBrand(brand) {
 }
 
 function validarAward() {
-    let award = document.querySelector("#premio");
+    const award = document.querySelector("#premio");
     const valor = award.value.trim();
     console.log(valor);
     const feedback = document.querySelector("#award-validation");
@@ -17,8 +17,7 @@ function validarAward() {
         // Reglas de validacion, minimo 10 caracteres reales 
         const reglas = /^(?=(?:.*\S){5}).+$/;
         if (reglas.test(valor)) {
-            const val = feedback.querySelector(".valid-feedback");
-            console.log(val);
+            const val = feedback.querySelector("div");
             if (val === null) {
                 award.classList.add("is-valid");
                 const valid = document.createElement("div");
@@ -27,16 +26,23 @@ function validarAward() {
                 feedback.append(valid);
                 // return true;
             } else {
+                award.classList.replace(award.classList[1],"is-valid");
                 // return true;
             }
         } else {
             const val = feedback.querySelector("div");
             console.log(val);
             if (val !== null) {
-                val.classList.replace(".invalid-fe5edback")
+                val.classList.replace("valid-feedback","invalid-feedback")
                 val.textContent = "Incorrecto";
+                award.classList.replace("is-valid","is-invalid");
+            }else{
+                award.classList.add("is-invalid");
+                const valid = document.createElement("div");
+                valid.textContent = "Incorrecto";
+                valid.className = "invalid-feedback";
+                feedback.append(valid);
             }
-            award.classList.replace("is-valid","is-invalid");
             // return false;
         }
     } else {
@@ -44,7 +50,7 @@ function validarAward() {
         if (val !== null) {
             val.remove();
         }
-        award.classList.remove();
+        award.classList.remove(award.classList[1]);
         
 
         // return true;
