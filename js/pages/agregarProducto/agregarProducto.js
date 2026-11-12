@@ -317,6 +317,5 @@ formulario.addEventListener("submit", (event) => {
 document.querySelector("#premio").addEventListener("input", validarAward);
 
 document.getElementById("btn-limpiarFormulario").addEventListener("click", e => (
-    formulario.reset()
-)
-);        
+    location.reload()
+));        
