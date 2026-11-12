@@ -215,6 +215,14 @@ function resolverCampo(campo, error) {
 }
 
 function validarDetail(detail) {
+    const MIN_DETAIL=20, MAX_DETAIL=800;
+    let clearText = (typeof(detail)==="string" && detail.trim() !== ``) ? detail.trim() : false;
+    if(!clearText)return false;
+
+    if(clearText.length < MIN_DETAIL || clearText.length > MAX_DETAIL) {
+		console.log("Error");
+        return false;
+    }
     return true;
 }
 
