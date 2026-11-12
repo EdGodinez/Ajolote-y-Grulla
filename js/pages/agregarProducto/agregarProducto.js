@@ -11,7 +11,6 @@ function validarBrand(brand) {
 function validarAward() {
     const award = document.querySelector("#premio");
     const valor = award.value.trim();
-    console.log(valor);
     const feedback = document.querySelector("#award-validation");
     if (award.value != "") {
         // Reglas de validacion, minimo 10 caracteres reales 
@@ -19,14 +18,17 @@ function validarAward() {
         if (reglas.test(valor)) {
             const val = feedback.querySelector("div");
             if (val === null) {
-                award.classList.add("is-valid");
                 const valid = document.createElement("div");
                 valid.textContent = "Correcto";
                 valid.className = "valid-feedback";
                 feedback.append(valid);
+                award.classList.add("is-valid");
                 // return true;
             } else {
                 award.classList.replace(award.classList[1],"is-valid");
+                const valid = feedback.querySelector("div");
+                valid.textContent = "Correcto";
+                valid.className = "valid-feedback";
                 // return true;
             }
         } else {
