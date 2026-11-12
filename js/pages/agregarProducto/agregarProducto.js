@@ -1,13 +1,7 @@
-let catalogoProductos = [];
-import("../products/products.js")
-    .then((modulo) => {
-        if (modulo && Array.isArray(modulo.productos)) {
-            catalogoProductos = modulo.productos;
-        }
-    })
-    .catch(() => {
-        console.warn("Aviso: No se pudo cargar products.js, validando localmente.");
-    });
+import { productos } from "../products/products.js";
+
+const catalogoProductos = productos;
+
 
 document.addEventListener("DOMContentLoaded", () => {
     const campoNombre = document.getElementById("name");
@@ -133,21 +127,28 @@ const CATEGORIAS_VALIDAS = ["Plumas y Lapiceros", "Accesorios", "Cintas Adhesiva
 
 function validarBrand(brand) {
     const textoLimpio = brand.trim();
-    
+
     // REGEX: Letras (incluyendo acentos), números, espacios, guiones y ampersand (&)
     const regexValido = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ0-9\s\-\&]+$/;
-    
+
+
+    console.log("Marca recibida:", brand);
+    console.log("Marca limpia:", textoLimpio);
+    console.log("Longitud:", textoLimpio.length);
+    console.log("Regex válida:", regexValido.test(textoLimpio));
+
     // Evalua longitud mínima, máxima y que cumpla el regex
     if (textoLimpio.length >= 2 && textoLimpio.length <= 50 && regexValido.test(textoLimpio)) {
         return true;
+    } else {
+        alert("La Marca ingresada no es valida. Debe tener entre 2 y 50 caracteres y no contener simbolos especiales.");
+        return false;
     }
-    alert("La Marca ingresada no es valida. Debe tener entre 2 y 50 caracteres y no contener simbolos especiales.");
-    
-    return false;
+
 }
 
 function validarAward(award) {
-    const valor = award.value.trim();
+    const valor = award.trim();
     console.log(valor);
     if (valor != "") {
         // Reglas de validacion, minimo 10 caracteres reales 
@@ -159,7 +160,7 @@ function validarAward(award) {
             return false;
         }
     } else {
-        return true;      
+        return true;
     }
 }
 
@@ -173,18 +174,25 @@ function validarDescription(description) {
     return resolverCampo("descripcion", error);
 }
 
-function validarDetail(detail) {
+function resolverCampo(campo, error) {
+    if (error) {
+        alert(error);
+        return false;
+    }
 
+    return true;
+}
+
+function validarDetail(detail) {
+    return true;
 }
 
 function validarCharacteristics(characteristics) {
-    const seleccionadas = document.querySelectorAll('#caracteristicas .form-check-input:checked');
-    
-    if (seleccionadas.length === 0) {
+    if (characteristics.length === 0) {
+        alert("Selecciona al menos una característica.");
         return false;
-    } else {
-        return true;
     }
+    return true;
 }
 
 
@@ -203,43 +211,114 @@ function validarCategory(category) {
 }
 
 function validarPrice(price) {
-    
+
     if (price.trim() == "") {
-        return false ;
+        return false;
     }
 
     let precioNumero = Number(price)
     if (Number.isNaN(precioNumero)) {
-        return false ;
+        return false;
     }
 
     if (precioNumero < 0.01) {
-        return false ;
+        return false;
     }
 
-     if (price.includes(".") && precioTexto.split(".")[1].length > 2) {
+    if (price.includes(".") && price.split(".")[1].length > 2) {
         return false;
     }
 
     return true;
-    
+
 }
 
 function validarImg(img) {
-
+    return true;
 }
+
+
 
 function agregarProducto(producto) {
 
+    const productosGuardados = JSON.parse(
+        localStorage.getItem("productosAgregados") || "[]"
+    );
+
+    const ids = [
+        ...productos.map(p => Number(p.id)),
+        ...productosGuardados.map(p => Number(p.id))
+    ];
+
+    const nuevoId = ids.length > 0
+        ? Math.max(...ids) + 1
+        : 1;
+
+    const nuevoProducto = {
+        ...producto,
+        id: nuevoId
+    };
+
+    productosGuardados.push(nuevoProducto);
+
+    localStorage.setItem(
+        "productosAgregados",
+        JSON.stringify(productosGuardados)
+    );
+
+    productos.push(nuevoProducto);
+
+    console.log("Producto agregado:", nuevoProducto);
+
+    return nuevoProducto;
 }
+
+
 
 const formulario = document.getElementById("form-agregar-producto");
 
 
 formulario.addEventListener("submit", (event) => {
     event.preventDefault();
-    let award = document.getElementById("premio");
-    validarAward(award);
+
+    const datos = new FormData(formulario);
+
+    const name = datos.get("name")?.trim() ?? "";
+    const brand = datos.get("brand")?.trim() ?? "";
+    const award = datos.get("award")?.trim() ?? "";
+    const description = datos.get("description")?.trim() ?? "";
+    const detail = datos.get("detail")?.trim() ?? "";
+    const characteristics = datos.getAll("characteristics");
+    const category = datos.get("category") ?? "";
+    const price = datos.get("price") ?? "";
+    const img = datos.get("img")?.trim() ?? "";
+        
+    if (!validarBrand(brand)) return;
+    if (!validarAward(award)) return;
+    if (!validarDescription(description)) return;
+    if (!validarDetail(detail)) return;
+    if (!validarCharacteristics(characteristics)) return;
+    if (!validarCategory(category)) return;
+    if (!validarPrice(price)) return;
+    if (!validarImg(img)) return;
+
+    const producto = {
+        productName: name,
+        brand,
+        award,
+        description,
+        detail,
+        characteristics,
+        category,
+        price: Number(price),
+        img
+    };
+
+    agregarProducto(producto);
+
+    alert("Producto registrado correctamente.");
+
+    window.location.href = "./products.html";
 
 });
 
