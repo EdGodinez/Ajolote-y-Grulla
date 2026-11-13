@@ -147,19 +147,50 @@ function validarBrand(brand) {
 
 }
 
-function validarAward(award) {
-    const valor = award.trim();
-    console.log(valor);
-    if (valor != "") {
+function validarAward() {
+    const award = document.querySelector("#premio");
+    const valor = award.value.trim();
+    const feedback = document.querySelector("#award-validation");
+    if (award.value != "") {
         // Reglas de validacion, minimo 10 caracteres reales 
-        const reglas = /^(?=(?:.*\S){10}).+$/;
+        const reglas = /^(?=(?:.*\S){5}).+$/;
         if (reglas.test(valor)) {
-            console.log("ok");
+            const val = feedback.querySelector("div");
+            if (val === null) {
+                const valid = document.createElement("div");
+                valid.textContent = "Correcto";
+                valid.className = "valid-feedback";
+                feedback.append(valid);
+                award.classList.add("is-valid");
+               } else {
+                award.classList.replace(award.classList[1],"is-valid");
+                const valid = feedback.querySelector("div");
+                valid.textContent = "Correcto";
+                valid.className = "valid-feedback";
+            }
             return true;
         } else {
+            const val = feedback.querySelector("div");
+            console.log(val);
+            if (val !== null) {
+                val.classList.replace("valid-feedback","invalid-feedback")
+                val.textContent = "Incorrecto";
+                award.classList.replace("is-valid","is-invalid");
+            }else{
+                award.classList.add("is-invalid");
+                const valid = document.createElement("div");
+                valid.textContent = "Incorrecto";
+                valid.className = "invalid-feedback";
+                feedback.append(valid);
+            }
             return false;
         }
     } else {
+        const val = feedback.querySelector("div");
+        if (val !== null) {
+            val.remove();
+        }
+        award.classList.remove(award.classList[1]);
         return true;
     }
 }
@@ -286,51 +317,13 @@ function agregarProducto(producto) {
 const formulario = document.getElementById("form-agregar-producto");
 
 
+
 formulario.addEventListener("submit", (event) => {
     event.preventDefault();
-
-    const datos = new FormData(formulario);
-
-    const name = datos.get("name")?.trim() ?? "";
-    const brand = datos.get("brand")?.trim() ?? "";
-    const award = datos.get("award")?.trim() ?? "";
-    const description = datos.get("description")?.trim() ?? "";
-    const detail = datos.get("detail")?.trim() ?? "";
-    const characteristics = datos.getAll("characteristics");
-    const category = datos.get("category") ?? "";
-    const price = datos.get("price") ?? "";
-    const img = datos.get("img")?.trim() ?? "";
-        
-    if (!validarBrand(brand)) return;
-    if (!validarAward(award)) return;
-    if (!validarDescription(description)) return;
-    if (!validarDetail(detail)) return;
-    if (!validarCharacteristics(characteristics)) return;
-    if (!validarCategory(category)) return;
-    if (!validarPrice(price)) return;
-    if (!validarImg(img)) return;
-
-    const producto = {
-        productName: name,
-        brand,
-        award,
-        description,
-        detail,
-        characteristics,
-        category,
-        price: Number(price),
-        img
-    };
-
-    agregarProducto(producto);
-
-    alert("Producto registrado correctamente.");
-
-    window.location.href = "./products.html";
-
 });
 
+document.querySelector("#premio").addEventListener("input", validarAward);
+
 document.getElementById("btn-limpiarFormulario").addEventListener("click", e => (
-    formulario.reset()
-)
-);        
+    location.reload()
+));        
