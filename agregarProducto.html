@@ -68,20 +68,28 @@
 
                         <!-- Nombre -->
                         <div class="col-md-6">
-                            <label for="nombre" class="form-label">Nombre</label>
-                            <input type="text" class="form-control" id="nombre" name="nombre" required>
+                            <label for="name" class="form-label">Nombre</label>
+                            <input type="text" class="form-control" id="name" name="name" maxlength="77" required>
+                            
+                            <div id="alerttrade" class="invalid-tooltip position- static mt-1" style="display: none;">
+                            </div>
+                        
+                            <div id="alertname" class="invalid-feedback" style="display: none;"></div>                
+                            <div class="d-flex justify-content-end mt-1">
+                                <small id="contadorName" class="text-muted" style="font-size: 0.75rem;">0/77</small>
+                            </div>
                         </div>
 
                         <!-- Marca -->
                         <div class="col-md-6">
                             <label for="marca" class="form-label">Marca</label>
-                            <input type="text" class="form-control" id="marca" name="marca" required>
+                            <input type="text" class="form-control" id="brand" name="brand" required>
                         </div>
 
                         <!-- Categoría -->
                         <div class="col-md-6">
                             <label for="categoria" class="form-label">Categoría</label>
-                            <select class="form-select" id="categoria" name="categoria" required>
+                            <select class="form-select" id="category" name="category" required>
                                 <option value="">Selecciona una categoría</option>
                                 <option value="Plumas y Lapiceros">Plumas y Lapiceros</option>
                                 <option value="Accesorios">Accesorios</option>
@@ -98,102 +106,102 @@
                             <div id="caracteristicas">
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox"
-                                           name="caracteristicas" value="Aesthetic" id="aesthetic">
+                                           name="characteristics" value="Aesthetic" id="aesthetic">
                                     <label class="form-check-label" for="aesthetic">Aesthetic</label>
                                 </div>
 
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox"
-                                           name="caracteristicas" value="Creativo" id="creativo">
+                                           name="characteristics" value="Creativo" id="creativo">
                                     <label class="form-check-label" for="creativo">Creativo</label>
                                 </div>
 
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox"
-                                           name="caracteristicas" value="Diseño inteligente" id="diseno-inteligente">
+                                           name="characteristics" value="Diseño inteligente" id="diseno-inteligente">
                                     <label class="form-check-label" for="diseno-inteligente">Diseño inteligente</label>
                                 </div>
 
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox"
-                                           name="caracteristicas" value="Diseño minimalista" id="diseno-minimalista">
+                                           name="characteristics" value="Diseño minimalista" id="diseno-minimalista">
                                     <label class="form-check-label" for="diseno-minimalista">Diseño minimalista</label>
                                 </div>
 
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox"
-                                           name="caracteristicas" value="Divertido" id="divertido">
+                                           name="characteristics" value="Divertido" id="divertido">
                                     <label class="form-check-label" for="divertido">Divertido</label>
                                 </div>
 
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox"
-                                           name="caracteristicas" value="Elegante" id="elegante">
+                                           name="characteristics" value="Elegante" id="elegante">
                                     <label class="form-check-label" for="elegante">Elegante</label>
                                 </div>
 
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox"
-                                           name="caracteristicas" value="Ergonómico" id="ergonomico">
+                                           name="characteristics" value="Ergonómico" id="ergonomico">
                                     <label class="form-check-label" for="ergonomico">Ergonómico</label>
                                 </div>
 
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox"
-                                           name="caracteristicas" value="Innovador" id="innovador">
+                                           name="characteristics" value="Innovador" id="innovador">
                                     <label class="form-check-label" for="innovador">Innovador</label>
                                 </div>
 
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox"
-                                           name="caracteristicas" value="Multifuncional" id="multifuncional">
+                                           name="characteristics" value="Multifuncional" id="multifuncional">
                                     <label class="form-check-label" for="multifuncional">Multifuncional</label>
                                 </div>
 
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox"
-                                           name="caracteristicas" value="No sabía que lo necesitaba" id="no-sabiia">
+                                           name="characteristics" value="No sabía que lo necesitaba" id="no-sabiia">
                                     <label class="form-check-label" for="no-sabiia">No sabía que lo necesitaba</label>
                                 </div>
 
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox"
-                                           name="caracteristicas" value="Original" id="original">
+                                           name="characteristics" value="Original" id="original">
                                     <label class="form-check-label" for="original">Original</label>
                                 </div>
 
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox"
-                                           name="caracteristicas" value="Practico" id="practico">
+                                           name="characteristics" value="Practico" id="practico">
                                     <label class="form-check-label" for="practico">Practico</label>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Premio -->
-                        <div class="col-md-6">
-                            <label for="premio" class="form-label">Premio (opcional)</label>
-                            <input type="text" class="form-control" id="premio" name="premio">
-                        </div>
+                <!-- Premio -->
+                <div id="award-validation" class="col-md-6">
+                    <label for="premio" class="form-label">Premio (opcional)</label>
+                    <input type="text" class="form-control " id="premio" name="premio">   
+                </div>
 
                         <!-- Precio -->
                         <div class="col-md-6">
                             <label for="precio" class="form-label">Precio</label>
-                            <input type="number" class="form-control" id="precio"
-                                   name="precio" min="0.01" step="0.01" required>
+                            <input type="number" class="form-control" id="price"
+                                   name="price" min="0.01" step="0.01" required>
                         </div>
 
                         <!-- Imagen -->
                         <div class="col-12">
                             <label for="imagen" class="form-label">Imagen (ruta o URL)</label>
-                            <input type="text" class="form-control" id="imagen"
-                                   name="imagen" placeholder="./assets/productos/img.jpg" required>
+                            <input type="text" class="form-control" id="img"
+                                   name="img" placeholder="./assets/productos/img.jpg" required>
                         </div>
 
                         <!-- Descripción -->
                         <div class="col-12">
                             <label for="descripcion" class="form-label">Descripción</label>
-                            <textarea class="form-control" id="descripcion" name="descripcion" rows="2" required></textarea>
+                            <textarea class="form-control" id="description" name="description" rows="2" required></textarea>
                         </div>
 
                         <!-- Detalle -->

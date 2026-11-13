@@ -75,13 +75,14 @@ export function renderHeader() {
                                 }">Contáctanos</a>
                         </li>
                         <li class="nav-item p-2 ms-auto">
-                            <a type="button" href="#" id="carritoCompra" class="btn rounded-pill px-3"><i class="bi bi-cart2"></i></a>
+                            <a href="#" id="carritoCompra" class="btn rounded-pill px-3">
+                                <i class="bi bi-cart2"></i>
+                            </a>
                         </li>
                         <li class="nav-item p-2 ms-auto">
-                            <a type="button" href="#" id="btnInicioSesion" class="btn rounded-pill px-3">Iniciar Sesión</i></a>
+                            <a href="#" id="btnInicioSesion" class="btn rounded-pill px-3">Iniciar Sesión</a>
                         </li>
-                  </ul>    
-                </div>
+                    </ul>
                 </div>
             </div>
         </nav>

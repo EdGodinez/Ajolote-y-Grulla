@@ -4,18 +4,21 @@ nav{
     font-family: var(--fuente-encabezados);
     color: var(--blanco-calido);
 }
-#formBusqueda{
-background-color: #e8e8e8;
+
+#formBusqueda {
+    background-color: #e8e8e8;
 }
 
-#formBusqueda input{
+#formBusqueda input {
     background-color: #e8e8e8;
     border-color: #e8e8e8;
     color: var(--azul-marino-intenso);
     outline: none;
     border: 0;
 }
-#formBusqueda .barra-encabezado input :focus, #formBusqueda .barra-encabezado input :focus-visible{
+
+#formBusqueda .barra-encabezado input:focus,
+#formBusqueda .barra-encabezado input:focus-visible {
     background-color: #e8e8e8;
     color: var(--lila);
     outline: none !important;
@@ -66,11 +69,32 @@ background-color: #e8e8e8;
     color: var(--azul-marino-intenso);
 }
 
-.navbar-toggler-icon{
+.nav-item a:hover {
+    color: var(--lila);
+}
+
+.nav-item .activo {
+    color: var(--rosa-coral);
+}
+
+#carritoCompra {
+    background-color: var(--menta);
+}
+
+#carritoCompra i {
+    color: var(--azul-marino-intenso);
+}
+
+#btnInicioSesion {
+    background-color: var(--rosa-sakura);
+    color: var(--azul-marino-intenso);
+}
+
+.navbar-toggler-icon {
     filter: invert(1) grayscale(100%) brightness(200%);
 }
 
-#logo{
+#logo {
     width: 40px;
     height: 40px;
 }
