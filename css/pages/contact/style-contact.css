@@ -5,10 +5,13 @@
     padding-top: 130px;
 }
 
+
+/* Título principal */
 .contact-title {
     color: var(--rosa-coral);
     letter-spacing: -1px;
     font-family: var(--fuente-encabezados);
+    font-style: italic !important;
 }
 
 .contact-description {
