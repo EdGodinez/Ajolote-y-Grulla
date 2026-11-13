@@ -1,3 +1,4 @@
+
 /* ==========================================
    COMPONENTES GLOBALES
    ========================================== */
@@ -27,7 +28,7 @@ import { renderContact } from "./pages/contact/index-contact.js";
    COMPONENTE CATALOGO
    ========================================== */
 
-   import { initCatalogo } from "./pages/products/catalogo.js";
+import { initCatalogo } from "./pages/products/catalogo.js";
 
 /* ==========================================
    INICIALIZACIÓN
@@ -39,7 +40,7 @@ renderFooter();
 
 // Componentes exclusivos de index.html
 if (document.getElementById("productSection")) {
-    renderIndex()
+    renderIndex();
 }
 
 // Componentes exclusivos de about.html

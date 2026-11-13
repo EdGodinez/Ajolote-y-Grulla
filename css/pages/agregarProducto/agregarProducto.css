@@ -1,0 +1,57 @@
+/* --- Estilos para los títulos y textos --- */
+.product-title {
+    color: var(--rosa-coral);
+    letter-spacing: -1px;
+    font-family: var(--fuente-encabezados);
+    font-weight: 700;
+    
+}
+
+/* --- Convertir los checkboxes de características en botones tipo "Pill" --- */
+
+/* Contenedor de las opciones para organizarlas en fila de forma flexible */
+#caracteristicas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* Ocultamos el checkbox tradicional pero lo dejamos accesible */
+#caracteristicas .form-check {
+    padding: 0;
+    margin: 0;
+}
+
+#caracteristicas .form-check-input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Transformamos la etiqueta (label) en un botón estilo "pill" */
+#caracteristicas .form-check-label {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 50rem; /* Esto hace que los bordes sean completamente redondeados tipo píldora */
+    color: #495057;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+/* Efecto al pasar el cursor por encima */
+#caracteristicas .form-check-label:hover {
+    background-color: #e9ecef;
+    border-color: #ced4da;
+}
+
+/* Estilo cuando el checkbox está seleccionado (cambia de color y resalta) */
+#caracteristicas .form-check-input:checked + .form-check-label {
+    background-color: var(--menta,); /* Usa tu color coral o uno de acento */
+    color: #FAFAF7;
+    border-color: var(--menta);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
