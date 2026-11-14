@@ -54,9 +54,6 @@ carousel-item {
     min-height: 300px;
 }
 
-#slider-codersfree .card-body {
-	@@ -65,38 +57,50 @@
-
 #slider-codersfree .carousel-icon {
     font-size: 3rem;
     color: var(--rosa-coral);;

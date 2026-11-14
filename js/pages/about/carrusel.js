@@ -4,7 +4,7 @@ export function renderCarrusel() {
     if (!container) return;
 
     container.innerHTML = `
-        <div class="container-fluid py-4" style="background-color: #c9b7f0; background-image: url('./assets/images/about/fondo.png'); background-size: 1000px; background-repeat: repeat;">
+        <div class="container-fluid py-4" style="background-color: #c9b7f0; background-image: url('./assets/about-carrusel/fondo.png'); background-size: 1000px; background-repeat: repeat;">
 
             <div id="slider-codersfree" class="carousel slide" data-bs-ride="carousel">
 
