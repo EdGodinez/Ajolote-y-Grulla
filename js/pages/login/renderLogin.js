@@ -194,3 +194,6 @@ renderColLogin();
 renderColRegister();
 toggleToLogin(colLogin, colRegister, colOverlay);
 toggleToRegister(colLogin, colRegister, colOverlay);
+
+// Inicializar funcionalidad de registro
+import("./registro.js");
