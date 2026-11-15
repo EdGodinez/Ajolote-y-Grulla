@@ -11,3 +11,4 @@ formulario.addEventListener("submit", (event) => {
         alert("Las contraseñas no coinciden. Por favor, revísalas.");
         return; // Detiene el proceso si no coinciden
     }
+});
