@@ -68,30 +68,41 @@ h1.hero-title {
 }
 
 .hero-collage__item--1 {
-  width: 45%;
-  top: 2%;
-  left: 18%;
+  width: 35%;
+  top: 5%;
+  left: 25%;
 }
 
 .hero-collage__item--2 {
-  width: 55%;
-  top: 22%;
-  left: 0;
+  width: 45%;
+  top: 20%;
+  left: 4%;
   z-index: 1;
 }
 
 .hero-collage__item--3 {
-  width: 35%;
-  top: 18%;
-  right: 4%;
+  width: 26%;
+  top: 12%;
+  right: 10%;
   z-index: 2;
 }
 
 .hero-collage__item--4 {
-  width: 40%;
-  bottom: 4%;
-  right: 6%;
+  width: 32%;
+  bottom: 6%;
+  right: 14%;
   z-index: 3;
+}
+
+@media (min-width: 992px) {
+  .hero-collage {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 42%;
+    height: 100%;
+    aspect-ratio: auto;
+  }
 }
 
 /* Productos recortados a la derecha (slide 3) */
@@ -109,6 +120,28 @@ h1.hero-title {
     height: 100%;
     object-fit: contain;
     object-position: right bottom;
+  }
+}
+
+/* Zoom lento mientras la diapositiva está activa (no aplica al video de la slide 1) */
+@keyframes hero-zoom {
+  from {
+    scale: 1;
+  }
+  to {
+    scale: 1.08;
+  }
+}
+
+.carousel-item.active .hero-collage,
+.carousel-item.active .hero-bg {
+  animation: hero-zoom 6s ease-out forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .carousel-item.active .hero-collage,
+  .carousel-item.active .hero-bg {
+    animation: none;
   }
 }
 
