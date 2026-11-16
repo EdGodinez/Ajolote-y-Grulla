@@ -7,6 +7,7 @@ const HERO_SLIDES = [
     eyebrow: "PAPELERÍA JAPONESA EN MÉXICO",
     title: "¡Lo quiero<br />Tokio!",
     titleTag: "h1",
+    largeTitle: true,
     lead: "<em>LLEGARON LOS GANADORES DE LOS JAPANESE STATIONERY AWARDS 2026</em>",
     cta: { label: "¡Compra ahora!", href: "./products.html" },
     textCols: 6,
@@ -39,6 +40,7 @@ const HERO_SLIDES = [
   {
     title: "¡Regalo sorpresa!",
     titleTag: "h2",
+    largeTitle: true,
     lead: "Con tu pedido al registrarte por primera vez.",
     paragraphs: ["¡No pierdas la oportunidad!"],
     cta: { label: "¡Regístrate ahora!", href: "./registro.html" },
@@ -82,16 +84,16 @@ const MEDIA_RENDERERS = {
 };
 
 function renderSlideText(slide) {
-  const { eyebrow, kicker, title, titleTag, lead, paragraphs = [], cta } = slide;
+  const { eyebrow, kicker, title, titleTag, largeTitle, lead, paragraphs = [], cta } = slide;
 
   return `
     ${optional(eyebrow, (text) => `
       <p class="eyebrow d-flex align-items-center gap-2 mb-0"><span></span> ${text}</p>`)}
     ${optional(kicker, (text) => `<p class="hero-lead mb-0">${text}</p>`)}
-    <${titleTag} class="hero-title mb-0">${title}</${titleTag}>
+    <${titleTag} class="hero-title${largeTitle ? " hero-title--xl" : ""} mb-0">${title}</${titleTag}>
     ${optional(lead, (text) => `<p class="hero-lead mb-0">${text}</p>`)}
     ${paragraphs.map((text) => `<p class="fs-4 fw-bold mb-0">${text}</p>`).join("")}
-    <a class="btn btn-hero rounded-pill px-4 py-2 fs-5 d-inline-flex align-items-center gap-2" href="${cta.href}">
+    <a class="btn btn-hero rounded-pill d-inline-flex align-items-center justify-content-center gap-3" href="${cta.href}">
       ${cta.label} <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
     </a>`;
 }

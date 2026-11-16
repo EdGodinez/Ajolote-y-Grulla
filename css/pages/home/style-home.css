@@ -23,7 +23,7 @@
   line-height: 1.1;
 }
 
-h1.hero-title {
+.hero-title--xl {
   font-size: clamp(3.5rem, 7vw, 6rem);
 }
 
@@ -35,6 +35,13 @@ h1.hero-title {
 }
 
 .btn-hero {
+  --bs-btn-padding-x: 2.5rem;
+  --bs-btn-padding-y: 0.75rem;
+  --bs-btn-font-size: clamp(1.5rem, 2.5vw, 2.25rem);
+  --bs-btn-line-height: 1.2;
+  min-width: min(28rem, 100%);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
   --bs-btn-bg: var(--rosa-sakura);
   --bs-btn-color: var(--azul-marino-intenso);
   --bs-btn-border-color: var(--rosa-sakura);
