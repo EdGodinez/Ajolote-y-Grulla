@@ -21,7 +21,7 @@ const HERO_SLIDES = [
     title: "Japanese<br />Stationery Awards?",
     titleTag: "h2",
     paragraphs: [
-      "<strong>¡Los Japanese Stationery Awards son el equivalente a los premios Óscar, pero para el mundo de la papelería en Japón!</strong>",
+      "¡Los Japanese Stationery Awards son el equivalente a los premios Óscar, pero para el mundo de la papelería en Japón!",
       "Premian a esas joyas de ingeniería japonesa que hacen que organizar tus notas, estudiar o trabajar se sienta como un verdadero apapacho al corazón.",
     ],
     cta: { label: "¡Compra ahora!", href: "./products.html" },
@@ -90,8 +90,8 @@ function renderSlideText(slide) {
     ${optional(kicker, (text) => `<p class="hero-lead mb-0">${text}</p>`)}
     <${titleTag} class="hero-title mb-0">${title}</${titleTag}>
     ${optional(lead, (text) => `<p class="hero-lead mb-0">${text}</p>`)}
-    ${paragraphs.map((text) => `<p class="fs-5 mb-0">${text}</p>`).join("")}
-    <a class="btn btn-hero rounded-pill px-4 py-2 fs-5 fst-italic d-inline-flex align-items-center gap-2" href="${cta.href}">
+    ${paragraphs.map((text) => `<p class="fs-4 fw-bold mb-0">${text}</p>`).join("")}
+    <a class="btn btn-hero rounded-pill px-4 py-2 fs-5 d-inline-flex align-items-center gap-2" href="${cta.href}">
       ${cta.label} <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
     </a>`;
 }
