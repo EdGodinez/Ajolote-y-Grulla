@@ -12,7 +12,7 @@ const renderColLogin = () => {
                 <span></span> BIENVENIDO(A)
               </p>
               <h1>Iniciar Sesión</h1>
-              <p class="text-mute">
+              <p class="text-muted">
                 Ingresa a tu cuenta para continuar comprando, ver tus pedidos y
                 mucho más.
               </p>
@@ -48,7 +48,7 @@ const renderColLogin = () => {
                   />
                 </div>
                 <div class="recordar text-end py-2">
-                  <a href="#" class="eyebrow">¿Olvidaste tu contraseña?</a>
+                  <a href="./recoveryPassword.html" class="eyebrow">¿Olvidaste tu contraseña?</a>
                 </div>
                 <button
                   type="submit"
@@ -87,7 +87,7 @@ const renderColRegister = () => {
                 <span></span> BIENVENIDO(A)
               </p>
               <h1>Registrate</h1>
-              <p class="text-mute">
+              <p class="text-muted">
                 Crea una cuenta para continuar comprando, ver tus pedidos y
                 mucho más.
               </p>
