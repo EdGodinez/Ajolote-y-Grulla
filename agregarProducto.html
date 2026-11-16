@@ -35,7 +35,7 @@
                  <!-- BUTTON QUE RETROCEDE A LA ANTERIOR PAGINA EN EL HISTORIAL -->
                 <div class="pb-4">
                     <button
-                    class="btn btn-danger px-5 d-flex align-items-center"
+                    class="btn btn-danger px-5 d-flex align-items-center shadow-sm"
                     onclick="history.back()"
                     >
                     <svg
@@ -178,11 +178,11 @@
                             </div>
                         </div>
 
-                        <!-- Premio -->
-                        <div class="col-md-6">
-                            <label for="premio" class="form-label">Premio (opcional)</label>
-                            <input type="text" class="form-control" id="award" name="award">
-                        </div>
+                <!-- Premio -->
+                <div id="award-validation" class="col-md-6">
+                    <label for="premio" class="form-label">Premio (opcional)</label>
+                    <input type="text" class="form-control " id="premio" name="premio">   
+                </div>
 
                         <!-- Precio -->
                         <div class="col-md-6">
