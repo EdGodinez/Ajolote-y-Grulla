@@ -9,6 +9,35 @@
   min-height: 36rem;
 }
 
+/* Todas las slides encimadas en la misma celda: el carrusel toma la altura de la más alta */
+.hero-carousel .carousel-inner {
+  display: grid;
+}
+
+.hero-carousel .carousel-item {
+  display: block;
+  grid-area: 1 / 1;
+  margin-right: 0;
+  visibility: hidden;
+}
+
+.hero-carousel .carousel-item.active,
+.hero-carousel .carousel-item-next,
+.hero-carousel .carousel-item-prev {
+  visibility: visible;
+}
+
+/* La slide que entra se coloca a un lado sin animación; solo se anima al deslizarse hacia el centro */
+.hero-carousel .carousel-item:not(.active):not(.carousel-item-next):not(.carousel-item-prev),
+.hero-carousel .carousel-item-next:not(.carousel-item-start),
+.hero-carousel .carousel-item-prev:not(.carousel-item-end) {
+  transition: none;
+}
+
+.hero-carousel .carousel-inner::after {
+  display: none;
+}
+
 .hero-carousel .eyebrow {
   color: var(--blanco-calido);
   letter-spacing: 0.08em;
