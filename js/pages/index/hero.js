@@ -11,10 +11,11 @@ const HERO_SLIDES = [
     lead: "<em>LLEGARON LOS GANADORES DE LOS JAPANESE STATIONERY AWARDS 2026</em>",
     cta: { label: "¡Compra ahora!", href: "./products.html" },
     textCols: 6,
+    interval: 6300,
     media: {
-      type: "image",
-      src: "./assets/images/home-hero/hero-principal.png",
-      alt: "Productos ganadores de los Japanese Stationery Awards 2026",
+      type: "video",
+      src: "./assets/images/home-hero/video-hero.mp4",
+      poster: "./assets/images/home-hero/video-hero-poster.jpg",
     },
   },
   {
@@ -66,6 +67,10 @@ const optional = (value, template) => (value ? template(value) : "");
  * Cada tipo de imagen del hero tiene su propia forma de pintarse.
  */
 const MEDIA_RENDERERS = {
+  video: ({ src, poster }) => `
+    <video src="${src}" poster="${poster}" class="hero-media d-block mx-auto shadow-lg"
+      autoplay muted loop playsinline aria-hidden="true"></video>`,
+
   image: ({ src, alt }) => `
     <img src="${src}" alt="${alt}" class="hero-media d-block mx-auto shadow-lg" />`,
 
@@ -100,7 +105,7 @@ function renderSlideText(slide) {
 
 function renderSlide(slide, index) {
   return `
-    <div class="carousel-item${index === 0 ? " active" : ""}">
+    <div class="carousel-item${index === 0 ? " active" : ""}"${optional(slide.interval, (ms) => ` data-bs-interval="${ms}"`)}>
       <div class="container py-5">
         <div class="row align-items-center g-5 hero-slide">
           <div class="col-12 col-lg-${slide.textCols} d-flex flex-column align-items-start gap-4">
@@ -155,4 +160,20 @@ export function renderIndexHero() {
       ${renderControl("prev", "Anterior", "left")}
       ${renderControl("next", "Siguiente", "right")}
     </div>`;
+
+  heroElement.addEventListener("slid.bs.carousel", restartActiveVideo);
+}
+
+/**
+ * Reinicia el video de la diapositiva que acaba de entrar para que siempre se vea desde el principio.
+ *
+ * @param {Event} event Evento "slid.bs.carousel" de Bootstrap.
+ * @returns {void} No retorna ningún valor.
+ */
+function restartActiveVideo(event) {
+  const video = event.relatedTarget.querySelector("video");
+  if (!video) return;
+
+  video.currentTime = 0;
+  video.play();
 }
