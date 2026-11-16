@@ -1,12 +1,33 @@
 /* ESTILOS DEL HERO */
 
+/*
+ * Medidas proporcionales al ancho de la pantalla (vw), tomadas del diseño de Canva (1366 px de ancho).
+ * clamp(mínimo, proporción, máximo) evita que algo quede ilegible en celular o enorme en monitores.
+ */
 .hero-carousel {
+  --hero-height: max(40rem, min(50vw, 100svh - 5rem));
   background: var(--degradado-hero);
   color: var(--blanco-calido);
 }
 
+/* Se le restan los 6rem del py-5 del contenedor para que la slide completa mida --hero-height */
 .hero-slide {
-  min-height: 36rem;
+  min-height: calc(var(--hero-height) - 6rem);
+}
+
+.hero-copy {
+  gap: clamp(1.5rem, 2vw, 2.5rem);
+}
+
+/* A todo el ancho como el navbar; en escritorio deja espacio para las flechas del carrusel */
+.hero-container {
+  padding-inline: 1.5rem;
+}
+
+@media (min-width: 992px) {
+  .hero-container {
+    padding-inline: clamp(6rem, 8vw, 10rem);
+  }
 }
 
 /* Todas las slides encimadas en la misma celda: el carrusel toma la altura de la más alta */
@@ -39,6 +60,7 @@
 }
 
 .hero-carousel .eyebrow {
+  font-size: clamp(1rem, 1.6vw, 1.75rem);
   color: var(--blanco-calido);
   letter-spacing: 0.08em;
 }
@@ -48,27 +70,32 @@
 }
 
 .hero-title {
-  font-size: clamp(2.5rem, 5.5vw, 4.5rem);
+  font-size: clamp(2.5rem, 4.8vw, 6rem);
   line-height: 1.1;
 }
 
 .hero-title--xl {
-  font-size: clamp(3.5rem, 7vw, 6rem);
+  font-size: clamp(3.5rem, 7.5vw, 9rem);
 }
 
 .hero-lead {
   font-family: var(--fuente-encabezados);
   font-weight: 600;
-  font-size: clamp(1.25rem, 2.5vw, 2.25rem);
+  font-size: clamp(1.25rem, 2.6vw, 3rem);
   line-height: 1.2;
+}
+
+.hero-text {
+  font-size: clamp(1.125rem, 1.7vw, 2rem);
+  line-height: 1.4;
 }
 
 .btn-hero {
   --bs-btn-padding-x: 2.5rem;
-  --bs-btn-padding-y: 0.75rem;
-  --bs-btn-font-size: clamp(1.5rem, 2.5vw, 2.25rem);
+  --bs-btn-padding-y: clamp(0.75rem, 1vw, 1.25rem);
+  --bs-btn-font-size: clamp(1.5rem, 2.5vw, 3rem);
   --bs-btn-line-height: 1.2;
-  min-width: min(28rem, 100%);
+  min-width: min(max(28rem, 31vw), 100%);
   text-transform: uppercase;
   letter-spacing: 0.04em;
   --bs-btn-bg: var(--rosa-sakura);
@@ -85,16 +112,17 @@
 /* Imagen única (slide 1) */
 .hero-media {
   width: 100%;
-  max-width: 35rem;
+  max-width: max(35rem, 37vw);
   aspect-ratio: 1 / 1;
   object-fit: cover;
   border-radius: 1rem;
 }
 
-/* Collage de productos recortados (slide 2) */
+/* Collage de productos recortados (slide 2): posiciones tomadas del diseño en Canva */
 .hero-collage {
   position: relative;
   aspect-ratio: 1 / 1;
+  overflow: hidden;
 }
 
 .hero-collage__item {
@@ -104,29 +132,29 @@
 }
 
 .hero-collage__item--1 {
-  width: 35%;
-  top: 5%;
-  left: 25%;
+  width: 49%;
+  top: 32%;
+  left: 12%;
 }
 
 .hero-collage__item--2 {
-  width: 45%;
-  top: 20%;
-  left: 4%;
+  width: 40%;
+  top: 0;
+  left: 29%;
   z-index: 1;
 }
 
 .hero-collage__item--3 {
-  width: 26%;
-  top: 12%;
-  right: 10%;
+  width: 71%;
+  top: 0;
+  left: 41%;
   z-index: 2;
 }
 
 .hero-collage__item--4 {
-  width: 32%;
-  bottom: 6%;
-  right: 14%;
+  width: 97%;
+  top: 60%;
+  left: 5%;
   z-index: 3;
 }
 
@@ -135,9 +163,10 @@
     position: absolute;
     top: 0;
     right: 0;
-    width: 42%;
     height: 100%;
-    aspect-ratio: auto;
+    width: auto;
+    max-width: 50%;
+    aspect-ratio: 683 / 691;
   }
 }
 
@@ -150,12 +179,13 @@
 @media (min-width: 992px) {
   .hero-bg {
     position: absolute;
+    top: 0;
     right: 0;
-    bottom: 0;
-    width: 65%;
+    width: 55%;
     height: 100%;
-    object-fit: contain;
-    object-position: right bottom;
+    object-fit: cover;
+    object-position: 50% center;
+    mask-image: linear-gradient(to right, transparent, #000 8%);
   }
 }
 

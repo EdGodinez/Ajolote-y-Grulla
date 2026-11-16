@@ -27,14 +27,14 @@ const HERO_SLIDES = [
       "Premian a esas joyas de ingeniería japonesa que hacen que organizar tus notas, estudiar o trabajar se sienta como un verdadero apapacho al corazón.",
     ],
     cta: { label: "¡Compra ahora!", href: "./products.html" },
-    textCols: 7,
+    textCols: 6,
     media: {
       type: "collage",
       images: [
         { src: "./assets/images/home-hero/washi-tape.png", alt: "Cinta washi" },
-        { src: "./assets/images/home-hero/estuche-ovni.png", alt: "Estuche en forma de ovni" },
-        { src: "./assets/images/home-hero/lapiz.png", alt: "Lápiz japonés" },
         { src: "./assets/images/home-hero/cuter-foca.png", alt: "Cúter en forma de foca" },
+        { src: "./assets/images/home-hero/lapiz.png", alt: "Marcador con brillos" },
+        { src: "./assets/images/home-hero/clip-libro.png", alt: "Clips para libro sujetando las páginas" },
       ],
     },
   },
@@ -48,7 +48,7 @@ const HERO_SLIDES = [
     textCols: 6,
     media: {
       type: "background",
-      src: "./assets/images/home-hero/regalo-sorpresa.png",
+      src: "./assets/images/home-hero/regalo-sorpresa-2.png",
       alt: "Selección de papelería japonesa de regalo",
     },
   },
@@ -97,7 +97,7 @@ function renderSlideText(slide) {
     ${optional(kicker, (text) => `<p class="hero-lead mb-0">${text}</p>`)}
     <${titleTag} class="hero-title${largeTitle ? " hero-title--xl" : ""} mb-0">${title}</${titleTag}>
     ${optional(lead, (text) => `<p class="hero-lead mb-0">${text}</p>`)}
-    ${paragraphs.map((text) => `<p class="fs-4 fw-bold mb-0">${text}</p>`).join("")}
+    ${paragraphs.map((text) => `<p class="hero-text fw-bold mb-0">${text}</p>`).join("")}
     <a class="btn btn-hero rounded-pill d-inline-flex align-items-center justify-content-center gap-3" href="${cta.href}">
       ${cta.label} <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
     </a>`;
@@ -106,9 +106,9 @@ function renderSlideText(slide) {
 function renderSlide(slide, index) {
   return `
     <div class="carousel-item${index === 0 ? " active" : ""}"${optional(slide.interval, (ms) => ` data-bs-interval="${ms}"`)}>
-      <div class="container py-5">
+      <div class="container-fluid hero-container py-5">
         <div class="row align-items-center g-5 hero-slide">
-          <div class="col-12 col-lg-${slide.textCols} d-flex flex-column align-items-start gap-4">
+          <div class="col-12 col-lg-${slide.textCols} d-flex flex-column align-items-start hero-copy">
             ${renderSlideText(slide)}
           </div>
           <div class="col-12 col-lg-${12 - slide.textCols}">
