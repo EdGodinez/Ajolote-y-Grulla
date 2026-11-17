@@ -35,10 +35,12 @@
   display: grid;
 }
 
+/* overflow: hidden recorta lo que se sale de cada slide para que no invada a la vecina al deslizarse */
 .hero-carousel .carousel-item {
   display: block;
   grid-area: 1 / 1;
   margin-right: 0;
+  overflow: hidden;
   visibility: hidden;
 }
 
@@ -170,22 +172,41 @@
   }
 }
 
-/* Productos recortados a la derecha (slide 3) */
+/* Acomodo "spotlight" (slide 3): medidas tomadas del diseño en Canva */
+.hero-slide--spotlight .hero-lead {
+  max-width: 11em;
+  margin-inline: auto;
+  font-size: clamp(1.5rem, 3.3vw, 3.75rem);
+}
+
+.hero-slide--spotlight .hero-text {
+  font-size: clamp(1.25rem, 2.4vw, 2.5rem);
+}
+
+.hero-aside {
+  width: clamp(14rem, 26vw, 32rem);
+  height: auto;
+}
+
+/* Productos abajo a la derecha (slide 3): se salen por la orilla derecha e inferior */
 .hero-bg {
   width: 100%;
   height: auto;
 }
 
 @media (min-width: 992px) {
+  .hero-slide--spotlight .btn-hero {
+    min-width: max(28rem, 31vw);
+    white-space: nowrap;
+  }
+
   .hero-bg {
     position: absolute;
-    top: 0;
-    right: 0;
-    width: 55%;
-    height: 100%;
-    object-fit: cover;
-    object-position: 50% center;
-    mask-image: linear-gradient(to right, transparent, #000 8%);
+    left: 53%;
+    bottom: 0;
+    width: auto;
+    height: 73%;
+    max-width: none;
   }
 }
 

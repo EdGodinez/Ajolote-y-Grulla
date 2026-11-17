@@ -39,16 +39,20 @@ const HERO_SLIDES = [
     },
   },
   {
+    layout: "spotlight",
     title: "¡Regalo sorpresa!",
     titleTag: "h2",
     largeTitle: true,
     lead: "Con tu pedido al registrarte por primera vez.",
     paragraphs: ["¡No pierdas la oportunidad!"],
     cta: { label: "¡Regístrate ahora!", href: "./registro.html" },
-    textCols: 6,
+    aside: {
+      src: "./assets/images/home-hero/cajita-sorpresa.png",
+      alt: "Cajita de regalo sonriente",
+    },
     media: {
       type: "background",
-      src: "./assets/images/home-hero/regalo-sorpresa-2.png",
+      src: "./assets/images/home-hero/regalo-sorpresa.webp",
       alt: "Selección de papelería japonesa de regalo",
     },
   },
@@ -88,33 +92,64 @@ const MEDIA_RENDERERS = {
     <img src="${src}" alt="${alt}" class="hero-bg" />`,
 };
 
-function renderSlideText(slide) {
-  const { eyebrow, kicker, title, titleTag, largeTitle, lead, paragraphs = [], cta } = slide;
+const renderMedia = (media) => MEDIA_RENDERERS[media.type](media);
 
-  return `
-    ${optional(eyebrow, (text) => `
-      <p class="eyebrow d-flex align-items-center gap-2 mb-0"><span></span> ${text}</p>`)}
-    ${optional(kicker, (text) => `<p class="hero-lead mb-0">${text}</p>`)}
-    <${titleTag} class="hero-title${largeTitle ? " hero-title--xl" : ""} mb-0">${title}</${titleTag}>
-    ${optional(lead, (text) => `<p class="hero-lead mb-0">${text}</p>`)}
-    ${paragraphs.map((text) => `<p class="hero-text fw-bold mb-0">${text}</p>`).join("")}
-    <a class="btn btn-hero rounded-pill d-inline-flex align-items-center justify-content-center gap-3" href="${cta.href}">
-      ${cta.label} <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
-    </a>`;
-}
+const renderTitle = ({ title, titleTag, largeTitle }, extraClasses = "") => `
+  <${titleTag} class="hero-title${largeTitle ? " hero-title--xl" : ""} ${extraClasses} mb-0">${title}</${titleTag}>`;
+
+const renderSupportText = ({ lead, paragraphs = [] }) => `
+  ${optional(lead, (text) => `<p class="hero-lead mb-0">${text}</p>`)}
+  ${paragraphs.map((text) => `<p class="hero-text fw-bold mb-0">${text}</p>`).join("")}`;
+
+const renderCta = ({ label, href }) => `
+  <a class="btn btn-hero rounded-pill d-inline-flex align-items-center justify-content-center gap-3" href="${href}">
+    ${label} <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+  </a>`;
+
+/**
+ * Acomodos disponibles para una diapositiva:
+ * - split: texto a la izquierda e imagen a la derecha (slides 1 y 2).
+ * - spotlight: título centrado arriba; abajo, imagen secundaria con botón y texto al centro (slide 3).
+ */
+const SLIDE_LAYOUTS = {
+  split: (slide) => `
+    <div class="row align-items-center g-5 hero-slide">
+      <div class="col-12 col-lg-${slide.textCols} d-flex flex-column align-items-start hero-copy">
+        ${optional(slide.eyebrow, (text) => `
+          <p class="eyebrow d-flex align-items-center gap-2 mb-0"><span></span> ${text}</p>`)}
+        ${optional(slide.kicker, (text) => `<p class="hero-lead mb-0">${text}</p>`)}
+        ${renderTitle(slide)}
+        ${renderSupportText(slide)}
+        ${renderCta(slide.cta)}
+      </div>
+      <div class="col-12 col-lg-${12 - slide.textCols}">
+        ${renderMedia(slide.media)}
+      </div>
+    </div>`,
+
+  spotlight: (slide) => `
+    <div class="hero-slide hero-slide--spotlight d-flex flex-column hero-copy">
+      ${renderTitle(slide, "text-center position-relative z-1")}
+      <div class="row flex-grow-1 align-items-center align-content-center g-4 position-relative z-1">
+        <div class="col-12 col-lg-4 order-2 order-lg-1 d-flex flex-column align-items-center hero-copy">
+          <img src="${slide.aside.src}" alt="${slide.aside.alt}" class="hero-aside" />
+          ${renderCta(slide.cta)}
+        </div>
+        <div class="col-12 col-lg-4 order-1 order-lg-2 d-flex flex-column text-center hero-copy">
+          ${renderSupportText(slide)}
+        </div>
+      </div>
+      ${renderMedia(slide.media)}
+    </div>`,
+};
 
 function renderSlide(slide, index) {
+  const layout = SLIDE_LAYOUTS[slide.layout ?? "split"];
+
   return `
     <div class="carousel-item${index === 0 ? " active" : ""}"${optional(slide.interval, (ms) => ` data-bs-interval="${ms}"`)}>
       <div class="container-fluid hero-container py-5">
-        <div class="row align-items-center g-5 hero-slide">
-          <div class="col-12 col-lg-${slide.textCols} d-flex flex-column align-items-start hero-copy">
-            ${renderSlideText(slide)}
-          </div>
-          <div class="col-12 col-lg-${12 - slide.textCols}">
-            ${MEDIA_RENDERERS[slide.media.type](slide.media)}
-          </div>
-        </div>
+        ${layout(slide)}
       </div>
       ${HERO_DECORATIONS.map(
         (kanji, i) => `<span class="hero-deco hero-deco--${i + 1} d-none d-lg-block" aria-hidden="true">${kanji}</span>`
