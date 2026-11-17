@@ -2,14 +2,17 @@ import { productos } from "../products/products.js";
 import { renderSectionHeader } from "./section-header.js";
 
 /**
- * Producto del mes. Para cambiarlo, basta con poner otro id y su imagen o video.
- * El video de las washi tapes está pendiente; cuando exista, se cambia media a:
- * { type: "video", src: "./assets/images/home-pick/video-pick.mp4", poster: "..." }
+ * Producto del mes. Para cambiarlo, basta con poner otro id y su imagen o video
+ * (media acepta { type: "image", src } o { type: "video", src, poster }).
  */
 const PICK_DEL_MES = {
   productId: 9,
   title: "Washi-tapes",
-  media: { type: "image", src: "./assets/productos/P15-Cintas-Washi.jpg" },
+  media: {
+    type: "video",
+    src: "./assets/images/home-pick/video-pick.mp4",
+    poster: "./assets/images/home-pick/video-pick-poster.jpg",
+  },
 };
 
 const PICK_MEDIA = {
