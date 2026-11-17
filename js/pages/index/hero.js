@@ -106,7 +106,7 @@ const renderSupportText = ({ lead, paragraphs = [] }) => `
   ${paragraphs.map((text) => `<p class="hero-text fw-bold mb-0">${text}</p>`).join("")}`;
 
 const renderCta = ({ label, href }) => `
-  <a class="btn btn-hero rounded-pill d-inline-flex align-items-center justify-content-center gap-3" href="${href}">
+  <a class="btn btn-sakura btn-hero rounded-pill d-inline-flex align-items-center justify-content-center gap-3" href="${href}">
     ${label} <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
   </a>`;
 

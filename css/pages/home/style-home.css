@@ -19,6 +19,20 @@ html {
 /* NAVEGACIÓN DENTRO DE LA PÁGINA - FIN */
 
 
+/* BOTÓN ROSA SAKURA (hero y pick del mes); el hover es azul marino, nunca coral */
+.btn-sakura {
+  --bs-btn-bg: var(--rosa-sakura);
+  --bs-btn-color: var(--azul-marino-intenso);
+  --bs-btn-border-color: var(--rosa-sakura);
+  --bs-btn-hover-bg: var(--azul-marino-intenso);
+  --bs-btn-hover-color: var(--blanco-calido);
+  --bs-btn-hover-border-color: var(--azul-marino-intenso);
+  --bs-btn-active-bg: var(--azul-marino-intenso);
+  --bs-btn-active-color: var(--blanco-calido);
+  --bs-btn-active-border-color: var(--azul-marino-intenso);
+}
+
+
 /* ESTILOS DEL HERO */
 
 /*
@@ -130,15 +144,6 @@ html {
   min-width: min(max(28rem, 31vw), 100%);
   text-transform: uppercase;
   letter-spacing: 0.04em;
-  --bs-btn-bg: var(--rosa-sakura);
-  --bs-btn-color: var(--azul-marino-intenso);
-  --bs-btn-border-color: var(--rosa-sakura);
-  --bs-btn-hover-bg: var(--azul-marino-intenso);
-  --bs-btn-hover-color: var(--blanco-calido);
-  --bs-btn-hover-border-color: var(--azul-marino-intenso);
-  --bs-btn-active-bg: var(--azul-marino-intenso);
-  --bs-btn-active-color: var(--blanco-calido);
-  --bs-btn-active-border-color: var(--azul-marino-intenso);
 }
 
 /* Imagen única (slide 1) */
@@ -390,6 +395,50 @@ html {
 /* ESTILOS DEL BLOG - FIN */
 
 
+/* SECCIONES SOBRE FONDO DE ONDAS (no sabía que lo necesitaba, pick del mes y categorías) */
+.background-ondas {
+  background:
+    url("../../../assets/images/fondo-ondas.png") center / cover,
+    var(--menta);
+}
+
+.section-card {
+  padding: clamp(1.5rem, 4vw, 3.5rem);
+  border-radius: 2rem;
+  background-color: var(--blanco-calido);
+}
+
+.section-title {
+  font-size: clamp(2rem, 3.4vw, 3rem);
+  color: var(--azul-marino-intenso);
+}
+
+.section-link {
+  font-weight: 700;
+  color: var(--azul-marino-intenso);
+}
+
+.section-link:hover {
+  text-decoration: underline;
+}
+
+.pick-text {
+  font-size: clamp(1rem, 1.4vw, 1.25rem);
+  line-height: 1.4;
+  color: var(--azul-marino-intenso);
+}
+
+.pick-media {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  border-radius: 1.5rem;
+}
+
+/* SECCIONES SOBRE FONDO DE ONDAS - FIN */
+
+
 /* ESTILOS DE CATEGORIAS */
 .bg-cat-red {
   background-color: #f25c69;
@@ -417,19 +466,15 @@ html {
   transform: rotate(2deg) scale(1.05);
 }
 
+.categorie-card.bg-cat-navy {
+  background-color: var(--azul-marino-intenso);
+  color: var(--blanco-calido);
+}
+
 /* ESTILOS DE CATEGORIAS - FIN */
 
 
 /* ESTILO DE PRODUCTOS */
-#categoriesFilter .active {
-  color: var(--rosa-coral);
-  border-bottom-color: currentcolor;
-}
-
-#categoriesFilter button {
-  color: gray;
-}
-
 #products img {
   height: 250px;
   width: 100%;

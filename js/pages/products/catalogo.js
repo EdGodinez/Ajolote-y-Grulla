@@ -148,6 +148,12 @@ export function initCatalogo() {
     filtrarProductos();
   });
 
+  // Si se llega desde otra página con ?categoria=..., se activa ese filtro al cargar
+  const categoriaDeUrl = new URLSearchParams(window.location.search).get("categoria");
+  const botonCategoria = [...filtrosCategorias.querySelectorAll(".filtro")]
+    .find(boton => boton.textContent === categoriaDeUrl);
+  botonCategoria?.click();
+
   crearFiltros(filtrosCharacteristics, characteristics, "filtro-caracteristica", caracteristica => {
     caracteristicaActiva = caracteristica;
     filtrarProductos();
