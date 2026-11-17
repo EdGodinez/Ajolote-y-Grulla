@@ -3,26 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/pages/login/style-login.css">
     
 </head>
 <body>
     <div class="formularios">
     <h1>Inicio de sesión</h1>
-    <form method="post">
+    <form method="post" novalidate>
         <div class="username">
             <label for="username">Nombre de usuario</label>
-            <input type="text" id="username" name="username" autocomplete="username" required>
+            <input type="text" id="username" name="username" autocomplete="username" required >
+            <p id="errorUsername" class="error"></p>
         </div>
         <div class="password">
             <label for="password">Contraseña</label>
             <input type="password" id="password" name="password" autocomplete="current-password" required>
+            <p id="errorPassword" class="error"></p>
         </div>
         <div class="recordar">
             <a href="#">¿Olvidaste tu contraseña?</a>
         </div>
         <button type="submit">Iniciar sesión</button>
         <div class="registrarse">
-            <p>¿No tienes una cuenta? <a href="#">Regístrate</a></p>
+        <p>¿No tienes una cuenta? <a href="#">Regístrate</a></p>
         </div>
     </form>
 </div>
