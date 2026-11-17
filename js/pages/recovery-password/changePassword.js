@@ -26,8 +26,7 @@ formulario.addEventListener("submit", async (e) => {
 
         if (datos.ok) {
             alert(datos.mensaje);
-            // Redirigir al login o página principal
-            window.location.href = "./index.html"; 
+            window.location.href = "http://localhost:5500/Ajolote-y-Grulla/"; 
         } else {
             alert("Error: " + datos.mensaje);
         }

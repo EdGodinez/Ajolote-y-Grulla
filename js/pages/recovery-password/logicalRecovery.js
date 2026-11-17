@@ -4,8 +4,10 @@
  * @param {*} email 
  */
 
-export async function solicitarRecuperacion(email) {
+export const solicitarRecuperacion = async (email) => {
     try {
+        alert("Enviando correo, por favor espera un momento...");
+
         const respuesta = await fetch("https://ajolote-backend.onrender.com/api/recuperar", {
             method: "POST",
             headers: {
@@ -17,12 +19,12 @@ export async function solicitarRecuperacion(email) {
         const datos = await respuesta.json();
 
         if (datos.ok) {
-            console.log("Ta bien")
+            alert("Correo enviado correctamente. Revisa tu bandeja de entrada.");
         } else {
-            alert("Alert: " + datos.mensaje);
+            alert("Error: " + datos.mensaje);
         }
     } catch (error) {
         console.error("Error de conexión:", error);
         alert("No se pudo conectar con el servidor.");
     }
-}
+};
