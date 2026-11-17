@@ -148,6 +148,8 @@ html {
 
 /* Imagen única (slide 1) */
 .hero-media {
+  position: relative;
+  z-index: 1;
   width: 100%;
   max-width: max(35rem, 37vw);
   aspect-ratio: 1 / 1;
@@ -273,12 +275,16 @@ html {
   }
 }
 
-/* Decoraciones en japonés, repartidas por las orillas del hero */
+/*
+ * Decoraciones en japonés, como marca de agua: van primero en el HTML del slide y con poca opacidad,
+ * y el texto y el video tienen z-index 1, así que si llegan a encimarse quedan por detrás.
+ */
 .hero-deco {
   position: absolute;
   font-size: clamp(1.25rem, 1.9vw, 2.5rem);
   font-weight: 700;
   color: var(--azul-marino-intenso);
+  opacity: 0.25;
   pointer-events: none;
 }
 
