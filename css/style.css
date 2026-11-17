@@ -20,11 +20,16 @@
 :root {
     /* Paleta de colores */
     --rosa-coral: #F85C70;
+    --rosa-coral-oscuro: #D24053;
+    --rosa-coral-claro: #F18694;
     --lila: #C9B7F0;
     --rosa-sakura: #F5A9C3;
     --menta: #B7E6DB;
     --azul-marino-intenso: #2E3855;
     --blanco-calido: #F9F6F0;
+
+    /* Degradados */
+    --degradado-hero: linear-gradient(90deg, var(--rosa-coral-oscuro) 0%, var(--rosa-coral) 25%, var(--rosa-coral-claro) 50%, var(--rosa-coral) 75%, var(--rosa-coral-oscuro) 100%);
 
     /* Tipografías */
     --fuente-encabezados: 'Poppins', sans-serif;
@@ -79,10 +84,6 @@ a {
   background: var(--rosa-coral);
   width: 26px;
   height: 1px;
-}
-
-#hero h1 {
-  font-size: clamp(58px, 7vw, 96px);
 }
 
 /*

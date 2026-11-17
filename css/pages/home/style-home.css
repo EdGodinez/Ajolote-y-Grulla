@@ -1,58 +1,393 @@
+/* NAVEGACIÓN DENTRO DE LA PÁGINA */
+
+/* Desplazamiento suave al usar enlaces internos como el "Conoce más" del hero */
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Deja espacio para el navbar fijo, para que no tape el inicio de la sección */
+#about {
+  scroll-margin-top: 6rem;
+}
+
+/* NAVEGACIÓN DENTRO DE LA PÁGINA - FIN */
+
+
 /* ESTILOS DEL HERO */
 
-.stamp {
-  border-color: var(--rosa-coral) !important;
-  color: var(--rosa-coral);
+/*
+ * Medidas proporcionales al ancho de la pantalla (vw), tomadas del diseño de Canva (1366 px de ancho).
+ * clamp(mínimo, proporción, máximo) evita que algo quede ilegible en celular o enorme en monitores.
+ */
+.hero-carousel {
+  --hero-height: max(40rem, min(50vw, 100svh - 5rem));
+  background: var(--degradado-hero);
+  color: var(--blanco-calido);
 }
 
-.hero-circle {
-  background-color: var(--lila);
-  position: absolute;
-  bottom: 20%;
-  left: 17%;
-  width: 70%;
-  aspect-ratio: 1 / 1; /* Mantiene el círculo perfecto */
-  border-radius: 50%;
-  z-index: 0;
+/* Se le restan los 6rem del py-5 del contenedor para que la slide completa mida --hero-height */
+.hero-slide {
+  min-height: calc(var(--hero-height) - 6rem);
 }
 
-.hero-card-green {
+.hero-copy {
+  gap: clamp(1.5rem, 2vw, 2.5rem);
+}
+
+/* A todo el ancho como el navbar; en escritorio deja espacio para las flechas del carrusel */
+.hero-container {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding-inline: 1.5rem;
+}
+
+/* El contenido de cada slide se estira hasta el alto del slide más alto */
+.hero-container > .hero-slide {
+  flex-grow: 1;
+}
+
+@media (min-width: 992px) {
+  .hero-container {
+    padding-inline: clamp(6rem, 8vw, 10rem);
+  }
+}
+
+/* Todas las slides encimadas en la misma celda: el carrusel toma la altura de la más alta */
+.hero-carousel .carousel-inner {
+  display: grid;
+}
+
+/* overflow: hidden recorta lo que se sale de cada slide para que no invada a la vecina al deslizarse */
+.hero-carousel .carousel-item {
+  display: flex;
+  flex-direction: column;
+  grid-area: 1 / 1;
+  margin-right: 0;
+  overflow: hidden;
+  visibility: hidden;
+}
+
+.hero-carousel .carousel-item.active,
+.hero-carousel .carousel-item-next,
+.hero-carousel .carousel-item-prev {
+  visibility: visible;
+}
+
+/* La slide que entra se coloca a un lado sin animación; solo se anima al deslizarse hacia el centro */
+.hero-carousel .carousel-item:not(.active):not(.carousel-item-next):not(.carousel-item-prev),
+.hero-carousel .carousel-item-next:not(.carousel-item-start),
+.hero-carousel .carousel-item-prev:not(.carousel-item-end) {
+  transition: none;
+}
+
+.hero-carousel .carousel-inner::after {
+  display: none;
+}
+
+.hero-carousel .eyebrow {
+  font-size: clamp(1rem, 1.6vw, 1.75rem);
+  color: var(--blanco-calido);
+  letter-spacing: 0.08em;
+}
+
+.hero-carousel .eyebrow span {
+  background: currentColor;
+}
+
+.hero-title {
+  font-size: clamp(2.5rem, 4.8vw, 6rem);
+  line-height: 1.1;
+}
+
+.hero-title--xl {
+  font-size: clamp(3.5rem, 7.5vw, 9rem);
+}
+
+.hero-lead {
+  font-family: var(--fuente-encabezados);
+  font-weight: 600;
+  font-size: clamp(1.25rem, 2.6vw, 3rem);
+  line-height: 1.2;
+}
+
+.hero-text {
+  font-size: clamp(1.125rem, 1.7vw, 2rem);
+  line-height: 1.4;
+}
+
+.btn-hero {
+  --bs-btn-padding-x: 2.5rem;
+  --bs-btn-padding-y: clamp(0.75rem, 1vw, 1.25rem);
+  --bs-btn-font-size: clamp(1.5rem, 2.5vw, 3rem);
+  --bs-btn-line-height: 1.2;
+  min-width: min(max(28rem, 31vw), 100%);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  --bs-btn-bg: var(--rosa-sakura);
+  --bs-btn-color: var(--azul-marino-intenso);
+  --bs-btn-border-color: var(--rosa-sakura);
+  --bs-btn-hover-bg: var(--azul-marino-intenso);
+  --bs-btn-hover-color: var(--blanco-calido);
+  --bs-btn-hover-border-color: var(--azul-marino-intenso);
+  --bs-btn-active-bg: var(--azul-marino-intenso);
+  --bs-btn-active-color: var(--blanco-calido);
+  --bs-btn-active-border-color: var(--azul-marino-intenso);
+}
+
+/* Imagen única (slide 1) */
+.hero-media {
+  width: 100%;
+  max-width: max(35rem, 37vw);
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 1rem;
+}
+
+/* Collage de productos recortados (slide 2): posiciones tomadas del diseño en Canva */
+.hero-collage {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+}
+
+.hero-collage__item {
   position: absolute;
-  width: 60%;
-  height: 80%;
-  background-color: var(--menta);
-  transform: rotate(15deg) translate(60px, 10px);
+  height: auto;
+  filter: drop-shadow(0 0.75rem 1rem rgb(46 56 85 / 0.25));
+}
+
+.hero-collage__item--1 {
+  width: 49%;
+  top: 32%;
+  left: 12%;
+}
+
+.hero-collage__item--2 {
+  width: 40%;
+  top: 0;
+  left: 29%;
   z-index: 1;
 }
 
-.hero-main-img {
-  position: relative;
-  width: 60%;
-  max-width: 280px;
-  object-fit: cover;
-  transform: rotate(-4deg);
+.hero-collage__item--3 {
+  width: 71%;
+  top: 0;
+  left: 41%;
   z-index: 2;
-  border: 8px solid white;
-  transition: transform 0.3s ease;
 }
 
-.hero-main-img:hover {
-  transform: rotate(2deg) scale(1.05);
-  z-index: 4;
-}
-
-.hero-floating-tag {
-  position: absolute;
-  bottom: 25%;
-  left: 10%;
-  transform: rotate(-17deg);
+.hero-collage__item--4 {
+  width: 97%;
+  top: 60%;
+  left: 5%;
   z-index: 3;
 }
 
-.hero-note .text {
-  font-size: 10px !important;
+@media (min-width: 992px) {
+  .hero-collage {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: auto;
+    max-width: 50%;
+    aspect-ratio: 683 / 691;
+  }
+}
+
+/* Acomodo "spotlight" (slide 3): medidas tomadas del diseño en Canva */
+.hero-slide--spotlight .hero-lead {
+  max-width: 11em;
+  margin-inline: auto;
+  font-size: clamp(1.5rem, 3.3vw, 3.75rem);
+}
+
+.hero-slide--spotlight .hero-text {
+  font-size: clamp(1.25rem, 2.4vw, 2.5rem);
+}
+
+.hero-aside {
+  width: clamp(14rem, 26vw, 32rem);
+  height: auto;
+}
+
+/*
+ * Productos abajo a la derecha (slide 3): se salen por la orilla derecha e inferior.
+ * En celular, los márgenes negativos cancelan el relleno del contenedor (1.5rem a los lados y
+ * los 3rem del py-5 abajo) para que la imagen quede pegada a las orillas del slide.
+ */
+.hero-bg {
+  width: calc(100% + 3rem);
+  max-width: none;
+  height: auto;
+  margin: 0 -1.5rem -3rem;
+}
+
+@media (min-width: 992px) {
+  .hero-slide--spotlight .btn-hero {
+    min-width: max(28rem, 31vw);
+    white-space: nowrap;
+  }
+
+  .hero-bg {
+    position: absolute;
+    left: 53%;
+    bottom: 0;
+    width: auto;
+    height: 73%;
+    margin: 0;
+  }
+}
+
+/* Zoom lento mientras la diapositiva está activa (no aplica al video de la slide 1) */
+@keyframes hero-zoom {
+  from {
+    scale: 1;
+  }
+  to {
+    scale: 1.08;
+  }
+}
+
+.carousel-item.active .hero-collage,
+.carousel-item.active .hero-bg {
+  animation: hero-zoom 6s ease-out forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .carousel-item.active .hero-collage,
+  .carousel-item.active .hero-bg {
+    animation: none;
+  }
+}
+
+/* Decoraciones en japonés, repartidas por las orillas del hero */
+.hero-deco {
+  position: absolute;
+  font-size: clamp(1.25rem, 1.9vw, 2.5rem);
+  font-weight: 700;
+  color: var(--azul-marino-intenso);
+  pointer-events: none;
+}
+
+.hero-deco--1 {
+  top: 62%;
+  left: 2%;
+  transform: rotate(-5deg);
+}
+
+.hero-deco--2 {
+  bottom: 6%;
+  left: 3%;
+  transform: rotate(20deg);
+}
+
+.hero-deco--3 {
+  top: 5%;
+  left: 54%;
+  transform: rotate(17deg);
+}
+
+.hero-deco--4 {
+  top: 6%;
+  left: 16%;
+  transform: rotate(-18deg);
+}
+
+.hero-deco--5 {
+  top: 7.5%;
+  left: 2.5%;
+  transform: rotate(-12deg);
+}
+
+.hero-deco--6 {
+  top: 4.5%;
+  left: 33%;
+  transform: rotate(8deg);
+}
+
+.hero-deco--7 {
+  bottom: 3%;
+  left: 32%;
+  transform: rotate(6deg);
+}
+
+/* Indicadores y flechas del carrusel */
+.hero-carousel .carousel-indicators [data-bs-target] {
+  width: 2.5rem;
+  height: 0.375rem;
+  border: 0;
+  border-radius: 1rem;
+  background-color: var(--blanco-calido);
+}
+
+.hero-carousel .carousel-control-prev,
+.hero-carousel .carousel-control-next {
+  width: auto;
+  padding-inline: 1.5rem;
+  opacity: 1;
+}
+
+.hero-carousel__control {
+  display: grid;
+  place-items: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: var(--azul-marino-intenso);
+  color: var(--blanco-calido);
 }
 /* ESTILOS DEL HERO - FIN*/
+
+
+/* ESTILOS DEL BLOG (JAPANESE STATIONERY AWARDS) */
+
+/* Tamaños proporcionales al diseño de Canva (1366 px de ancho), con mínimo y máximo */
+.blog-title {
+  color: var(--rosa-coral);
+  font-size: clamp(2rem, 4.1vw, 3.5rem);
+  line-height: 1.16;
+}
+
+.blog-kicker {
+  font-size: clamp(1.5rem, 3.1vw, 2.65rem);
+}
+
+.blog-text {
+  font-family: var(--fuente-encabezados);
+  font-weight: 700;
+  font-size: clamp(1rem, 1.63vw, 1.4rem);
+  line-height: 1.4;
+  color: var(--azul-marino-intenso);
+}
+
+/* Garabatos lilas en las esquinas de la sección; no reciben clics para no estorbar */
+.blog-deco {
+  position: absolute;
+  height: auto;
+  pointer-events: none;
+}
+
+.blog-deco--top {
+  top: 1.5rem;
+  right: 0;
+  width: clamp(10rem, 18vw, 18rem);
+}
+
+.blog-deco--bottom {
+  bottom: 0;
+  left: 1rem;
+  width: clamp(10rem, 19vw, 19rem);
+}
+
+/* ESTILOS DEL BLOG - FIN */
 
 
 /* ESTILOS DE CATEGORIAS */
