@@ -1,3 +1,5 @@
+import { solicitarRecuperacion } from "./logicalRecovery.js"
+
 const recoveryEl = document.getElementById("recovery-div")
 
 const renderRecovery = () => {
@@ -30,21 +32,26 @@ const renderRecovery = () => {
                   required
                 />
               </div>
-              <div class="password">
-                <label for="password" class="form-label m-0"
-                  >Contraseña
-                  <p class="eyebrow d-inline">*</p></label
-                >
-                <input
-                  type="password"
-                  id="password"
-                  name="password"
-                  class="form-control"
-                  autocomplete="current-password"
-                  placeholder="Ingresa nueva contraseña"
-                  required
-                />
-              </div>
+              
+              <!--==== Apartado contrasenia ====-->
+              <!--
+                <div class="password">
+                  <label for="password" class="form-label m-0"
+                    >Contraseña
+                    <p class="eyebrow d-inline">*</p></label
+                  >
+                  <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    class="form-control"
+                    autocomplete="current-password"
+                    placeholder="Ingresa nueva contraseña"
+                    required
+                  />
+                </div>
+              -->
+
               <button
                 type="submit"
                 class="btn btn-primary w-100"
@@ -55,7 +62,16 @@ const renderRecovery = () => {
             </form>
           </div>
         </div>
-    `
+    `;
+
+    const formulario = document.getElementById("recovery-form");
+    
+    formulario.addEventListener("submit", async (event) => {
+        event.preventDefault();
+        
+        const emailInput = document.getElementById("email").value.trim();
+        await solicitarRecuperacion(emailInput);
+    });
 }
 
 renderRecovery()
