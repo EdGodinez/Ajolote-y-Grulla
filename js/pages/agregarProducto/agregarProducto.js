@@ -317,7 +317,6 @@ function agregarProducto(producto) {
 const formulario = document.getElementById("form-agregar-producto");
 
 
-
 formulario.addEventListener("submit", (event) => {
     event.preventDefault();
 });
