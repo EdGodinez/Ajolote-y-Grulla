@@ -26,7 +26,7 @@ const HERO_SLIDES = [
       "¡Los Japanese Stationery Awards son el equivalente a los premios Óscar, pero para el mundo de la papelería en Japón!",
       "Premian a esas joyas de ingeniería japonesa que hacen que organizar tus notas, estudiar o trabajar se sienta como un verdadero apapacho al corazón.",
     ],
-    cta: { label: "¡Compra ahora!", href: "./products.html" },
+    cta: { label: "Conoce más", href: "#about" },
     textCols: 6,
     media: {
       type: "collage",
@@ -45,7 +45,7 @@ const HERO_SLIDES = [
     largeTitle: true,
     lead: "Con tu pedido al registrarte por primera vez.",
     paragraphs: ["¡No pierdas la oportunidad!"],
-    cta: { label: "¡Regístrate ahora!", href: "./registro.html" },
+    cta: { label: "¡Regístrate ahora!", href: "./login.html" },
     aside: {
       src: "./assets/images/home-hero/cajita-sorpresa.png",
       alt: "Cajita de regalo sonriente",
@@ -58,7 +58,11 @@ const HERO_SLIDES = [
   },
 ];
 
-const HERO_DECORATIONS = ["紙", "ハサミ", "文房具屋", "文具"];
+/**
+ * Palabras decorativas en japonés: papel, tijeras, papelería, útiles, lápiz, goma y cuaderno.
+ * Cada una se acomoda en la orilla con su clase hero-deco--N.
+ */
+const HERO_DECORATIONS = ["紙", "ハサミ", "文房具屋", "文具", "鉛筆", "消しゴム", "ノート"];
 
 const CAROUSEL_ID = "heroCarousel";
 
@@ -129,8 +133,8 @@ const SLIDE_LAYOUTS = {
 
   spotlight: (slide) => `
     <div class="hero-slide hero-slide--spotlight d-flex flex-column hero-copy">
-      ${renderTitle(slide, "text-center position-relative z-1")}
-      <div class="row flex-grow-1 align-items-center align-content-center g-4 position-relative z-1">
+      ${renderTitle(slide, "text-center position-relative z-1 mt-auto")}
+      <div class="row align-items-center g-4 position-relative z-1 mb-auto">
         <div class="col-12 col-lg-4 order-2 order-lg-1 d-flex flex-column align-items-center hero-copy">
           <img src="${slide.aside.src}" alt="${slide.aside.alt}" class="hero-aside" />
           ${renderCta(slide.cta)}

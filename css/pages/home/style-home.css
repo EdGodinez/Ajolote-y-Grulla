@@ -1,3 +1,24 @@
+/* NAVEGACIÓN DENTRO DE LA PÁGINA */
+
+/* Desplazamiento suave al usar enlaces internos como el "Conoce más" del hero */
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Deja espacio para el navbar fijo, para que no tape el inicio de la sección */
+#about {
+  scroll-margin-top: 6rem;
+}
+
+/* NAVEGACIÓN DENTRO DE LA PÁGINA - FIN */
+
+
 /* ESTILOS DEL HERO */
 
 /*
@@ -21,7 +42,15 @@
 
 /* A todo el ancho como el navbar; en escritorio deja espacio para las flechas del carrusel */
 .hero-container {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
   padding-inline: 1.5rem;
+}
+
+/* El contenido de cada slide se estira hasta el alto del slide más alto */
+.hero-container > .hero-slide {
+  flex-grow: 1;
 }
 
 @media (min-width: 992px) {
@@ -37,7 +66,8 @@
 
 /* overflow: hidden recorta lo que se sale de cada slide para que no invada a la vecina al deslizarse */
 .hero-carousel .carousel-item {
-  display: block;
+  display: flex;
+  flex-direction: column;
   grid-area: 1 / 1;
   margin-right: 0;
   overflow: hidden;
@@ -188,10 +218,16 @@
   height: auto;
 }
 
-/* Productos abajo a la derecha (slide 3): se salen por la orilla derecha e inferior */
+/*
+ * Productos abajo a la derecha (slide 3): se salen por la orilla derecha e inferior.
+ * En celular, los márgenes negativos cancelan el relleno del contenedor (1.5rem a los lados y
+ * los 3rem del py-5 abajo) para que la imagen quede pegada a las orillas del slide.
+ */
 .hero-bg {
-  width: 100%;
+  width: calc(100% + 3rem);
+  max-width: none;
   height: auto;
+  margin: 0 -1.5rem -3rem;
 }
 
 @media (min-width: 992px) {
@@ -206,7 +242,7 @@
     bottom: 0;
     width: auto;
     height: 73%;
-    max-width: none;
+    margin: 0;
   }
 }
 
@@ -232,40 +268,55 @@
   }
 }
 
-/* Decoraciones en japonés */
+/* Decoraciones en japonés, repartidas por las orillas del hero */
 .hero-deco {
   position: absolute;
+  font-size: clamp(1.25rem, 1.9vw, 2.5rem);
   font-weight: 700;
   color: var(--azul-marino-intenso);
   pointer-events: none;
 }
 
 .hero-deco--1 {
-  top: 65%;
+  top: 62%;
   left: 2%;
-  font-size: 1.6rem;
   transform: rotate(-5deg);
 }
 
 .hero-deco--2 {
   bottom: 6%;
   left: 3%;
-  font-size: 1.4rem;
   transform: rotate(20deg);
 }
 
 .hero-deco--3 {
   top: 5%;
-  right: 6%;
-  font-size: 1.1rem;
+  left: 54%;
   transform: rotate(17deg);
 }
 
 .hero-deco--4 {
-  bottom: 4%;
-  left: 60%;
-  font-size: 1.25rem;
+  top: 6%;
+  left: 16%;
   transform: rotate(-18deg);
+}
+
+.hero-deco--5 {
+  top: 7.5%;
+  left: 2.5%;
+  transform: rotate(-12deg);
+}
+
+.hero-deco--6 {
+  top: 4.5%;
+  left: 33%;
+  transform: rotate(8deg);
+}
+
+.hero-deco--7 {
+  bottom: 3%;
+  left: 32%;
+  transform: rotate(6deg);
 }
 
 /* Indicadores y flechas del carrusel */
