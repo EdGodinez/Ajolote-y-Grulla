@@ -50,7 +50,7 @@ export function renderProducts() {
     ${renderSectionHeader({
       eyebrow: "EXPLORA NUESTRA CATEGORÍA FAVORITA",
       title: CARACTERISTICA_DESTACADA,
-      link: { label: "Ver todo", href: "./products.html" },
+      link: { label: "Ver todo", href: `./products.html?caracteristica=${encodeURIComponent(CARACTERISTICA_DESTACADA)}` },
     })}
     <div class="row g-4" id="products">
       ${destacados.map(renderProductCard).join("")}
