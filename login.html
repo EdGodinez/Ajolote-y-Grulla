@@ -1,34 +1,71 @@
-  <!DOCTYPE html>
-   <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Iniciar Sesion</title>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="" href="">
-</head>
-<body>
-    
-    <div class="formularios">
-        <h1>Inicio de Sesion</h1>
-        <form method="post">
-            <div class="username">
-            <input type="text" required>
-            <label>Nombre del usuaario</label>
-           </div>
-            <div class="contraseña">
-                <input type="password" required>
-                <label>Contraseña</label>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="./css/style.css" />
+    <!-- Login CSS -->
+    <link rel="stylesheet" href="./css/pages/login/login.css" />
+  </head>
+  <body class="background-blanco">
+    <div class="container py-3">
+      <div
+        class="card position-relative overflow-hidden shadow"
+        style="min-height: 580px"
+      >
+        <div class="row g-0 h-100 align-items-center">
+          <!-- ===============
+                INICIAR SESION 
+                 =============== -->
+          <div class="col-12 col-md-6 p-4 d-block" id="col-login"></div>
+          <!-- ===============
+                REGISTRARSE 
+                 =============== -->
+          <div class="col-12 col-md-6 p-4 d-none d-md-block" id="col-register">
+            
+          </div>
+          <!-- ===============
+                AJOLOTE&GRULLA 
+                 =============== -->
+          <div
+            id="col-overlay"
+            class="col-12 col-md-6 d-flex justify-content-center flex-column p-3 position-absolute h-100 z-2 top-0 end-0 d-m"
+            style="background-color: #fdfaf6"
+          >
+            <img
+              src="./assets/images/Ajolote&Grulla-LoginRegister.svg"
+              class="mb-2"
+              style="max-height: 380px; object-fit: contain"
+              alt="imagen de Ajolote & Grulla"
+            />
+            <div class="text-center">
+              <h5>Tu mundo favorito, siempre contigo</h5>
+              <p class="m-0 text-muted px-5">
+                Inicia sesión para guardar tus productos favoritos, reastrear
+                tus pedidos y disfrutar de una experiencia personalizada.
+              </p>
             </div>
-            <div class="recordad">¿Olvido su Contraseña?</div>
-            <input type="submit" value="Iniciar">
-            <div class="registrarse">
-                Quiero hacer el <a href="#"> registro</a>
-            </div>
-        </form>
-
-
+          </div>
+        </div>
+      </div>
     </div>
-</body>
-   </html>
-   
+
+    <!-- Bootstrap JS -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+
+    <script type="module" src="./js/pages/login/renderLogin.js"></script>
+  </body>
+</html>
