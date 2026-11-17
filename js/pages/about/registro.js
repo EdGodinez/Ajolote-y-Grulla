@@ -1,6 +1,7 @@
 const formulario = document.querySelector("form");
 
 formulario.addEventListener("submit", (event) => {
+
     event.preventDefault(); // Evita que la página se recargue
     
     const datos = new FormData(formulario);
@@ -11,3 +12,4 @@ formulario.addEventListener("submit", (event) => {
         alert("Las contraseñas no coinciden. Por favor, revísalas.");
         return; // Detiene el proceso si no coinciden
     }
+});
