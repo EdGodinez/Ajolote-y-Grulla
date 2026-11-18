@@ -1,81 +1,104 @@
+/* =========================
+   1. NAVBAR GENERAL
+   ========================= */
 
-nav{
+nav {
     background-color: var(--azul-marino-intenso);
     font-family: var(--fuente-encabezados);
     color: var(--blanco-calido);
 }
 
+.navbar-brand,
+nav .nav-item a {
+    color: var(--blanco-calido);
+}
+
+#nombreTienda:hover,
+nav .nav-item a:hover {
+    color: var(--lila);
+}
+
+nav .nav-item .activo {
+    color: var(--rosa-coral);
+}
+
+/* Logo */
+#logo {
+    width: 40px;
+    height: 40px;
+}
+
+/* Botón del menú responsive */
+.navbar-toggler-icon {
+    filter: invert(1) grayscale(100%) brightness(200%);
+}
+
+#btnMenu {
+    border: none;
+    box-shadow: none;
+}
+
+
+/* =========================
+   2. BUSCADOR
+   ========================= */
+
 #formBusqueda {
     background-color: #e8e8e8;
+    border: none;
+    width: 420px;
+    max-width: 100%;
 }
 
 #formBusqueda input {
-    background-color: #e8e8e8;
-    border-color: #e8e8e8;
+    background-color: transparent;
+    border: none;
     color: var(--azul-marino-intenso);
     outline: none;
-    border: 0;
-}
-
-#formBusqueda .barra-encabezado input:focus,
-#formBusqueda .barra-encabezado input:focus-visible {
-    background-color: #e8e8e8;
-    color: var(--lila);
-    outline: none !important;
-    box-shadow: none !important;
-    border-color: transparent !important;
-}
-
-#nombreTienda:hover{
-    color: var(--lila);
-}
-
-
-.btn-busqueda-Collapse{
-    color:var(--blanco-calido);
-}
-
-
-.barra-encabezado .form-control:focus, .btn-busqueda:focus-visible, .btn-busqueda:focus,.btn-busqueda:active, #btnMenu{
     box-shadow: none;
+}
+
+#formBusqueda .barra-encabezado input {
+    padding: 0.375rem 0.75rem;
+}
+
+#formBusqueda input:focus,
+#formBusqueda input:focus-visible {
+    background-color: transparent;
+    color: var(--azul-marino-intenso);
     border-color: transparent;
-    border: 0;
+    outline: none;
+    box-shadow: none;
 }
 
-.navbar-brand, nav .nav-item a{
-    color:var(--blanco-calido);
-    padding:auto;
+#formBusqueda input::placeholder {
+    color: #555;
+    opacity: 1;
 }
 
-
-.nav-item a:hover{
-    color:var(--lila);
-}
-
-.nav-item .activo{
-       color: var(--rosa-coral);
-}
-
-#carritoCompra{
-    background-color: var(--menta);
-}
-
-#carritoCompra i{
+/* Botón de búsqueda */
+#formBusqueda .btn-busqueda {
+    border: none;
     color: var(--azul-marino-intenso);
 }
 
-#btnInicioSesion{
-    background-color: var(--rosa-sakura);
-    color: var(--azul-marino-intenso);
+.btn-busqueda-Collapse {
+    color: var(--blanco-calido);
 }
 
-.nav-item a:hover {
-    color: var(--lila);
+/* Eliminar efectos visuales de Bootstrap */
+.barra-encabezado .form-control:focus,
+.btn-busqueda:focus,
+.btn-busqueda:focus-visible,
+.btn-busqueda:active {
+    border-color: transparent;
+    box-shadow: none;
 }
 
-.nav-item .activo {
-    color: var(--rosa-coral);
-}
+
+/* =========================
+   3. CARRITO DE COMPRAS
+   ========================= */
 
 #carritoCompra {
     background-color: var(--menta);
@@ -85,92 +108,140 @@ nav{
     color: var(--azul-marino-intenso);
 }
 
+
+/* =========================
+   4. INICIO DE SESIÓN
+   ========================= */
+
 #btnInicioSesion {
     background-color: var(--rosa-sakura);
     color: var(--azul-marino-intenso);
 }
 
-.navbar-toggler-icon {
-    filter: invert(1) grayscale(100%) brightness(200%);
+
+/* =========================
+   5. USUARIO AUTENTICADO
+   ========================= */
+
+.btn-usuario.btn {
+    /* Colores del texto */
+    --bs-btn-color: var(--menta);
+    --bs-btn-hover-color: var(--menta);
+    --bs-btn-active-color: var(--menta);
+
+    /* Fondo transparente */
+    --bs-btn-bg: transparent;
+    --bs-btn-hover-bg: transparent;
+    --bs-btn-active-bg: transparent;
+
+    /* Contorno */
+    --bs-btn-border-color: transparent;
+    --bs-btn-hover-border-color: var(--menta);
+    --bs-btn-active-border-color: var(--menta);
+
+    font-weight: 600;
+
+    transition:
+        color 0.3s ease,
+        border-color 0.3s ease;
 }
 
-#logo {
-    width: 40px;
-    height: 40px;
+/* Mantener contorno al abrir el dropdown */
+.btn-usuario.show {
+    border-color: var(--menta);
 }
 
-/* Buscador del navbar */
-#formBusqueda {
-    background-color: #e8e8e8;
-    border: none;
-<<<<<<< HEAD
+/* Accesibilidad con teclado */
+.btn-usuario:focus-visible {
+    outline: 2px solid var(--menta);
+    outline-offset: 2px;
 }
 
-#formBusqueda .barra-encabezado input {
-    padding: .375rem .75rem;
-=======
-   
+/* Animación de la flecha del usuario */
+.btn-usuario.dropdown-toggle::after {
+    transition: transform 0.3s ease;
 }
 
-#formBusqueda .barra-encabezado input{
-    padding:.375rem .75rem;
->>>>>>> 721b2ea34806dd1aefbebaf696e788b7dc5a8ef3
-    background-color: transparent;
-    border: none;
-    color: var(--azul-marino-intenso);
-    box-shadow: none;
+/* Girar flecha cuando el menú está abierto */
+.btn-usuario.dropdown-toggle.show::after {
+    transform: rotate(180deg);
 }
 
-#formBusqueda input::placeholder {
-    color: #555;
-    opacity: 1;
-}
 
-#formBusqueda .btn-busqueda {
-    border: none;
-    color: var(--azul-marino-intenso);
-}
+/* =========================
+   6. OFFCANVAS DE BÚSQUEDA
+   ========================= */
 
-<<<<<<< HEAD
-/* Offcanvas */
 header #offcanvasBusqueda {
     background-color: var(--azul-marino-intenso);
-    --bs-offcanvas-height: 15vh !important;
-=======
-/* offcanvas */
-header #offcanvasBusqueda{
-    background-color: var(--azul-marino-intenso);
-    --bs-offcanvas-height: 15vh !important; 
->>>>>>> 721b2ea34806dd1aefbebaf696e788b7dc5a8ef3
+    --bs-offcanvas-height: 15vh;
+
     flex-direction: row-reverse;
     align-items: center;
 }
 
-<<<<<<< HEAD
 header #offcanvasBusqueda form {
-    width: 100vh;
+    width: 100%;
 }
 
 header #offcanvasBusqueda input {
-=======
-header #offcanvasBusqueda form{
-   width: 100vh;
-}
-
-header #offcanvasBusqueda input{
->>>>>>> 721b2ea34806dd1aefbebaf696e788b7dc5a8ef3
     width: 85%;
 }
 
-@media (max-width: 1200px) {
-<<<<<<< HEAD
+
+/* =========================
+   7. OFFCANVAS DEL MENÚ
+   ========================= */
+
+header #offcanvasMenu {
+    color: var(--blanco-calido);
+    background-color: var(--azul-marino-intenso);
+    --bs-offcanvas-width: 300px;
+}
+
+/* Solo afecta la lista principal de navegación */
+header #offcanvasMenu .navbar-nav {
+    display: block;
+}
+
+
+/* =========================
+   8. DISEÑO RESPONSIVE
+   ========================= */
+
+/* Pantallas grandes */
+@media (min-width: 1400px) {
+
+    #formBusqueda {
+        width: 420px;
+    }
+}
+
+/* Pantallas medianas */
+@media (min-width: 1200px) and (max-width: 1399.98px) {
+
+    #formBusqueda {
+        width: 320px;
+    }
+}
+
+/* Pantallas pequeñas y menú móvil */
+@media (max-width: 1199.98px) {
+
+    /* Buscador adaptable */
+    #formBusqueda {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    /* Menú colapsado */
     .navbar-collapse {
         padding: 10px;
         position: absolute;
         text-align: center;
         background-color: var(--azul-marino-intenso);
-        left: auto;
         right: 0.5%;
+
         border-bottom-left-radius: 0.5rem;
         border-bottom-right-radius: 0.5rem;
     }
@@ -184,52 +255,57 @@ header #offcanvasBusqueda input{
         margin-left: 0 !important;
         margin-right: 0 !important;
     }
-}
 
-header #offcanvasMenu {
-    color: var(--blanco-calido);
-    background-color: var(--azul-marino-intenso);
-    --bs-offcanvas-width: 300px !important;
-}
+    /* =========================
+       USUARIO EN MÓVIL
+       ========================= */
 
-header #offcanvasMenu ul {
-    display: block;
-    align-items: flex-start;
-}
-=======
-    /* estilo de links colapsados dentro del menu */
-.navbar-collapse {
-    padding:10px;
-    position: absolute;
-    text-align: center;
-    background-color: var(--azul-marino-intenso);
-    left: auto;
-  right: 0.5%;
-  border-bottom-left-radius: 0.5rem;
-  border-bottom-right-radius: 0.5rem;
-}
+    /* Mantener contorno al abrir el menú */
+    #offcanvasMenu .btn-usuario.show {
+        border-color: var(--menta);
+    }
 
-.navbar-collapse .navbar-nav {
-    margin: 0 !important;          
-    align-items: center;
-  }
+    /* =========================
+       DROPDOWN EN MÓVIL
+       ========================= */
 
-  .navbar-collapse .nav-item {
-    margin-left: 0 !important;    
-    margin-right: 0 !important;
-  }
+    /* Evita que se muestre automáticamente */
+    #offcanvasMenu .dropdown-menu:not(.show) {
+        display: none;
+    }
 
+    /* Mostrar cuando Bootstrap agrega .show */
+    #offcanvasMenu .dropdown-menu.show {
+        display: block;
+    }
+
+    /* Integrar dropdown al menú móvil */
+    #offcanvasMenu .dropdown-menu {
+        position: static !important;
+
+        background-color: transparent;
+        border: none;
+        box-shadow: none;
+
+        min-width: 0;
+        padding: 0;
+        margin-top: 0.5rem;
+
+        transform: none !important;
+    }
+
+    /* Botón Cerrar sesión */
+    #offcanvasMenu .btn-cerrar-sesion {
+        color: var(--rosa-sakura);
+        background-color: transparent;
+
+        border-radius: 0.5rem;
+        padding: 10px 16px;
+        text-align: left;
+    }
+
+    #offcanvasMenu .btn-cerrar-sesion:hover {
+        color: var(--blanco-calido);
+        background-color: rgba(255, 255, 255, 0.08);
+    }
 }
-
-header #offcanvasMenu{
-    color: var(--blanco-calido);
-    background-color: var(--azul-marino-intenso);
-    --bs-offcanvas-width: 300px !important; 
-    
-}
-
-header #offcanvasMenu ul{
-    display: block;
-        align-items:flex-start;
-}
->>>>>>> 721b2ea34806dd1aefbebaf696e788b7dc5a8ef3
