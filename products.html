@@ -31,14 +31,20 @@
   <header id="header"></header>
 
   <main class="catalogo">
+
+    <!-- Encabezado con degradado -->
+    <div class="catalogo-encabezado">
+      <div class="container">
+        <h1 class="display-4 fw-bold catalogo-title">Catálogo</h1>
+
+        <p class="catalogo-subtitulo">
+          Descubre nuestra selección de papelería japonesa:
+          productos únicos que combinan creatividad, diseño y funcionalidad.
+        </p>
+      </div>
+    </div>
+
     <div class="container">
-
-      <h1 class="display-4 fw-bold catalogo-title">Catálogo</h1>
-
-      <p class="catalogo-subtitulo">
-        Descubre nuestra selección de papelería japonesa:
-        productos únicos que combinan creatividad, diseño y funcionalidad.
-      </p>
 
       <!-- Botón agregar producto -->
       <div class="d-flex justify-content-end mb-4">
@@ -58,11 +64,13 @@
       </div>
 
       <!-- Filtros -->
-      <p class="filtros-titulo">Categorías</p>
-      <div id="filtros-categorias" class="d-flex flex-wrap gap-2 mb-3"></div>
+      <section class="catalogo-filtros mb-4" aria-label="Filtros del catálogo">
+        <p class="filtros-titulo">Categorías</p>
+        <div id="filtros-categorias" class="d-flex flex-wrap gap-2 mb-3"></div>
 
-      <p class="filtros-titulo">Características</p>
-      <div id="filtros-characteristics" class="d-flex flex-wrap gap-2 mb-4"></div>
+        <p class="filtros-titulo">Características</p>
+        <div id="filtros-characteristics" class="d-flex flex-wrap gap-2"></div>
+      </section>
 
       <!-- Listado de productos -->
       <div class="row g-4" id="lista-productos"></div>

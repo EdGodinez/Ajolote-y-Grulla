@@ -1,7 +1,15 @@
 /* Catálogo */
 
 .catalogo {
-    padding: 60px 0;
+    padding-bottom: 60px;
+    background:
+        url("../../../assets/images/fondo-ondas.png") center / cover fixed,
+        var(--rosa-sakura);
+}
+
+.catalogo-encabezado {
+    padding: 60px 0 24px;
+    background: linear-gradient(to bottom, var(--blanco-calido) 40%, transparent);
 }
 
 .catalogo-title {
@@ -33,7 +41,7 @@
 }
 
 .buscador-productos:focus-within {
-    border-color: var(--rosa-coral);
+    border-color: var(--lila);
 }
 
 .buscador-productos i {
@@ -62,14 +70,15 @@
 .btn-agregar-producto {
     background-color: var(--azul-marino-intenso);
     color: var(--blanco-calido);
+    transition: background-color 0.3s ease, color 0.3s ease;
     border-radius: 30px;
     padding: 12px 24px;
     font-weight: 600;
 }
 
 .btn-agregar-producto:hover {
-    background-color: var(--rosa-coral);
-    color: var(--blanco-calido);
+    background-color: var(--lila);
+    color: var(--azul-marino-intenso);
 }
 
 @media (max-width: 576px) {
@@ -80,6 +89,12 @@
 
 
 /* Filtros y etiquetas */
+
+.catalogo-filtros {
+    padding: 20px 24px;
+    border-radius: 24px;
+    background-color: var(--blanco-calido);
+}
 
 .filtros-titulo {
     margin-bottom: 8px;
@@ -205,7 +220,7 @@
 .producto-precio {
     margin-top: auto;
     margin-bottom: 16px;
-    color: var(--rosa-coral);
+    color: var(--azul-marino-intenso);
     font-size: 1.4rem;
     font-weight: 700;
 }
@@ -227,7 +242,7 @@
     gap: 8px;
     width: 100%;
     padding: 12px;
-    border: 1px solid var(--rosa-coral);
+    border: 2px solid var(--azul-marino-intenso);
     border-radius: 50px;
     font-family: var(--fuente-contenido);
     font-weight: 700;
@@ -238,23 +253,21 @@
 }
 
 .btn-agregar-carrito {
-    background-color: var(--rosa-coral);
-    color: white;
-}
-
-.btn-agregar-carrito:hover {
-    background-color: var(--azul-marino-intenso);
-    border-color: var(--azul-marino-intenso);
+    background-color: var(--rosa-sakura);
+    border-color: var(--rosa-sakura);
+    color: var(--azul-marino-intenso);
 }
 
 .btn-ver-mas {
     background-color: transparent;
-    color: var(--rosa-coral);
+    color: var(--azul-marino-intenso);
 }
 
+.btn-agregar-carrito:hover,
 .btn-ver-mas:hover {
-    background-color: var(--rosa-sakura);
-    color: var(--azul-marino-intenso);
+    background-color: var(--azul-marino-intenso);
+    border-color: var(--azul-marino-intenso);
+    color: var(--blanco-calido);
 }
 
 .btn-agregar-carrito:focus-visible,
@@ -267,7 +280,11 @@
 
 @media (max-width: 576px) {
     .catalogo {
-        padding: 40px 0;
+        padding-bottom: 40px;
+    }
+
+    .catalogo-encabezado {
+        padding-top: 40px;
     }
 
     .catalogo-subtitulo {

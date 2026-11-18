@@ -1,0 +1,138 @@
+/* Variables de la paleta pastel */
+:root {
+    --pastel-bg: #FFFDF9;
+    --pastel-pink: #FFD1DC;
+    --pastel-purple: #E2D4F0;
+    --pastel-blue: #D0E8FF;
+    --text-dark: #333333;
+    --font-title: 'Cinzel', serif;
+    --font-text: 'Quicksand', sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--pastel-bg);
+    color: var(--text-dark);
+    font-family: var(--font-text);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+#quiz-container {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    max-width: 600px;
+    width: 90%;
+    text-align: center;
+}
+
+.title {
+    font-family: var(--font-title);
+    color: #4A4A4A;
+    margin-bottom: 1rem;
+}
+
+/* Transiciones entre pantallas */
+.screen {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+.screen.active {
+    display: block;
+    opacity: 1;
+}
+
+/* Botones */
+.btn {
+    background-color: var(--pastel-purple);
+    border: none;
+    padding: 12px 24px;
+    border-radius: 25px;
+    font-family: var(--font-text);
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+    text-decoration: none;
+    color: var(--text-dark);
+    display: inline-block;
+}
+.btn:hover {
+    background-color: var(--pastel-pink);
+    transform: translateY(-2px);
+}
+.option-btn {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    background-color: var(--pastel-blue);
+    text-align: left;
+}
+
+/* Barra de progreso */
+.progress-bar {
+    width: 100%;
+    height: 10px;
+    background-color: #eee;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    overflow: hidden;
+}
+#progress-fill {
+    height: 100%;
+    background-color: var(--pastel-pink);
+    width: 0%;
+    transition: width 0.3s ease;
+}
+
+/* Efecto 3D de la tarjeta */
+.card-container {
+    perspective: 1000px;
+    width: 300px;
+    height: 400px;
+    margin: 20px auto;
+}
+.card {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+}
+.card.flipped {
+    transform: rotateY(180deg);
+}
+.card-front, .card-back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+.card-front {
+    background: var(--pastel-purple);
+    flex-direction: column;
+}
+.card-back {
+    transform: rotateY(180deg);
+    background: var(--pastel-bg);
+}
+.card-back img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.mt-3 { margin-top: 1.5rem; }
+.text-muted { color: #888; font-size: 0.85rem; }

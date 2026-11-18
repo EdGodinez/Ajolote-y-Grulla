@@ -1,9 +1,8 @@
 const formulario = document.querySelector("form");
 
 formulario.addEventListener("submit", (event) => {
-
     event.preventDefault(); // Evita que la página se recargue
-    
+
     const datos = new FormData(formulario);
     const password = datos.get("password");
     const confirmPassword = datos.get("confirm-password");
