@@ -1,3 +1,4 @@
+
 export function renderHero() {
     const container = document.getElementById("about-hero");
 
@@ -14,7 +15,7 @@ export function renderHero() {
                         </h1>
 
                         <div class="papel-nota mx-auto mx-lg-0">
-                            <p class="mb-0"> 
+                            <p class="mb-0">
                                 Ajolote y Grulla es un e-commerce de artículos de papelería japonesa en México.
                                 En nuestro catálogo destacan productos ganadores de los prestigiosos premios
                                 <strong>"Japanese Stationery Awards."</strong>

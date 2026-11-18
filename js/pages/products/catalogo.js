@@ -1,5 +1,16 @@
 import { productos } from "./products.js";
 
+const productosGuardados = JSON.parse(
+    localStorage.getItem("productosAgregados") || "[]"
+);
+
+productosGuardados.forEach(producto => {
+    if (!productos.some(p => Number(p.id) === Number(producto.id))) {
+        productos.push(producto);
+    }
+});
+
+
 const TODOS = "Todos";
 
 const CARACTERISTICA_PRIORITARIA = "No sabía que lo necesitaba";
