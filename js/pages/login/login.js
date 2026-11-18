@@ -83,7 +83,7 @@ if (formularioLogin) {
         const correo = datos.get("email");
         const contrasena = datos.get("password");
 
-        /*   // Guarda lo que responde cada validación (mensaje de error o "")
+          // Guarda lo que responde cada validación (mensaje de error o "")
            const mensajeErrorCorreo = validarCorreo(correo);
            const mensajeErrorContrasena = validarContrasena(contrasena);
    
@@ -96,7 +96,7 @@ if (formularioLogin) {
            if (mensajeErrorCorreo !== "" || mensajeErrorContrasena !== "") {
                return;
            }
-   */
+
 
         // Consultar si los datos del usuario existen en registros
         const datosConsulta = {
