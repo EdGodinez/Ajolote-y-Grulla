@@ -1,4 +1,3 @@
-
 export function renderCarrusel() {
     const container = document.getElementById("about-carrusel");
 

@@ -1,133 +1,4 @@
-let catalogoProductos = [];
-import("../products/products.js")
-    .then((modulo) => {
-        if (modulo && Array.isArray(modulo.productos)) {
-            catalogoProductos = modulo.productos;
-        }
-    })
-    .catch(() => {
-        console.warn("Aviso: No se pudo cargar products.js, validando localmente.");
-    });
-
-document.addEventListener("DOMContentLoaded", () => {
-    const campoNombre = document.getElementById("name");
-    const campoMarca = document.getElementById("marca");
-    const textoContador = document.getElementById("contadorName");
-    const cajaErrorNombre = document.getElementById("alertname");
-    const recuadroAlertaMarca = document.getElementById("alerttrade");
-    const formularioProducto = document.getElementById("form-agregar-producto");
-
-    if (!campoNombre || !textoContador) {
-        console.error("Error: No existen los elementos #name o #contadorName en el HTML.");
-        return;
-    }
-
-    const limiteMaximo = Number(campoNombre.getAttribute("maxlength")) || 77;
-    textoContador.textContent = `0/${limiteMaximo}`;
-
-    function evaluarReglasNombre(valorNombre, valorMarca) {
-        const nombreSinEspacios = valorNombre.trim();
-        const marcaSinEspacios = (valorMarca || "").trim().toLowerCase();
-        const nombreEnMinusculas = nombreSinEspacios.toLowerCase();
-
-        const regexIniciaConPalabra = /^[a-zA-ZáéíóúÁÉÍÓÚüÜñÑ]{2,}/;
-
-        if (nombreSinEspacios.length === 0) {
-            return { esValido: false, codigoError: "vacio", mensaje: "El nombre no puede estar vacío." };
-        }
-
-
-        if (!regexIniciaConPalabra.test(nombreSinEspacios)) {
-            return { esValido: false, codigoError: "formato", mensaje: "El nombre debe comenzar con una palabra válida (mínimo 2 letras)." };
-        }
-
-        if (nombreSinEspacios.length < 3) {
-            return { esValido: false, codigoError: "longitud", mensaje: "El nombre debe tener al menos 3 caracteres." };
-        }
-        const incluyePalabraMarca = /\bmarca\b/i.test(nombreSinEspacios) || nombreEnMinusculas.includes("marca");
-        const repiteTextoMarca = marcaSinEspacios.length > 0 && nombreEnMinusculas.includes(marcaSinEspacios);
-
-        if (incluyePalabraMarca || repiteTextoMarca) {
-            return {
-                esValido: false,
-                codigoError: "marcaRepetida",
-                mensaje: "Colocar marca en el siguiente recuadro"
-            };
-        }
-
-        const existeDuplicado = catalogoProductos.some((item) => {
-            const itemNombre = (item.name || "").trim().toLowerCase();
-            const itemMarca = (item.brand || item.marca || "").trim().toLowerCase();
-            return itemNombre === nombreEnMinusculas && itemMarca === marcaSinEspacios;
-        });
-
-        if (existeDuplicado) {
-            return { esValido: false, codigoError: "duplicado", mensaje: "Ya existe un producto con ese nombre y marca." };
-        }
-
-        return { esValido: true, codigoError: "ninguno", mensaje: "" };
-    }
-
-    function actualizarInterfazNombre() {
-        const cadenaActual = campoNombre.value;
-        const totalCaracteres = cadenaActual.length;
-
-        if (totalCaracteres >= limiteMaximo) {
-            textoContador.textContent = `${totalCaracteres}/${limiteMaximo} - Límite alcanzado`;
-            textoContador.classList.remove("text-muted");
-            textoContador.classList.add("text-danger", "fw-bold");
-        } else {
-            textoContador.textContent = `${totalCaracteres}/${limiteMaximo}`;
-            textoContador.classList.add("text-muted");
-            textoContador.classList.remove("text-danger", "fw-bold");
-        }
-
-        if (cadenaActual.length === 0) {
-            campoNombre.classList.remove("is-invalid", "is-valid");
-            if (recuadroAlertaMarca) recuadroAlertaMarca.style.display = "none";
-            if (cajaErrorNombre) cajaErrorNombre.style.display = "none";
-            return;
-        }
-        const valorMarcaActual = campoMarca ? campoMarca.value : "";
-        const resultado = evaluarReglasNombre(cadenaActual, valorMarcaActual);
-
-        if (resultado.esValido) {
-            campoNombre.classList.remove("is-invalid");
-            campoNombre.classList.add("is-valid");
-            if (recuadroAlertaMarca) recuadroAlertaMarca.style.display = "none";
-            if (cajaErrorNombre) cajaErrorNombre.style.display = "none";
-        } else {
-            campoNombre.classList.remove("is-valid");
-            campoNombre.classList.add("is-invalid");
-
-            if (resultado.codigoError === "marcaRepetida") {
-                if (recuadroAlertaMarca) {
-                    recuadroAlertaMarca.textContent = resultado.mensaje;
-                    recuadroAlertaMarca.style.display = "block";
-                }
-                if (cajaErrorNombre) cajaErrorNombre.style.display = "none";
-            } else {
-                if (recuadroAlertaMarca) recuadroAlertaMarca.style.display = "none";
-                if (cajaErrorNombre) {
-                    cajaErrorNombre.textContent = resultado.mensaje;
-                    cajaErrorNombre.style.display = "block";
-                }
-            }
-        }
-    }
-
-    campoNombre.addEventListener("input", actualizarInterfazNombre);
-    if (campoMarca) {
-        campoMarca.addEventListener("input", actualizarInterfazNombre);
-    }
-
-    if (formularioProducto) {
-        formularioProducto.addEventListener("submit", (event) => {
-            event.preventDefault();
-            actualizarInterfazNombre();
-        });
-    }
-});
+import { productos } from "../products/products.js";
 
 const catalogoProductos = productos;
 
@@ -276,19 +147,50 @@ function validarBrand(brand) {
 
 }
 
-function validarAward(award) {
-    const valor = award.trim();
-    console.log(valor);
-    if (valor != "") {
+function validarAward() {
+    const award = document.querySelector("#premio");
+    const valor = award.value.trim();
+    const feedback = document.querySelector("#award-validation");
+    if (award.value != "") {
         // Reglas de validacion, minimo 10 caracteres reales 
-        const reglas = /^(?=(?:.*\S){10}).+$/;
+        const reglas = /^(?=(?:.*\S){5}).+$/;
         if (reglas.test(valor)) {
-            console.log("ok");
+            const val = feedback.querySelector("div");
+            if (val === null) {
+                const valid = document.createElement("div");
+                valid.textContent = "Correcto";
+                valid.className = "valid-feedback";
+                feedback.append(valid);
+                award.classList.add("is-valid");
+               } else {
+                award.classList.replace(award.classList[1],"is-valid");
+                const valid = feedback.querySelector("div");
+                valid.textContent = "Correcto";
+                valid.className = "valid-feedback";
+            }
             return true;
         } else {
+            const val = feedback.querySelector("div");
+            console.log(val);
+            if (val !== null) {
+                val.classList.replace("valid-feedback","invalid-feedback")
+                val.textContent = "Incorrecto";
+                award.classList.replace("is-valid","is-invalid");
+            }else{
+                award.classList.add("is-invalid");
+                const valid = document.createElement("div");
+                valid.textContent = "Incorrecto";
+                valid.className = "invalid-feedback";
+                feedback.append(valid);
+            }
             return false;
         }
     } else {
+        const val = feedback.querySelector("div");
+        if (val !== null) {
+            val.remove();
+        }
+        award.classList.remove(award.classList[1]);
         return true;
     }
 }
@@ -415,51 +317,13 @@ function agregarProducto(producto) {
 const formulario = document.getElementById("form-agregar-producto");
 
 
+
 formulario.addEventListener("submit", (event) => {
     event.preventDefault();
-
-    const datos = new FormData(formulario);
-
-    const name = datos.get("name")?.trim() ?? "";
-    const brand = datos.get("brand")?.trim() ?? "";
-    const award = datos.get("award")?.trim() ?? "";
-    const description = datos.get("description")?.trim() ?? "";
-    const detail = datos.get("detail")?.trim() ?? "";
-    const characteristics = datos.getAll("characteristics");
-    const category = datos.get("category") ?? "";
-    const price = datos.get("price") ?? "";
-    const img = datos.get("img")?.trim() ?? "";
-        
-    if (!validarBrand(brand)) return;
-    if (!validarAward(award)) return;
-    if (!validarDescription(description)) return;
-    if (!validarDetail(detail)) return;
-    if (!validarCharacteristics(characteristics)) return;
-    if (!validarCategory(category)) return;
-    if (!validarPrice(price)) return;
-    if (!validarImg(img)) return;
-
-    const producto = {
-        productName: name,
-        brand,
-        award,
-        description,
-        detail,
-        characteristics,
-        category,
-        price: Number(price),
-        img
-    };
-
-    agregarProducto(producto);
-
-    alert("Producto registrado correctamente.");
-
-    window.location.href = "./products.html";
-
 });
 
+document.querySelector("#premio").addEventListener("input", validarAward);
+
 document.getElementById("btn-limpiarFormulario").addEventListener("click", e => (
-    formulario.reset()
-)
-);        
+    location.reload()
+));        
