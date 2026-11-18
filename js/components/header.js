@@ -12,21 +12,37 @@ export function renderHeader() {
 
     if (usuario === null) {
         zonaSesion = `
-        <a href="./login.html" id="btnInicioSesion" class="btn rounded-pill px-3">Iniciar Sesión</a>
+            <a href="./login.html"
+            id="btnInicioSesion"
+            class="btn rounded-pill px-3">
+                Iniciar Sesión
+            </a>
         `;
     } else {
         zonaSesion = `
-        <div class="dropdown">
-            <button class="btn rounded-pill px-3 dropdown-toggle" data-bs-toggle="dropdown">  
-            ${usuario.email}  
-            </button> 
-            <ul class="dropdown-menu">
-                <li>
-                    <button class="dropdown-item btn-cerrar-sesion">Cerrar sesión</button>
-                </li>
-            </ul>
-        </div>
-    `};
+            <div class="dropdown">
+                <button
+                    class="btn rounded-pill px-3 dropdown-toggle btn-usuario"
+                    type="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                >
+                    ${usuario.fullname.trim().split(/\s+/)[0]}
+                </button>
+
+                <ul class="dropdown-menu dropdown-menu-end">
+                    <li>
+                        <button
+                            class="dropdown-item btn-cerrar-sesion"
+                            type="button"
+                        >
+                            Cerrar sesión
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        `;
+    }
 
     header.innerHTML = `
     <nav class="navbar fixed-top navbar-expand-xl">

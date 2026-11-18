@@ -82,7 +82,7 @@ if (formularioLogin) {
         const datos = new FormData(formularioLogin);
         const correo = datos.get("email");
         const contrasena = datos.get("password");
-
+            /*
           // Guarda lo que responde cada validación (mensaje de error o "")
            const mensajeErrorCorreo = validarCorreo(correo);
            const mensajeErrorContrasena = validarContrasena(contrasena);
@@ -97,11 +97,11 @@ if (formularioLogin) {
                return;
            }
 
-
+            */
         // Consultar si los datos del usuario existen en registros
         const datosConsulta = {
-            correo: correo.trim(),
-            contrasena: contrasena.trim()
+            correo: correo.toLocaleLowerCase().trim(),
+            contrasena: contrasena
         }
 
         verificarUsuarioSesion(datosConsulta);
@@ -112,6 +112,32 @@ if (formularioLogin) {
             window.location.href = "index.html";
         }
     });
+}
+
+function mostrarAlerta() {
+    let mensaje = "";
+    switch (alerta) {
+        case 1:
+            mensaje = "Es necesario Registrarse";
+            break;
+        case 2:
+            mensaje = "El correo ingresado no se encuentra registrado";
+            break;
+        case 3:
+            mensaje = "La contraseña ingresada no coincide";
+            break;
+        default:
+            mensaje = "Error al iniciar sesión";
+            break;
+    }
+    const contenedor = document.querySelector(".container");
+    const alertaError = document.createElement("div");
+    alertaError.className = "alert alert-danger";
+    alertaError.textContent = mensaje;
+    contenedor.prepend(alertaError);
+    setTimeout(() =>{
+        alertaError.remove();
+    },3000);
 }
 
 function mostrarAlerta() {

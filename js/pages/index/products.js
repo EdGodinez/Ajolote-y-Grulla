@@ -16,15 +16,15 @@ function renderProductCard({ id, category, productName, price, img }) {
       <div class="position-relative overflow-hidden">
         <img src="${img}" alt="${productName}" class="w-100" loading="lazy" />
         <div class="position-absolute bottom-0 start-0 end-0 p-3 d-flex justify-content-center">
-          <button type="button" data-id="${id}"
-            class="btn btn-outline-secondary rounded-pill shadow fw-bold w-100 py-2 purchase-btn glass-effect btn-agregar-carrito">
-            Agregar al carrito +
+          <button type="button" data-id="${id}" class="btn-agregar-carrito purchase-btn shadow">
+            <i class="bi bi-bag-plus" aria-hidden="true"></i>
+            Agregar al carrito
           </button>
         </div>
       </div>
-      <div class="d-flex justify-content-between gap-3 py-3">
+      <div class="product-info d-flex justify-content-between gap-3 py-3">
         <div>
-          <p class="mb-1">${category}</p>
+          <span class="etiqueta etiqueta-categoria mb-2">${category}</span>
           <h3 class="h5">${productName}</h3>
         </div>
         <strong class="text-nowrap">$${price} MXN</strong>

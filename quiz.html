@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descubre si eres Ajolote o Grulla</title>
+    
+    <!-- Fuentes tipográficas -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+    
+    <!-- Enlace al archivo CSS -->
+    <link rel="stylesheet" href="./css/quiz.css">
+    
+    <!-- Librería externa para el confeti -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+
+    <main id="quiz-container">
+        <!-- Pantalla 1: Inicio -->
+        <section id="start-screen" class="screen active">
+            <h1 class="title">¿Eres Ajolote o Grulla?</h1>
+            <p>Descubre tu verdadera naturaleza espiritual respondiendo este test.</p>
+            <button id="start-btn" class="btn">Comenzar Quiz</button>
+        </section>
+
+        <!-- Pantalla 2: Preguntas -->
+        <section id="question-screen" class="screen">
+            <div class="progress-bar">
+                <div id="progress-fill"></div>
+            </div>
+            <p id="question-counter" class="text-muted">Pregunta 1 de 10</p>
+            <h2 id="question-text" class="question"></h2>
+            
+            <div class="options">
+                <button id="option-a" class="btn option-btn"></button>
+                <button id="option-b" class="btn option-btn"></button>
+            </div>
+            
+            <div class="navigation mt-3">
+                <button id="prev-btn" class="btn nav-btn" style="display: none;">Volver a la anterior</button>
+            </div>
+        </section>
+
+        <!-- Pantalla 3: Resultados y Celebración -->
+        <section id="result-screen" class="screen">
+            <h1 id="result-title" class="title"></h1>
+            <p id="result-text"></p>
+            
+            <!-- Tarjeta 3D -->
+            <div class="card-container">
+                <div class="card" id="result-card">
+                    <div class="card-front">
+                        <h3>Revelando tu espíritu...</h3>
+                    </div>
+                    <div class="card-back">
+                        <img id="result-image" src="" alt="Tu resultado">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Redirección automática -->
+            <div class="redirect-info mt-3">
+                <p>Regresando a la tienda principal en <span id="countdown">15</span> segundos...</p>
+                <a href="index.html" class="btn">Ir ahora a la tienda</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Enlace al archivo JavaScript -->
+    <script src="./js/quiz.js"></script>
+
+</body>

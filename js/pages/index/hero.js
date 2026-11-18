@@ -24,7 +24,6 @@ const HERO_SLIDES = [
     titleTag: "h2",
     paragraphs: [
       "¡Los Japanese Stationery Awards son el equivalente a los premios Óscar, pero para el mundo de la papelería en Japón!",
-      "Premian a esas joyas de ingeniería japonesa que hacen que organizar tus notas, estudiar o trabajar se sienta como un verdadero apapacho al corazón.",
     ],
     cta: { label: "Conoce más", href: "#about" },
     textCols: 6,
