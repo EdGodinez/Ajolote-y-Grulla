@@ -5,19 +5,19 @@ export function verificarUsuarioSesion(usuarioVerificar) {
     // Obtener usuarios registrados        
     const usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
     if(usuarios.length > 0){
-        console.log(usuarios[0]);
-        const correoExiste = usuarios.find(correo => correo.email === usuarioVerificar.correo);
-        if (correoExiste === undefined) {
+        const usuarioEncontrado = usuarios.find(user => user.email === usuarioVerificar.correo);
+        if (usuarioEncontrado === undefined) {
             alerta = 2;
         } else {
-            if (correoExiste.password === usuarioVerificar.contrasena ) {
+            if (usuarioEncontrado.password === usuarioVerificar.contrasena) {
                 const user = {
-                    id: correoExiste.id,
-                    fullname: correoExiste.fullname,
-                    email: correoExiste.email
+                    id: usuarioEncontrado.id,
+                    fullname: usuarioEncontrado.fullname,
+                    email: usuarioEncontrado.email
                 }
                 // Funcion para guardar sesion de usuario que esta correctamente logeado
                 userSesionActive(user);
+                alerta = 0;
             } else {
                 alerta = 3;
             }
