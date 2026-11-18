@@ -197,3 +197,4 @@ toggleToRegister(colLogin, colRegister, colOverlay);
 
 // Inicializar funcionalidad de registro
 import("./registro.js");
+import("./login.js");

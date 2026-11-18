@@ -1,6 +1,6 @@
 const formulario = document.getElementById("register-form");
 
-formulario.addEventListener("submit", (event) => {
+formulario.addEventListener("submit", async(event) => { // agregue async
     event.preventDefault();
 
     // Obtener datos del formulario
@@ -45,6 +45,43 @@ formulario.addEventListener("submit", (event) => {
     // Confirmar registro
     alert("Usuario registrado exitosamente.");
 
+    // Prueba para registrar usuarios en una base de datos en la nube -
+    // Trabaja en conjunto con recoveryPassword
+    await registrarUsuario(email, password);
+
     // Limpiar formulario
     formulario.reset();
 });
+
+
+
+/**
+ * Prueba con base de datos alojada en "Render"
+ * Solo para probar funcion de recovery password
+ * @param {*} email 
+ * @param {*} password 
+ */
+
+export async function registrarUsuario(email, password) {
+    try {
+        const respuesta = await fetch("https://ajolote-backend.onrender.com/api/registro", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ email, password })
+        });
+
+        const datos = await respuesta.json();
+
+        if (datos.ok) {
+            alert("Alerta: " + datos.mensaje);
+            
+        } else {
+            alert("Alerta: " + datos.mensaje);
+        }
+    } catch (error) {
+        console.error("Error de conexión:", error);
+        alert("No se pudo conectar con el servidor.");
+    }
+}

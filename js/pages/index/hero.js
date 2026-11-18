@@ -106,7 +106,7 @@ const renderSupportText = ({ lead, paragraphs = [] }) => `
   ${paragraphs.map((text) => `<p class="hero-text fw-bold mb-0">${text}</p>`).join("")}`;
 
 const renderCta = ({ label, href }) => `
-  <a class="btn btn-hero rounded-pill d-inline-flex align-items-center justify-content-center gap-3" href="${href}">
+  <a class="btn btn-sakura btn-hero rounded-pill d-inline-flex align-items-center justify-content-center gap-3" href="${href}">
     ${label} <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
   </a>`;
 
@@ -118,7 +118,7 @@ const renderCta = ({ label, href }) => `
 const SLIDE_LAYOUTS = {
   split: (slide) => `
     <div class="row align-items-center g-5 hero-slide">
-      <div class="col-12 col-lg-${slide.textCols} d-flex flex-column align-items-start hero-copy">
+      <div class="col-12 col-lg-${slide.textCols} d-flex flex-column align-items-start hero-copy position-relative z-1">
         ${optional(slide.eyebrow, (text) => `
           <p class="eyebrow d-flex align-items-center gap-2 mb-0"><span></span> ${text}</p>`)}
         ${optional(slide.kicker, (text) => `<p class="hero-lead mb-0">${text}</p>`)}
@@ -152,12 +152,12 @@ function renderSlide(slide, index) {
 
   return `
     <div class="carousel-item${index === 0 ? " active" : ""}"${optional(slide.interval, (ms) => ` data-bs-interval="${ms}"`)}>
-      <div class="container-fluid hero-container py-5">
-        ${layout(slide)}
-      </div>
       ${HERO_DECORATIONS.map(
         (kanji, i) => `<span class="hero-deco hero-deco--${i + 1} d-none d-lg-block" aria-hidden="true">${kanji}</span>`
       ).join("")}
+      <div class="container-fluid hero-container py-5">
+        ${layout(slide)}
+      </div>
     </div>`;
 }
 
