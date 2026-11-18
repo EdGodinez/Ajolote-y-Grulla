@@ -2,9 +2,6 @@ export let alerta = 0;
 
 // funcion para verificar usuario desde login
 export function verificarUsuarioSesion(usuarioVerificar) {
-
-    alerta = 0;
-
     // Obtener usuarios registrados        
     const usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
     if(usuarios.length > 0){
@@ -21,6 +18,7 @@ export function verificarUsuarioSesion(usuarioVerificar) {
                 }
                 // Funcion para guardar sesion de usuario que esta correctamente logeado
                 userSesionActive(user);
+                alerta = 0;
             } else {
                 alerta = 3;
             }
