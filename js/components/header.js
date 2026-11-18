@@ -1,3 +1,5 @@
+import {obtenerUsuarioLogueado, cerrarSesion} from "./sesion.js"
+
 export function renderHeader() {
   const header = document.getElementById("header");
 
@@ -5,6 +7,23 @@ export function renderHeader() {
 
   // Obtener la página actual
   const currentPage = window.location.pathname.split("/").pop() || "index.html";
+  let usuario = obtenerUsuarioLogueado();
+  let zonaSesion = "";
+
+    if (usuario === null){
+        zonaSesion = `<a href="./login.html" id="btnInicioSesion" class="btn rounded-pill px-3">Iniciar Sesión</a>`;
+    } else {
+        zonaSesion = `<div class="dropdown">
+         <button class="btn rounded-pill px-3 dropdown-toggle" data-bs-toggle="dropdown">  
+         ${usuario.nombre}  
+         </button> 
+        <ul class="dropdown-menu">
+            <li>
+                <button class="dropdown-item btn-cerrar-sesion">Cerrar sesión</button>
+            </li>
+        </ul>
+         </div>`
+    };
 
   header.innerHTML = `
         <nav class="navbar fixed-top navbar-expand-xl">
@@ -36,7 +55,7 @@ export function renderHeader() {
 <div class="d-flex align-items-center d-xl-none">
     <button id="btnMenu" class="btn navbar-toggler" type="button"  data-bs-toggle="offcanvas" data-bs-target="#offcanvasMenu" aria-controls="offcanvasMenu">
         <i class="navbar-toggler-icon"></i>
-    </button>
+    </button> 
 </div>
 
 
@@ -80,7 +99,7 @@ export function renderHeader() {
                             </a>
                         </li>
                         <li class="nav-item p-2 ms-auto">
-                            <a href="#" id="btnInicioSesion" class="btn rounded-pill px-3">Iniciar Sesión</a>
+                            ${zonaSesion}
                         </li>
                     </ul>
                 </div>
@@ -114,7 +133,7 @@ export function renderHeader() {
          <a type="button" href="#" id="carritoCompra" class="btn rounded-pill px-3"><i class="bi bi-cart2"></i></a>
      </li>
      <li class="nav-item p-2 ms-auto">
-         <a type="button" href="#" id="btnInicioSesion" class="btn rounded-pill px-3">Iniciar Sesión</i></a>
+         ${zonaSesion}
      </li>
                         <li class="nav-item p-2 ms-auto">
                             <a href="./index.html" class="nav-link ${
@@ -152,4 +171,11 @@ export function renderHeader() {
 </div>
 
     `;
+
+    let botonesCerrarSesion = document.querySelectorAll(".btn-cerrar-sesion");
+
+
+    botonesCerrarSesion.forEach(function (boton){
+        boton.addEventListener("click", cerrarSesion);
+    })
 }

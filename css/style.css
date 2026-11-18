@@ -20,11 +20,16 @@
 :root {
     /* Paleta de colores */
     --rosa-coral: #F85C70;
+    --rosa-coral-oscuro: #D24053;
+    --rosa-coral-claro: #F18694;
     --lila: #C9B7F0;
     --rosa-sakura: #F5A9C3;
     --menta: #B7E6DB;
     --azul-marino-intenso: #2E3855;
     --blanco-calido: #F9F6F0;
+
+    /* Degradados */
+    --degradado-hero: linear-gradient(90deg, var(--rosa-coral-oscuro) 0%, var(--rosa-coral) 25%, var(--rosa-coral-claro) 50%, var(--rosa-coral) 75%, var(--rosa-coral-oscuro) 100%);
 
     /* Tipografías */
     --fuente-encabezados: 'Poppins', sans-serif;
@@ -81,10 +86,6 @@ a {
   height: 1px;
 }
 
-#hero h1 {
-  font-size: clamp(58px, 7vw, 96px);
-}
-
 /*
 button {
    all: unset; 
@@ -104,20 +105,49 @@ h2 i {
   background-color: var(--lila);
 }
 
-.btn-info {
-  position: relative;
-  background-color: var(--rosa-coral);
-  border-color: var(--rosa-coral);
+
+/* ==========================================
+   BOTONES PRIMARIO Y SECUNDARIO
+   ========================================== */
+.btn-primary {
+  background-color: var(--rosa-sakura);
+  border-color: var(--rosa-sakura);
+  color: #2E3855;
   transform: translateY(5%);
   transition: all 0.3s ease-in-out;
 }
 
-.btn-info:hover {
+.btn-primary:hover {
   color: var(--blanco-calido);
   transform: translateY(0);
   background-color: var(--azul-marino-intenso);
   border-color: var(--azul-marino-intenso);
 }
+
+.btn-primary:active {
+    background-color: rgba(46, 56, 85, 0.850) !important;
+    border-color: var(--azul-marino-intenso) !important;
+}
+
+.btn-secondary {
+  background-color: transparent;
+  border: 3px solid var(--lila);
+  color: var(--lila);
+}
+
+.btn-secondary:hover {
+  color: #fff;
+  background-color: var(--lila);
+  border-color: var(--lila);
+}
+
+.btn-secondary:active {
+    background-color: var(--lila) !important;
+    border-color: var(--lila) !important;
+}
+
+
+
 
 
 

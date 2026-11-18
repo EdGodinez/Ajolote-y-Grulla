@@ -99,6 +99,15 @@ function crearFiltros(contenedor, opciones, claseFiltro, alSeleccionar) {
   });
 }
 
+// Si se llega desde otra página con ?parametro=valor, activa el filtro con ese nombre
+function activarFiltroDesdeUrl(contenedor, parametro) {
+  const valor = new URLSearchParams(window.location.search).get(parametro);
+  const boton = [...contenedor.querySelectorAll(".filtro")]
+    .find(filtro => filtro.textContent === valor);
+
+  boton?.click();
+}
+
 export function initCatalogo() {
   const contenedor = document.getElementById("lista-productos");
   const filtrosCategorias = document.getElementById("filtros-categorias");
@@ -152,6 +161,9 @@ export function initCatalogo() {
     caracteristicaActiva = caracteristica;
     filtrarProductos();
   });
+
+  activarFiltroDesdeUrl(filtrosCategorias, "categoria");
+  activarFiltroDesdeUrl(filtrosCharacteristics, "caracteristica");
 
   buscador.addEventListener("input", filtrarProductos);
 
