@@ -1,4 +1,3 @@
-
 const presentationcards = [
     {
         nombre: "Luis Enrique Jiménez Bernal",
@@ -188,34 +187,45 @@ export function renderTeamCards() {
             : `https://${miembro.linkedin}`;
 
         allCardsHTML += `
-            <article class="tarjeta-equipo">
-                <div class="card-left">
-                    <img src="${miembro.foto}" alt="Avatar de ${miembro.nombre}" class="avatar">
-                    <span class="team-badge">Bit Busters • Equipo 4</span>
-                </div>
-                <div class="card-right">
-                    <div class="card-info-top">
-                        <h2 class="card-name">${miembro.nombre}</h2>
-                        <h3 class="card-role">${miembro.rol}</h3>
-                        <p class="card-description">${miembro.descripcion}</p>
-                        <div class="skills-container">
-                            ${skillsHTML}
+            <article class="tarjeta-equipo" tabindex="0">
+                <div class="card-inner">
+                    <!-- CARA FRONTAL: Fotografía completa + Nombre grande abajo -->
+                    <div class="card-front">
+                        <img src="${miembro.foto}" alt="Foto de ${miembro.nombre}" class="avatar">
+                        <div class="card-front-overlay">
+                            <span class="front-accent-line"></span>
+                            <h2 class="front-name">${miembro.nombre}</h2>
                         </div>
                     </div>
 
-                    <div class="social-links">
-                        <a href="${miembro.github}" target="_blank" rel="noopener noreferrer" title="GitHub">
-                            <i class="bi bi-github"></i>
-                            <span>GitHub</span>
-                        </a>
-                        <a href="${linkedinUrl}" target="_blank" rel="noopener noreferrer" title="LinkedIn">
-                            <i class="bi bi-linkedin"></i>
-                            <span>LinkedIn</span>
-                        </a>
-                        <a href="mailto:${miembro.correoelectronico}" title="${miembro.correoelectronico}">
-                            <i class="bi bi-envelope-fill"></i>
-                            <span>Correo</span>
-                        </a>
+                    <!-- CARA TRASERA: Descripción, habilidades y redes -->
+                    <div class="card-back">
+                        <div class="card-back-header">
+                            <h2 class="card-name">${miembro.nombre}</h2>
+                            <h3 class="card-role">${miembro.rol}</h3>
+                        </div>
+
+                        <div class="card-back-body">
+                            <p class="card-description">${miembro.descripcion}</p>
+                            <div class="skills-container">
+                                ${skillsHTML}
+                            </div>
+                        </div>
+
+                        <div class="social-links">
+                            <a href="${miembro.github}" target="_blank" rel="noopener noreferrer" title="GitHub">
+                                <i class="bi bi-github"></i>
+                                <span>GitHub</span>
+                            </a>
+                            <a href="${linkedinUrl}" target="_blank" rel="noopener noreferrer" title="LinkedIn">
+                                <i class="bi bi-linkedin"></i>
+                                <span>LinkedIn</span>
+                            </a>
+                            <a href="mailto:${miembro.correoelectronico}" title="${miembro.correoelectronico}">
+                                <i class="bi bi-envelope-fill"></i>
+                                <span>Correo</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </article>
