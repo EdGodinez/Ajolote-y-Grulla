@@ -1,0 +1,37 @@
+.carousel-indicators [data-bs-target] {
+    width: .75rem;
+    height: .75rem;
+    cursor: pointer;
+    border: 1px solid #000;
+    border-radius: .75rem;
+    background-color: #0000;
+    flex: 0 auto;
+    padding: 0;
+}
+
+.carousel-indicators .active {
+    width: calc(.75rem * 2.5);
+    background-color: #000;
+    border-color: #000;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .carousel-indicators [data-bs-target] {
+        transition: opacity .6s ease, width .3s ease;
+    }
+}
+
+.carousel-drop-shrink .carousel-item {
+  opacity: 0;
+  transform: translateY(-25px);
+  transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+
+.carousel-drop-shrink .active.carousel-item-start,
+.carousel-drop-shrink .active.carousel-item-end {
+  opacity: 0;
+  transform: scale(0.85);
+  z-index: 1;
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
