@@ -18,13 +18,13 @@ const renderColLogin = () => {
               </p>
               <form method="post" class="d-grid gap-2" id="login-form">
                 <div class="username">
-                  <label for="email" class="form-label m-0"
+                  <label for="login-email" class="form-label m-0"
                     >Correo electrónico
                     <p class="eyebrow d-inline">*</p></label
                   >
                   <input
                     type="email"
-                    id="email"
+                    id="login-email"
                     name="email"
                     class="form-control"
                     autocomplete="email"
@@ -33,13 +33,13 @@ const renderColLogin = () => {
                   />
                 </div>
                 <div class="password">
-                  <label for="password" class="form-label m-0" 
+                  <label for="login-password" class="form-label m-0"
                     >Contraseña
                     <p class="eyebrow d-inline">*</p></label
                   >
                   <input
                     type="password"
-                    id="password"
+                    id="login-password"
                     name="password"
                     class="form-control"
                     autocomplete="current-password"
@@ -113,14 +113,14 @@ const renderColRegister = () => {
                   </div>
 
                   <div class="">
-                    <label for="email" class="form-label m-0"
+                    <label for="register-email" class="form-label m-0"
                       >Correo electrónico
                       <p class="eyebrow d-inline">*</p></label
                     >
                     <input
                       class="form-control"
                       type="email"
-                      id="email"
+                      id="register-email"
                       name="email"
                       autocomplete="email"
                       required
@@ -129,14 +129,14 @@ const renderColRegister = () => {
                   </div>
 
                   <div class="">
-                    <label for="password" class="form-label m-0"
+                    <label for="register-password" class="form-label m-0"
                       >Contraseña
                       <p class="eyebrow d-inline">*</p></label
                     >
                     <input
                       class="form-control"
                       type="password"
-                      id="password"
+                      id="register-password"
                       name="password"
                       autocomplete="new-password"
                       required
