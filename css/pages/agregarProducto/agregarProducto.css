@@ -7,6 +7,24 @@
     
 }
 
+/* --- Fondo general de la sección (estilo Catálogo con degradado superior) --- */
+.product-section {
+    min-height: 100vh;
+    background-color: #F8F4EC;
+    background-image:
+        linear-gradient(
+            to bottom,
+            #F8F4EC 0%,
+            rgba(248, 244, 236, 0.85) 12%,
+            rgba(248, 244, 236, 0) 30%
+        ),
+        /* Ajusta el nombre exacto y la extensión (.jpg, .png, .jpeg) de tu imagen */
+        url("/assets/images/home-agregarProducto/rose.jpg");
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
 /* --- Convertir los checkboxes de características en botones tipo "Pill" --- */
 
 /* Contenedor de las opciones para organizarlas en fila de forma flexible */
@@ -44,14 +62,24 @@
 
 /* Efecto al pasar el cursor por encima */
 #caracteristicas .form-check-label:hover {
-    background-color: #e9ecef;
+    background-color: #c994c2;
     border-color: #ced4da;
 }
 
 /* Estilo cuando el checkbox está seleccionado (cambia de color y resalta) */
 #caracteristicas .form-check-input:checked + .form-check-label {
     background-color: var(--menta,); /* Usa tu color coral o uno de acento */
-    color: #FAFAF7;
+    color: #3557a1;
     border-color: var(--menta);
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+/* --- Tarjeta principal del formulario (estilo tarjetas crema del Catálogo) --- */
+#form-agregar-producto {
+    background-color: rgba(219, 237, 243, 0.94);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-radius: 24px;
+    padding: 2.25rem;
+    box-shadow: 0 10px 30px rgba(38, 54, 83, 0.08);
+    border: 1px solid rgba(204, 18, 111, 0.459);
 }
