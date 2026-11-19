@@ -110,7 +110,6 @@ const presentationcards = [
         linkedin: "http://www.linkedin.com/in/alan-jair-cruz-arenas",
         correoelectronico: "cruz.arenas.alanjair@hotmail.com"
     },
-
     {
         nombre: "Kevin Adair Martinez Yañez",
         rol: "Desarrollador Fullstack - frontend & UI/UX • Scrum Master - Product Owner - QA- Tester - DevOps",
