@@ -60,8 +60,10 @@ function crearTarjeta(producto) {
         <div class="producto-info">
           <h3 class="producto-nombre">${producto.productName}</h3>
           <p class="producto-descripcion">${producto.description}</p>
-          <p class="producto-precio">$${producto.price} MXN</p>
-
+          <p class="producto-precio">${Number(producto.price).toLocaleString("es-MX", {
+              minimumFractionDigits: 2,
+              maximumFractionDigits: 2
+          })} MXN</p>
           <div class="producto-acciones">
             <button type="button" class="btn btn-primary rounded-pill py-3 mb-1" data-id="${producto.id}">
               <i class="bi bi-bag-plus"></i>

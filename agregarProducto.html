@@ -69,27 +69,55 @@
                         <!-- Nombre -->
                         <div class="col-md-6">
                             <label for="name" class="form-label">Nombre</label>
-                            <input type="text" class="form-control" id="name" name="name" maxlength="77" required>
-                            
-                            <div id="alerttrade" class="invalid-tooltip position-static mt-1" style="display: none;">
-                            </div>
-                        
-                            <div id="alertname" class="invalid-feedback" style="display: none;"></div>                
+
+                            <input
+                                type="text"
+                                class="form-control"
+                                id="name"
+                                name="name"
+                                maxlength="77"
+                                aria-describedby="error-name"
+                                required
+                            >
+
+                            <div id="error-name" class="invalid-feedback"></div>
+
                             <div class="d-flex justify-content-end mt-1">
-                                <small id="contadorName" class="text-muted" style="font-size: 0.75rem;">0/77</small>
+                                <small id="contadorName" class="text-muted">
+                                    0/77
+                                </small>
                             </div>
                         </div>
+
 
                         <!-- Marca -->
                         <div class="col-md-6">
                             <label for="brand" class="form-label">Marca</label>
-                            <input type="text" class="form-control" id="brand" name="brand" required>
+
+                            <input
+                                type="text"
+                                class="form-control"
+                                id="brand"
+                                name="brand"
+                                maxlength="50"
+                                aria-describedby="error-brand"
+                                required
+                            >
+
+                            <div id="error-brand" class="invalid-feedback"></div>
                         </div>
 
                         <!-- Categoría -->
                         <div class="col-md-6">
                             <label for="category" class="form-label">Categoría</label>
-                            <select class="form-select" id="category" name="category" required>
+
+                            <select
+                                class="form-select"
+                                id="category"
+                                name="category"
+                                aria-describedby="error-category"
+                                required
+                            >
                                 <option value="">Selecciona una categoría</option>
                                 <option value="Plumas y Lapiceros">Plumas y Lapiceros</option>
                                 <option value="Accesorios">Accesorios</option>
@@ -97,6 +125,8 @@
                                 <option value="Útiles">Útiles</option>
                                 <option value="Marcadores">Marcadores</option>
                             </select>
+
+                            <div id="error-category" class="invalid-feedback"></div>
                         </div>
 
                         <!-- Características -->
@@ -104,110 +134,176 @@
                             <label class="form-label">Características</label>
 
                             <div id="caracteristicas">
+
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox"
-                                           name="characteristics" value="Aesthetic" id="aesthetic">
+                                           name="characteristics" value="Aesthetic" id="aesthetic" aria-describedby="error-characteristics">
                                     <label class="form-check-label" for="aesthetic">Aesthetic</label>
                                 </div>
 
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox"
-                                           name="characteristics" value="Creativo" id="creativo">
+                                           name="characteristics" value="Creativo" id="creativo" aria-describedby="error-characteristics">
                                     <label class="form-check-label" for="creativo">Creativo</label>
                                 </div>
 
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox"
-                                           name="characteristics" value="Diseño inteligente" id="diseno-inteligente">
+                                           name="characteristics" value="Diseño inteligente" id="diseno-inteligente" aria-describedby="error-characteristics">
                                     <label class="form-check-label" for="diseno-inteligente">Diseño inteligente</label>
                                 </div>
 
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox"
-                                           name="characteristics" value="Diseño minimalista" id="diseno-minimalista">
+                                           name="characteristics" value="Diseño minimalista" id="diseno-minimalista" aria-describedby="error-characteristics">
                                     <label class="form-check-label" for="diseno-minimalista">Diseño minimalista</label>
                                 </div>
 
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox"
-                                           name="characteristics" value="Divertido" id="divertido">
+                                           name="characteristics" value="Divertido" id="divertido" aria-describedby="error-characteristics">
                                     <label class="form-check-label" for="divertido">Divertido</label>
                                 </div>
 
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox"
-                                           name="characteristics" value="Elegante" id="elegante">
+                                           name="characteristics" value="Elegante" id="elegante" aria-describedby="error-characteristics">
                                     <label class="form-check-label" for="elegante">Elegante</label>
                                 </div>
 
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox"
-                                           name="characteristics" value="Ergonómico" id="ergonomico">
+                                           name="characteristics" value="Ergonómico" id="ergonomico" aria-describedby="error-characteristics">
                                     <label class="form-check-label" for="ergonomico">Ergonómico</label>
                                 </div>
 
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox"
-                                           name="characteristics" value="Innovador" id="innovador">
+                                           name="characteristics" value="Innovador" id="innovador" aria-describedby="error-characteristics">
                                     <label class="form-check-label" for="innovador">Innovador</label>
                                 </div>
 
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox"
-                                           name="characteristics" value="Multifuncional" id="multifuncional">
+                                           name="characteristics" value="Multifuncional" id="multifuncional" aria-describedby="error-characteristics">
                                     <label class="form-check-label" for="multifuncional">Multifuncional</label>
                                 </div>
 
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox"
-                                           name="characteristics" value="No sabía que lo necesitaba" id="no-sabiia">
+                                           name="characteristics" value="No sabía que lo necesitaba" id="no-sabiia" aria-describedby="error-characteristics">
                                     <label class="form-check-label" for="no-sabiia">No sabía que lo necesitaba</label>
                                 </div>
 
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox"
-                                           name="characteristics" value="Original" id="original">
+                                           name="characteristics" value="Original" id="original" aria-describedby="error-characteristics">
                                     <label class="form-check-label" for="original">Original</label>
                                 </div>
 
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox"
-                                           name="characteristics" value="Practico" id="practico">
+                                           name="characteristics" value="Practico" id="practico" aria-describedby="error-characteristics">
                                     <label class="form-check-label" for="practico">Practico</label>
                                 </div>
                             </div>
+
+                            <div
+                                id="error-characteristics"
+                                class="text-danger small mt-2"
+                                role="alert"
+                                hidden
+                            ></div>
                         </div>
 
-                <!-- Premio -->
-                <div id="award-validation" class="col-md-6">
-                    <label for="premio" class="form-label">Premio (opcional)</label>
-                    <input type="text" class="form-control " id="premio" name="premio">   
-                </div>
+                        <!-- Premio -->
+                        <div class="col-md-6">
+                            <label for="award" class="form-label">
+                                Premio (opcional)
+                            </label>
+
+                            <input
+                                type="text"
+                                class="form-control"
+                                id="award"
+                                name="award"
+                                aria-describedby="error-award"
+                            >
+
+                            <div id="error-award" class="invalid-feedback"></div>
+                        </div>
 
                         <!-- Precio -->
                         <div class="col-md-6">
-                            <label for="precio" class="form-label">Precio</label>
-                            <input type="number" class="form-control" id="price"
-                                   name="price" min="0.01" step="0.01" required>
+                            <label for="price" class="form-label">Precio</label>
+
+                            <input
+                                type="number"
+                                class="form-control"
+                                id="price"
+                                name="price"
+                                min="0.01"
+                                step="0.01"
+                                aria-describedby="error-price"
+                                required
+                            >
+
+                            <div id="error-price" class="invalid-feedback"></div>
                         </div>
 
                         <!-- Imagen -->
                         <div class="col-12">
-                            <label for="imagen" class="form-label">Imagen (ruta o URL)</label>
-                            <input type="text" class="form-control" id="img"
-                                   name="img" placeholder="./assets/productos/img.jpg" required>
+                            <label for="img" class="form-label">
+                                Imagen (ruta o URL)
+                            </label>
+
+                            <input
+                                type="text"
+                                class="form-control"
+                                id="img"
+                                name="img"
+                                placeholder="./assets/productos/img.jpg"
+                                aria-describedby="error-img"
+                                required
+                            >
+
+                            <div id="error-img" class="invalid-feedback"></div>
                         </div>
 
                         <!-- Descripción -->
                         <div class="col-12">
-                            <label for="descripcion" class="form-label">Descripción</label>
-                            <textarea class="form-control" id="description" name="description" rows="2" required></textarea>
+                            <label for="description" class="form-label">
+                                Descripción
+                            </label>
+
+                            <textarea
+                                class="form-control"
+                                id="description"
+                                name="description"
+                                rows="2"
+                                maxlength="500"
+                                aria-describedby="error-description"
+                                required
+                            ></textarea>
+
+                            <div id="error-description" class="invalid-feedback"></div>
                         </div>
 
                         <!-- Detalle -->
                         <div class="col-12">
                             <label for="detail" class="form-label">Detalle</label>
-                            <textarea class="form-control" id="detail" name="detail" rows="5"></textarea>
+
+                            <textarea
+                                class="form-control"
+                                id="detail"
+                                name="detail"
+                                rows="5"
+                                maxlength="800"
+                                aria-describedby="error-detail"
+                                required
+                            ></textarea>
+
+                            <div id="error-detail" class="invalid-feedback"></div>
                         </div>
 
                         <!-- Botones -->
