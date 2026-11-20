@@ -1,15 +1,15 @@
 import { productos } from "./products.js";
+import { abreDetalle, clickDetalleProducto } from "./productoDetalle.js";
 
 const productosGuardados = JSON.parse(
-    localStorage.getItem("productosAgregados") || "[]"
+  localStorage.getItem("productosAgregados") || "[]",
 );
 
-productosGuardados.forEach(producto => {
-    if (!productos.some(p => Number(p.id) === Number(producto.id))) {
-        productos.push(producto);
-    }
+productosGuardados.forEach((producto) => {
+  if (!productos.some((p) => Number(p.id) === Number(producto.id))) {
+    productos.push(producto);
+  }
 });
-
 
 const TODOS = "Todos";
 
@@ -26,22 +26,28 @@ function normalizarTexto(texto) {
 
 // Pone primero la característica prioritaria y se queda solo con las primeras
 function seleccionarEtiquetas(characteristics) {
-  const prioritarias = characteristics.filter(c => c === CARACTERISTICA_PRIORITARIA);
-  const resto = characteristics.filter(c => c !== CARACTERISTICA_PRIORITARIA);
+  const prioritarias = characteristics.filter(
+    (c) => c === CARACTERISTICA_PRIORITARIA,
+  );
+  const resto = characteristics.filter((c) => c !== CARACTERISTICA_PRIORITARIA);
 
   return [...prioritarias, ...resto].slice(0, MAX_ETIQUETAS);
 }
 
 function crearEtiquetas(characteristics) {
   return seleccionarEtiquetas(characteristics)
-    .map(caracteristica => `<span class="producto-etiqueta">${caracteristica}</span>`)
+    .map(
+      (caracteristica) =>
+        `<span class="producto-etiqueta">${caracteristica}</span>`,
+    )
     .join("");
 }
 
 function crearTarjeta(producto) {
   return `
     <div class="col-6 col-md-4 col-lg-3">
-      <article class="producto-card h-100">
+      <a class="btn card border-0 rounded-5 p-3 h-100"      
+        data-id="${producto.id}">
 
         <div class="producto-etiquetas">
           ${crearEtiquetas(producto.characteristics)}
@@ -57,24 +63,21 @@ function crearTarjeta(producto) {
           <p class="producto-precio">$${producto.price} MXN</p>
 
           <div class="producto-acciones">
-            <button type="button" class="btn-agregar-carrito" data-id="${producto.id}">
+            <button type="button" class="btn btn-primary rounded-pill py-3 mb-1" data-id="${producto.id}">
               <i class="bi bi-bag-plus"></i>
               Agregar al carrito
-            </button>
-            <button type="button" class="btn-ver-mas" data-id="${producto.id}">
-              Ver más
             </button>
           </div>
         </div>
 
-      </article>
+      </a>
     </div>
   `;
 }
 
 // Genera un grupo de botones de filtro; sirve para categorías y características
 function crearFiltros(contenedor, opciones, claseFiltro, alSeleccionar) {
-  [TODOS, ...opciones].forEach(opcion => {
+  [TODOS, ...opciones].forEach((opcion) => {
     const boton = document.createElement("button");
     const esTodos = opcion === TODOS;
 
@@ -86,7 +89,7 @@ function crearFiltros(contenedor, opciones, claseFiltro, alSeleccionar) {
     boton.setAttribute("aria-pressed", String(esTodos));
 
     boton.addEventListener("click", () => {
-      contenedor.querySelectorAll(".filtro").forEach(btn => {
+      contenedor.querySelectorAll(".filtro").forEach((btn) => {
         const activo = btn === boton;
         btn.classList.toggle("activo", activo);
         btn.setAttribute("aria-pressed", String(activo));
@@ -102,8 +105,9 @@ function crearFiltros(contenedor, opciones, claseFiltro, alSeleccionar) {
 // Si se llega desde otra página con ?parametro=valor, activa el filtro con ese nombre
 function activarFiltroDesdeUrl(contenedor, parametro) {
   const valor = new URLSearchParams(window.location.search).get(parametro);
-  const boton = [...contenedor.querySelectorAll(".filtro")]
-    .find(filtro => filtro.textContent === valor);
+  const boton = [...contenedor.querySelectorAll(".filtro")].find(
+    (filtro) => filtro.textContent === valor,
+  );
 
   boton?.click();
 }
@@ -111,17 +115,30 @@ function activarFiltroDesdeUrl(contenedor, parametro) {
 export function initCatalogo() {
   const contenedor = document.getElementById("lista-productos");
   const filtrosCategorias = document.getElementById("filtros-categorias");
-  const filtrosCharacteristics = document.getElementById("filtros-characteristics");
+  const filtrosCharacteristics = document.getElementById(
+    "filtros-characteristics",
+  );
   const buscador = document.getElementById("buscar-producto");
   const mensaje = document.getElementById("sin-resultados");
 
-  if (!contenedor || !filtrosCategorias || !filtrosCharacteristics || !buscador || !mensaje) return;
+  if (
+    !contenedor ||
+    !filtrosCategorias ||
+    !filtrosCharacteristics ||
+    !buscador ||
+    !mensaje
+  )
+    return;
 
   let categoriaActiva = TODOS;
   let caracteristicaActiva = TODOS;
 
-  const categorias = [...new Set(productos.map(producto => producto.category))];
-  const characteristics = [...new Set(productos.flatMap(producto => producto.characteristics))];
+  const categorias = [
+    ...new Set(productos.map((producto) => producto.category)),
+  ];
+  const characteristics = [
+    ...new Set(productos.flatMap((producto) => producto.characteristics)),
+  ];
 
   function mostrarProductos(lista) {
     contenedor.innerHTML = lista.map(crearTarjeta).join("");
@@ -131,35 +148,64 @@ export function initCatalogo() {
   function filtrarProductos() {
     const texto = normalizarTexto(buscador.value);
 
-    const productosFiltrados = productos.filter(producto => {
+    const productosFiltrados = productos.filter((producto) => {
       const coincideCategoria =
         categoriaActiva === TODOS || producto.category === categoriaActiva;
 
       const coincideCaracteristica =
-        caracteristicaActiva === TODOS || producto.characteristics.includes(caracteristicaActiva);
+        caracteristicaActiva === TODOS ||
+        producto.characteristics.includes(caracteristicaActiva);
 
-      const textoProducto = normalizarTexto([
-        producto.productName,
-        producto.brand,
-        producto.description,
-        producto.detail,
-        ...producto.characteristics
-      ].join(" "));
+      const textoProducto = normalizarTexto(
+        [
+          producto.productName,
+          producto.brand,
+          producto.description,
+          producto.detail,
+          ...producto.characteristics,
+        ].join(" "),
+      );
 
-      return coincideCategoria && coincideCaracteristica && textoProducto.includes(texto);
+      return (
+        coincideCategoria &&
+        coincideCaracteristica &&
+        textoProducto.includes(texto)
+      );
     });
 
     mostrarProductos(productosFiltrados);
   }
 
-  crearFiltros(filtrosCategorias, categorias, "filtro-categoria", categoria => {
-    categoriaActiva = categoria;
-    filtrarProductos();
-  });
+  crearFiltros(
+    filtrosCategorias,
+    categorias,
+    "filtro-categoria",
+    (categoria) => {
+      categoriaActiva = categoria;
+      filtrarProductos();
+    },
+  );
 
-  crearFiltros(filtrosCharacteristics, characteristics, "filtro-caracteristica", caracteristica => {
-    caracteristicaActiva = caracteristica;
-    filtrarProductos();
+  crearFiltros(
+    filtrosCharacteristics,
+    characteristics,
+    "filtro-caracteristica",
+    (caracteristica) => {
+      caracteristicaActiva = caracteristica;
+      filtrarProductos();
+    },
+  );
+
+  contenedor.addEventListener("click", (e) => {
+    if (e.target.closest(".btn-primary")) return;
+
+    const tarjeta = e.target.closest(".card");
+
+    if (!tarjeta) return;
+
+    e.preventDefault();
+    const productId = Number(tarjeta.dataset.id);
+    abreDetalle(productId);
   });
 
   activarFiltroDesdeUrl(filtrosCategorias, "categoria");
@@ -168,4 +214,6 @@ export function initCatalogo() {
   buscador.addEventListener("input", filtrarProductos);
 
   filtrarProductos();
+
+  clickDetalleProducto();
 }
