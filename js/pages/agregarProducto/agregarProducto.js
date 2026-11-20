@@ -5,7 +5,7 @@ const catalogoProductos = productos;
 
 document.addEventListener("DOMContentLoaded", () => {
     const campoNombre = document.getElementById("name");
-    const campoMarca = document.getElementById("marca");
+    const campoMarca = document.getElementById("brand");
     const textoContador = document.getElementById("contadorName");
     const cajaErrorNombre = document.getElementById("alertname");
     const recuadroAlertaMarca = document.getElementById("alerttrade");
@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
             return {
                 esValido: false,
                 codigoError: "marcaRepetida",
-                mensaje: "Colocar marca en el siguiente recuadro"
+                mensaje: "Colocar marca en el siguiente recuadro"    
             };
         }
 
