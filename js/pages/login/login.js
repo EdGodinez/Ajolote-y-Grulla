@@ -4,10 +4,6 @@ import { verificarUsuarioSesion, alerta } from "./sesion.js";
 const formularioLogin = document.getElementById("login-form");
 const btnSubmitLogin = document.getElementById("btn-submit-login");
 
-/* Buttons de formulario de Register */
-const formularioRegister = document.getElementById("register-form");
-const btnSubmitRegister = document.getElementById("btn-submit-register");
-
 // Revisa el correo que escribió la persona.
 // Revisa que no esté vacío, que no tenga espacios y que tenga formato de
 // correo (algo, una arroba, un dominio y un punto).
