@@ -51,7 +51,7 @@ function mostrarAlerta(al) {
     }
     const contenedor = document.getElementById("btn-submit-login");
     const alertaError = document.createElement("div");
-    alertaError.className = "alert alert-danger text-end";
+    alertaError.className = "alert alert-danger text-center";
     alertaError.textContent = mensaje;
     contenedor.insertAdjacentElement("afterend",alertaError);
     setTimeout(() => {
@@ -123,7 +123,7 @@ function verificarPassword() {
     let pvalue = password.value.trim();
     let feedback = document.querySelector("#passwordLabel");
     // comprobar que el campo no quede vacio
-    if (pvalue != "") {
+    if (pvalue != "" && pvalue.length >= 8) {
         if (password.classList[1] === undefined) {
             password.classList.add("is-valid");
             const valid = document.createElement("p");
@@ -143,14 +143,14 @@ function verificarPassword() {
         if (password.classList[1] === undefined) {
             password.classList.add("is-invalid");
             const valid = document.createElement("p");
-            valid.textContent = "Campo inválido, es necesario rellenar campo";
+            valid.textContent = "Campo inválido. Es necesario rellenar campo, 8 caracteres mínimo";
             valid.className = "d-inline invalid-feedback";
             feedback.append(valid);
         } else {
             let notif = feedback.querySelectorAll("p");
             let textoAlert = notif[1];
             password.classList.replace(password.classList[1], "is-invalid");
-            textoAlert.textContent = "Campo inválido, es necesario rellenar campo";
+            textoAlert.textContent = "Campo inválido. Es necesario rellenar campo, 8 caracteres mínimo";
             textoAlert.classList.replace(textoAlert.classList[1], "invalid-feedback");
         }
         return false;
