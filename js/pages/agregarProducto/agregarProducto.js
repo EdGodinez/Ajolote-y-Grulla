@@ -150,9 +150,9 @@ function validarBrand(brand) {
 function validarAward() {
     const award = document.querySelector("#premio");
     const valor = award.value.trim();
-    const feedback = document.querySelector("#award-validation");
+    const feedback = document.querySelector("");
     if (award.value != "") {
-        // Reglas de validacion, minimo 10 caracteres reales 
+        // Reglas de validacion, minimo 5 caracteres reales 
         const reglas = /^(?=(?:.*\S){5}).+$/;
         if (reglas.test(valor)) {
             const val = feedback.querySelector("div");
@@ -171,7 +171,6 @@ function validarAward() {
             return true;
         } else {
             const val = feedback.querySelector("div");
-            console.log(val);
             if (val !== null) {
                 val.classList.replace("valid-feedback","invalid-feedback")
                 val.textContent = "Incorrecto";
