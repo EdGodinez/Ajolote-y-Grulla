@@ -15,7 +15,7 @@ const renderRecovery = () => {
               <span></span> パスワードをお忘れですか？
             </p>
             <h1>¿Olvidaste tu contraseña?</h1>
-            <p class="text-muted">Ingresa ########</p>
+            <p class="text-muted">Ingresa tu correo y se enviara un codigo para que restablescas tu contraseña.</p>
             <form method="post" class="w-75 d-grid gap-2" id="recovery-form">
               <div class="username">
                 <label for="email" class="form-label m-0"

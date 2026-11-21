@@ -1,4 +1,3 @@
-
 const presentationcards = [
     {
         nombre: "Luis Enrique Jiménez Bernal",
@@ -75,24 +74,6 @@ const presentationcards = [
         correoelectronico: "ruisc021@gmail.com"
     },
     {
-        nombre: "Alan Jair Cruz Arenas",
-        rol: "Desarrollador Fullstack - frontend & UI/UX • Scrum Master - Product Owner - QA- Tester - DevOps",
-        descripcion: "Desarrollador Full Stack Java Jr. con experiencia práctica en desarrollo de software, construcción de soluciones tecnológicas y resolución de problemas. Cuento con conocimientos en Java, Python, bases de datos y desarrollo web, además de experiencia en robótica, electrónica e infraestructura tecnológica.He liderado proyectos técnicos y equipos multidisciplinarios en competencias como FIRST y WRO, combinando programación, ingeniería y gestión de proyectos para desarrollar soluciones funcionales. Me interesa seguir creciendo en desarrollo de software, tecnología y soluciones de ingeniería.",
-        foto: "assets/team-photos/alan.jpeg",
-        Habilidad: [
-            { habilidad: "Figma", color: "var(--menta-pastel)" },
-            { habilidad: "HTML5 & CSS3", color: "var(--rosa-pastel)" },
-            { habilidad: "Bootstrap 5", color: "var(--lyla-pastel)" },
-            { habilidad: "JavaScript", color: "var(--menta-pastel)" },
-            { habilidad: "Java", color: "var(--rosa-pastel)" },
-            { habilidad: "SQL", color: "var(--rosa-pastel)" },
-            { habilidad: "Excel Avanzado", color: "var(--menta-pastel)" },
-        ],
-        github: "https://github.com/Alan-JC",
-        linkedin: "http://www.linkedin.com/in/alan-jair-cruz-arenas",
-        correoelectronico: "cruz.arenas.alanjair@hotmail.com"
-    },
-    {
         nombre: "Aída Alejandra Carvajal Aguado",
         rol: "Desarrollador Fullstack - frontend & UI/UX • Scrum Master - Product Owner - QA- Tester - DevOps",
         descripcion: "Como Desarrolladora Full Stack y Scrum Master, mi misión es asegurar que nuestro equipo trabaje con la misma armonía y fluidez que los trazos de una pluma de bambú. Para mí, tener bases técnicas sólidas en Java es tan indispensable como mantener un enfoque profundamente humano. Me apasiona coordinar a los Bit Busters fomentando la empatía, la comunicación abierta y la colaboración, asegurándome de que cada pieza del proyecto encaje perfectamente. Creo firmemente que la mejor tecnología se construye cuando las personas se sienten escuchadas y valoradas. Cuando no estoy facilitando ceremonias ágiles o revisando código, disfruto mucho de mi perrito Bosco y de la tranquilidad que me brinda la naturaleza.",
@@ -110,6 +91,24 @@ const presentationcards = [
         github: "https://github.com/aalecarvajal",
         linkedin: "www.linkedin.com/in/aalecarvajal",
         correoelectronico: "aidalecarvajal@gmail.com"
+    },
+    {
+        nombre: "Alan Jair Cruz Arenas",
+        rol: "Desarrollador Fullstack - frontend & UI/UX • Scrum Master - Product Owner - QA- Tester - DevOps",
+        descripcion: "Desarrollador Full Stack Java Jr. con experiencia práctica en desarrollo de software, construcción de soluciones tecnológicas y resolución de problemas. Cuento con conocimientos en Java, Python, bases de datos y desarrollo web, además de experiencia en robótica, electrónica e infraestructura tecnológica.He liderado proyectos técnicos y equipos multidisciplinarios en competencias como FIRST y WRO, combinando programación, ingeniería y gestión de proyectos para desarrollar soluciones funcionales. Me interesa seguir creciendo en desarrollo de software, tecnología y soluciones de ingeniería.",
+        foto: "assets/team-photos/alan.jpeg",
+        Habilidad: [
+            { habilidad: "Figma", color: "var(--menta-pastel)" },
+            { habilidad: "HTML5 & CSS3", color: "var(--rosa-pastel)" },
+            { habilidad: "Bootstrap 5", color: "var(--lyla-pastel)" },
+            { habilidad: "JavaScript", color: "var(--menta-pastel)" },
+            { habilidad: "Java", color: "var(--rosa-pastel)" },
+            { habilidad: "SQL", color: "var(--rosa-pastel)" },
+            { habilidad: "Excel Avanzado", color: "var(--menta-pastel)" },
+        ],
+        github: "https://github.com/Alan-JC",
+        linkedin: "http://www.linkedin.com/in/alan-jair-cruz-arenas",
+        correoelectronico: "cruz.arenas.alanjair@hotmail.com"
     },
     {
         nombre: "Kevin Adair Martinez Yañez",
@@ -188,34 +187,45 @@ export function renderTeamCards() {
             : `https://${miembro.linkedin}`;
 
         allCardsHTML += `
-            <article class="tarjeta-equipo">
-                <div class="card-left">
-                    <img src="${miembro.foto}" alt="Avatar de ${miembro.nombre}" class="avatar">
-                    <span class="team-badge">Bit Busters • Equipo 4</span>
-                </div>
-                <div class="card-right">
-                    <div class="card-info-top">
-                        <h2 class="card-name">${miembro.nombre}</h2>
-                        <h3 class="card-role">${miembro.rol}</h3>
-                        <p class="card-description">${miembro.descripcion}</p>
-                        <div class="skills-container">
-                            ${skillsHTML}
+            <article class="tarjeta-equipo" tabindex="0">
+                <div class="card-inner">
+                    <!-- CARA FRONTAL: Fotografía completa + Nombre grande abajo -->
+                    <div class="card-front">
+                        <img src="${miembro.foto}" alt="Foto de ${miembro.nombre}" class="avatar">
+                        <div class="card-front-overlay">
+                            <span class="front-accent-line"></span>
+                            <h2 class="front-name">${miembro.nombre}</h2>
                         </div>
                     </div>
 
-                    <div class="social-links">
-                        <a href="${miembro.github}" target="_blank" rel="noopener noreferrer" title="GitHub">
-                            <i class="bi bi-github"></i>
-                            <span>GitHub</span>
-                        </a>
-                        <a href="${linkedinUrl}" target="_blank" rel="noopener noreferrer" title="LinkedIn">
-                            <i class="bi bi-linkedin"></i>
-                            <span>LinkedIn</span>
-                        </a>
-                        <a href="mailto:${miembro.correoelectronico}" title="${miembro.correoelectronico}">
-                            <i class="bi bi-envelope-fill"></i>
-                            <span>Correo</span>
-                        </a>
+                    <!-- CARA TRASERA: Descripción, habilidades y redes -->
+                    <div class="card-back">
+                        <div class="card-back-header">
+                            <h2 class="card-name">${miembro.nombre}</h2>
+                            <h3 class="card-role">${miembro.rol}</h3>
+                        </div>
+
+                        <div class="card-back-body">
+                            <p class="card-description">${miembro.descripcion}</p>
+                            <div class="skills-container">
+                                ${skillsHTML}
+                            </div>
+                        </div>
+
+                        <div class="social-links">
+                            <a href="${miembro.github}" target="_blank" rel="noopener noreferrer" title="GitHub">
+                                <i class="bi bi-github"></i>
+                                <span>GitHub</span>
+                            </a>
+                            <a href="${linkedinUrl}" target="_blank" rel="noopener noreferrer" title="LinkedIn">
+                                <i class="bi bi-linkedin"></i>
+                                <span>LinkedIn</span>
+                            </a>
+                            <a href="mailto:${miembro.correoelectronico}" title="${miembro.correoelectronico}">
+                                <i class="bi bi-envelope-fill"></i>
+                                <span>Correo</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </article>
