@@ -1,6 +1,7 @@
 import { productos } from "../products/products.js";
 import { renderSectionHeader } from "./section-header.js";
 import { abreDetalle } from "../products/productoDetalle.js";
+import { formatearPrecio } from "../../utils/formatoPrecio.js";
 
 const CARACTERISTICA_DESTACADA = "No sabía que lo necesitaba";
 
@@ -31,7 +32,7 @@ function renderProductCard({ id, category, productName, price, img }) {
             <button type="button" data-id="${id}" class="btn-ver-detalle producto-nombre stretched-link border-0 bg-transparent p-0 text-start">${productName}</button>
           </h3>
         </div>
-        <strong class="text-nowrap">$${price} MXN</strong>
+        <strong class="text-nowrap">${formatearPrecio(price)}</strong>
       </div>
     </article>`;
 }

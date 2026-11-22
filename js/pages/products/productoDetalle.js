@@ -1,4 +1,5 @@
 import { productos } from "./products.js";
+import { formatearPrecio } from "../../utils/formatoPrecio.js";
 
 let dlg;
 
@@ -58,18 +59,15 @@ function abreDetalle(id) {
       <div class="detalle-texto col-12 col-md-7 pt-3 px-5">
         <p class="detalle-marca text-muted">${p.brand} </p>
         <span class="etiqueta etiqueta-menta mb-2">${p.category}</span>
-        <p class="detalle-precio" style="color: var(--azul-marino-intenso); font-weight: 700; font-size: 1.5rem">$${p.price.toFixed(2)}</p>
+        <p class="producto-precio">${formatearPrecio(p.price)}</p>
         <p class="">${p.detail}</p>
         <ul class="d-flex flex-wrap list-unstyled px-0 gap-2">${p.characteristics.map((t) => `<li class="etiqueta etiqueta-categoria">${t}</li>`).join("")}</ul>
-        <div class="d-grid">
-        <button type="button" class="btn btn-primary rounded-pill py-3 mb-1" data-id="${p.id}">
-            <i class="bi bi-bag-plus"></i>
-             Agregar al carrito
+        <button type="button" data-id="${p.id}" class="btn-agregar-carrito py-3 mb-1">
+          <i class="bi bi-bag-plus" aria-hidden="true"></i>
+          Agregar al carrito
         </button>
       </div>
-    </div>
-    `;
-  dlg.dataset.id = id;
+    </div>`;
   dlg.showModal();
 }
 
