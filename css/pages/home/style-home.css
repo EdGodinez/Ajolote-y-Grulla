@@ -19,7 +19,7 @@ html {
 /* NAVEGACIÓN DENTRO DE LA PÁGINA - FIN */
 
 
-/* BOTÓN ROSA SAKURA (hero y pick del mes); el hover es azul marino, nunca coral */
+/* BOTÓN ROSA SAKURA (hero); el hover es azul marino, nunca coral */
 .btn-sakura {
   --bs-btn-bg: var(--rosa-sakura);
   --bs-btn-color: var(--azul-marino-intenso);
