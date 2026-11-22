@@ -1,5 +1,5 @@
 import { productos } from "./products.js";
-import { abreDetalle, clickDetalleProducto } from "./productoDetalle.js";
+import { abreDetalle } from "./productoDetalle.js";
 
 const productosGuardados = JSON.parse(
   localStorage.getItem("productosAgregados") || "[]",
@@ -216,6 +216,4 @@ export function initCatalogo() {
   buscador.addEventListener("input", filtrarProductos);
 
   filtrarProductos();
-
-  clickDetalleProducto();
 }
