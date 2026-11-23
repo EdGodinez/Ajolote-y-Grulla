@@ -108,6 +108,18 @@ h2 i {
   background-color: var(--lila);
 }
 
+/* Ondas sobre menta (inicio y contacto) */
+.background-ondas {
+  background:
+    url("../assets/images/fondo-ondas.png") center / cover,
+    var(--menta);
+}
+
+/* Degradado blanco cálido detrás de los encabezados de página (catálogo y contacto) */
+.encabezado-degradado {
+  background: linear-gradient(to bottom, var(--blanco-calido) 40%, transparent);
+}
+
 
 /* ==========================================
    BOTONES PRIMARIO Y SECUNDARIO

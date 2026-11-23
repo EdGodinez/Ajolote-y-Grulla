@@ -401,13 +401,6 @@ html {
 /* ESTILOS DEL BLOG - FIN */
 
 
-/* SECCIONES SOBRE FONDO DE ONDAS (no sabía que lo necesitaba, pick del mes y categorías) */
-.background-ondas {
-  background:
-    url("../../../assets/images/fondo-ondas.png") center / cover,
-    var(--menta);
-}
-
 .section-card {
   padding: clamp(1.5rem, 4vw, 3.5rem);
   border-radius: 2rem;

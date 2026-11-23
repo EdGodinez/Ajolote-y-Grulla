@@ -1,8 +1,10 @@
 
 .contact-section {
-    background-color: var(--blanco-calido);
     min-height: 100vh;
-    padding-top: 130px;
+}
+
+.contact-encabezado {
+    padding: 60px 0 24px;
 }
 
 
@@ -11,7 +13,6 @@
     color: var(--rosa-coral);
     letter-spacing: -1px;
     font-family: var(--fuente-encabezados);
-    font-style: italic !important;
 }
 
 .contact-description {
@@ -183,12 +184,6 @@ a.contact-highlight:hover {
 
     .contact-location-card {
         grid-column: 1 / -1;
-    }
-}
-
-@media (max-width: 991px) {
-    .contact-section {
-        padding-top: 2rem;
     }
 }
 
