@@ -9,7 +9,7 @@ formulario.addEventListener("submit", async (e) => {
     const nuevaPassword = document.getElementById("nuevaPassword").value.trim();
 
     if (!token) {
-        alert("El token de recuperación no es válido o falta en el enlace.");
+        alert("El enlace ha expirado, favor de intentalo nuevamente");
         return;
     }
 
