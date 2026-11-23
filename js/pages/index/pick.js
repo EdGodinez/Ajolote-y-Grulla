@@ -1,5 +1,7 @@
 import { productos } from "../products/products.js";
 import { renderSectionHeader } from "./section-header.js";
+import { abreDetalle } from "../products/productoDetalle.js";
+import { formatearPrecio } from "../../utils/formatoPrecio.js";
 
 /**
  * Producto del mes. Para cambiarlo, basta con poner otro id y su imagen o video
@@ -26,7 +28,8 @@ const PICK_MEDIA = {
 
 /**
  * Renderiza la sección del pick del mes con la información del producto tomada de products.js.
- * El botón lleva la clase btn-agregar-carrito y el data-id del producto para conectarlo con el carrito.
+ * El botón de carrito lleva la clase btn-agregar-carrito y el data-id del producto para conectarlo con el carrito;
+ * "Ver más" abre el detalle del producto.
  *
  * @export
  * @returns {void} No retorna ningún valor.
@@ -44,13 +47,23 @@ export function renderPickOfTheMonth() {
         ${renderSectionHeader({ eyebrow: "NUESTRO PICK DEL MES", title })}
         <p class="pick-text fw-bold">${producto.description}</p>
         <p class="pick-text fw-bold">${producto.detail}</p>
-        <button type="button" data-id="${producto.id}"
-          class="btn btn-sakura rounded-pill px-4 py-2 mt-2 fw-bold text-uppercase btn-agregar-carrito">
-          Agregar al carrito <i class="bi bi-bag-plus ms-1" aria-hidden="true"></i>
-        </button>
+        <p class="producto-precio">${formatearPrecio(producto.price)}</p>
+        <div class="d-flex flex-wrap gap-3 mt-2">
+          <button type="button" data-id="${producto.id}" class="btn-agregar-carrito w-auto px-4">
+            <i class="bi bi-bag-plus" aria-hidden="true"></i>
+            Agregar al carrito
+          </button>
+          <button type="button" class="btn btn-secondary rounded-pill px-4 btn-ver-detalle">
+            Ver más
+          </button>
+        </div>
       </div>
       <div class="col-12 col-lg-7">
         ${PICK_MEDIA[media.type](media, producto.productName)}
       </div>
     </div>`;
+
+  pickSection
+    .querySelector(".btn-ver-detalle")
+    .addEventListener("click", () => abreDetalle(producto.id));
 }
