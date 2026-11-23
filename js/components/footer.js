@@ -68,7 +68,7 @@ export function renderFooter() {
                     &copy; 2026 Ajolote y Grulla. Todos los derechos reservados.
                 </p>
             </div>
-        </div>
+        </div> 
     `;
 
     footer.innerHTML = footerHTML;
