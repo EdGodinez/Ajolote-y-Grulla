@@ -12,25 +12,32 @@ if (formularioLogin) {
     document.querySelector("#login-password").addEventListener("keyup", verificarPassword);
 
     formularioLogin.addEventListener("submit", (event) => {
-        event.preventDefault(); // Evita que la página se recargue
-        let emailValido = verificarEmail();
-        let passwordValido = verificarPassword();
-        if (emailValido && passwordValido) {
-            const datosConsulta = {
-                correo: correo.toLocaleLowerCase().trim(),
-                contrasena: contrasena
-            }
-            verificarUsuarioSesion(datosConsulta);
-            if (alerta != 0) {
-                mostrarAlerta(alerta);
-            } else {
-                window.location.href = "index.html";
-            }
-        } else{
-            mostrarAlerta(4);
-        }
+  event.preventDefault();
 
-    });
+  const emailValido = verificarEmail();
+  const passwordValido = verificarPassword();
+
+  if (!emailValido || !passwordValido) {
+    mostrarAlerta(4);
+    return;
+  }
+
+  const correo = document.getElementById("login-email").value;
+  const contrasena = document.getElementById("login-password").value;
+
+  const datosConsulta = {
+    correo: correo.trim().toLowerCase(),
+    contrasena: contrasena
+  };
+
+  verificarUsuarioSesion(datosConsulta);
+
+  if (alerta !== 0) {
+    mostrarAlerta(alerta);
+  } else {
+    window.location.href = "index.html";
+  }
+});
 }
 //Alerta general de logueo
 function mostrarAlerta(al) {
@@ -94,7 +101,7 @@ function verificarEmail() {
                 let notif = feedback.querySelectorAll("p");
                 let textoAlert = notif[1];
                 email.classList.replace(email.classList[1], "is-invalid");
-                textoAlert.textContent = "Campo inválido";
+                textoAlert.textContent = "Formato de correo electronico invalido ";
                 textoAlert.classList.replace(textoAlert.classList[1], "invalid-feedback");
 
             }

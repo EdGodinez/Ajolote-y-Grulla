@@ -6,7 +6,7 @@ const colOverlay = document.getElementById("col-overlay");
 
 const renderColLogin = () => {
   colLogin.innerHTML += `
-    
+
   <div class="formularios">
     <p class="eyebrow d-flex align-items-center gap-2 m-2">
       <span></span> BIENVENIDO(A)
@@ -19,9 +19,9 @@ const renderColLogin = () => {
       <div class="username">
         <label id="emailLabel" for="login-email" class="form-label m-0" >
           Correo electrónico
-          <p class="eyebrow d-inline">*</p> 
+          <p class="eyebrow d-inline">*</p>
         </label>
-                  
+
         <input type="email" id="login-email" name="login-email" class="form-control" autocomplete="email" placeholder="Ingresa tu correo" required>
       </div>
       <div class="password">
@@ -37,9 +37,9 @@ const renderColLogin = () => {
       <button type="submit" class="btn btn-primary w-100" id="btn-submit-login" >
         Iniciar sesión
       </button>
-      
+
       <div class=" text-muted d-flex justify-content-between align-items-center eyebrow-gray" >
-        <span class="w-100"></span>            
+        <span class="w-100"></span>
         <p class="text-nowrap px-2 m-0">¿Aun no tienes una cuenta?</p>
         <span class="w-100"></span>
       </div>
@@ -67,7 +67,7 @@ const renderColRegister = () => {
               <form method="post" id="register-form">
                 <div class="d-grid gap-2">
                   <div class="">
-                    <label for="fullname" class="form-label m-0">
+                    <label id="fullnameLabel" for="fullname" class="form-label m-0">
                     Nombre Completo
                       <p class="eyebrow d-inline">*</p>
                     </label>
@@ -83,7 +83,7 @@ const renderColRegister = () => {
                   </div>
 
                   <div class="">
-                    <label for="register-email" class="form-label m-0"
+                    <label id="registerEmailLabel" for="register-email" class="form-label m-0"
                       >Correo electrónico
                       <p class="eyebrow d-inline">*</p></label
                     >
@@ -98,8 +98,27 @@ const renderColRegister = () => {
                     />
                   </div>
 
+                  <div>
+                    <label id="phoneLabel" for="register-phone" class="form-label m-0">
+                      Número telefónico
+                      <span class="eyebrow d-inline">*</span>
+                    </label>
+
+                    <input
+                      class="form-control"
+                      type="tel"
+                      id="register-phone"
+                      name="phone"
+                      autocomplete="tel-national"
+                      inputmode="numeric"
+                      maxlength="10"
+                      placeholder="Ingresa tu número telefónico"
+                      required
+                    />
+                  </div>
+
                   <div class="">
-                    <label for="register-password" class="form-label m-0"
+                    <label id="registerPasswordLabel" for="register-password" class="form-label m-0"
                       >Contraseña
                       <p class="eyebrow d-inline">*</p></label
                     >
@@ -115,7 +134,7 @@ const renderColRegister = () => {
                   </div>
 
                   <div class="">
-                    <label for="confirm-password" class="form-label m-0"
+                    <label id="confirmPasswordLabel" for="confirm-password" class="form-label m-0"
                       >Confirmar contraseña
                       <p class="eyebrow d-inline">*</p></label
                     >
