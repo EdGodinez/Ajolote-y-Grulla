@@ -1,8 +1,10 @@
 
 .contact-section {
-    background-color: var(--blanco-calido);
     min-height: 100vh;
-    padding-top: 130px;
+}
+
+.contact-encabezado {
+    padding: 60px 0 24px;
 }
 
 
@@ -11,7 +13,6 @@
     color: var(--rosa-coral);
     letter-spacing: -1px;
     font-family: var(--fuente-encabezados);
-    font-style: italic !important;
 }
 
 .contact-description {
@@ -19,12 +20,12 @@
     font-size: 1.1rem;
 }
 
-/* Distribución */
+/* Distribución: filas de título, subtítulo y contenido; la última (1fr) absorbe la altura extra del formulario */
 .contact-grid {
     display: grid;
     grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-rows: auto auto auto 1fr;
     gap: 20px;
-    align-items: start;
 }
 
 /* Tarjetas */
@@ -33,19 +34,27 @@
 .contact-location-card {
     min-width: 0;
     border-radius: 12px;
+    background-color: var(--blanco-calido);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
 }
 
+/* El formulario conserva su propia altura */
 .contact-card {
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+    grid-row: span 4;
+    align-self: start;
 }
 
-.contact-info-card {
-    background-color: rgba(248, 92, 112, 0.07);
-}
-
+/* Información y ubicación comparten filas (subgrid): misma altura y encabezados alineados */
+.contact-info-card,
 .contact-location-card {
-    background-color: #fff;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+    display: grid;
+    grid-row: span 3;
+    grid-template-rows: subgrid;
+    row-gap: 0;
+}
+
+.contact-card-cuerpo {
+    align-self: center;
 }
 
 .contact-grid h2 {
@@ -88,23 +97,12 @@
     color: var(--rosa-coral);
 }
 
-/* Botón */
+/* Botón: colores de .btn-primary (style.css); aquí solo su acomodo */
 .contact-button {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     min-width: 180px;
-    background-color: var(--rosa-coral);
-    color: #fff;
-    border: none;
-    border-radius: 7px;
-    transition: transform 0.2s ease, background-color 0.2s ease;
-}
-
-.contact-button:hover {
-    background-color: #e94f63;
-    color: #fff;
-    transform: translateY(-2px);
 }
 
 /* Información de contacto */
@@ -183,12 +181,6 @@ a.contact-highlight:hover {
 
     .contact-location-card {
         grid-column: 1 / -1;
-    }
-}
-
-@media (max-width: 991px) {
-    .contact-section {
-        padding-top: 2rem;
     }
 }
 

@@ -19,7 +19,7 @@ html {
 /* NAVEGACIÓN DENTRO DE LA PÁGINA - FIN */
 
 
-/* BOTÓN ROSA SAKURA (hero y pick del mes); el hover es azul marino, nunca coral */
+/* BOTÓN ROSA SAKURA (hero); el hover es azul marino, nunca coral */
 .btn-sakura {
   --bs-btn-bg: var(--rosa-sakura);
   --bs-btn-color: var(--azul-marino-intenso);
@@ -400,13 +400,6 @@ html {
 
 /* ESTILOS DEL BLOG - FIN */
 
-
-/* SECCIONES SOBRE FONDO DE ONDAS (no sabía que lo necesitaba, pick del mes y categorías) */
-.background-ondas {
-  background:
-    url("../../../assets/images/fondo-ondas.png") center / cover,
-    var(--menta);
-}
 
 .section-card {
   padding: clamp(1.5rem, 4vw, 3.5rem);

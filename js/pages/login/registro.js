@@ -1,87 +1,105 @@
+
+import {
+  iniciarValidacionesRegistro,
+  validarFormularioRegistro
+} from "./validacionesRegistro.js";
+
+iniciarValidacionesRegistro();
+
 const formulario = document.getElementById("register-form");
 
-formulario.addEventListener("submit", async(event) => { // agregue async
+if (formulario) {
+  formulario.addEventListener("submit", async (event) => {
     event.preventDefault();
 
-    // Obtener datos del formulario
+    if (!validarFormularioRegistro()) return;
+
     const datos = new FormData(formulario);
 
     const fullname = datos.get("fullname").trim();
     const email = datos.get("email").trim().toLowerCase();
     const password = datos.get("password");
-    const confirmPassword = datos.get("confirm-password");
 
-    // Validar contraseñas
-    if (password !== confirmPassword) {
-        alert("Las contraseñas no coinciden. Por favor, revísalas.");
-        return;
-    }
-
-    // Obtener usuarios registrados
     const usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
 
-    // Verificar si el correo ya existe
-    const existeUsuario = usuarios.some(usuario => usuario.email === email);
+    const existeUsuario = usuarios.some(
+      usuario => usuario.email === email
+    );
 
     if (existeUsuario) {
-        alert("Este correo electrónico ya está registrado.");
-        return;
+      mostrarErrorRegistro("Este correo electrónico ya está registrado.");
+      return;
     }
 
-    // Crear objeto usuario
     const nuevoUsuario = {
-        id: crypto.randomUUID(),
-        fullname: fullname,
-        email: email,
-        password: password
+      id: crypto.randomUUID(),
+      fullname,
+      email,
+      password
     };
 
-    // Agregar usuario al arreglo
     usuarios.push(nuevoUsuario);
-
-    // Guardar en localStorage
     localStorage.setItem("usuarios", JSON.stringify(usuarios));
 
-    // Confirmar registro
-    alert("Usuario registrado exitosamente.");
-
-    // Prueba para registrar usuarios en una base de datos en la nube -
-    // Trabaja en conjunto con recoveryPassword
+    // Prueba de registro en Render para recuperación de contraseña
     await registrarUsuario(email, password);
 
-    // Limpiar formulario
+    // Limpiar formulario y validaciones
     formulario.reset();
-});
 
+    formulario.querySelectorAll(".form-control").forEach(campo => {
+      campo.classList.remove("is-valid", "is-invalid");
+    });
 
+    formulario.querySelectorAll(".registro-feedback").forEach(mensaje => {
+      mensaje.remove();
+    });
 
-/**
- * Prueba con base de datos alojada en "Render"
- * Solo para probar funcion de recovery password
- * @param {*} email 
- * @param {*} password 
- */
+    // Mostrar formulario Login
+    document.getElementById("btn-toggle-register")?.click();
+  });
+}
+
+function mostrarErrorRegistro(mensaje) {
+  let alerta = formulario.querySelector(".alert-registro");
+
+  if (!alerta) {
+    alerta = document.createElement("div");
+    alerta.className = "alert alert-danger text-center alert-registro";
+    document.getElementById("btn-submit-register").after(alerta);
+  }
+
+  alerta.textContent = mensaje;
+}
 
 export async function registrarUsuario(email, password) {
-    try {
-        const respuesta = await fetch("https://ajolote-backend.onrender.com/api/registro", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({ email, password })
-        });
+  try {
+    const respuesta = await fetch(
+      "https://ajolote-backend.onrender.com/api/registro",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ email, password })
+      }
+    );
 
-        const datos = await respuesta.json();
-
-        if (datos.ok) {
-            alert("Alerta: " + datos.mensaje);
-            
-        } else {
-            alert("Alerta: " + datos.mensaje);
-        }
-    } catch (error) {
-        console.error("Error de conexión:", error);
-        alert("No se pudo conectar con el servidor.");
+    if (!respuesta.ok) {
+      console.error("Error al registrar usuario en Render");
+      return false;
     }
+
+    const datos = await respuesta.json();
+
+    if (!datos.ok) {
+      console.error(datos.mensaje);
+      return false;
+    }
+
+    return true;
+  } catch (error) {
+    console.error("Error de conexión:", error);
+    return false;
+  }
 }
