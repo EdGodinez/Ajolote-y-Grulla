@@ -5,10 +5,9 @@ export function renderContact() {
     if (!contact) return;
 
     contact.innerHTML = `
-        <section class="contact-section py-5">
-            <div class="container">
-
-                <div class="mb-4">
+        <section class="contact-section background-ondas pb-5">
+            <div class="contact-encabezado encabezado-degradado">
+                <div class="container">
                     <h1 class="display-4 fw-bold contact-title">
                         Contáctanos
                     </h1>
@@ -18,6 +17,9 @@ export function renderContact() {
                         Estamos aquí para ayudarte.
                     </p>
                 </div>
+            </div>
+
+            <div class="container">
 
                 <div class="contact-grid">
 
