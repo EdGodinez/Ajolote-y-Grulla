@@ -1,3 +1,6 @@
+body {
+  --color-ondas: var(--lila);
+}
 
 .eyebrow-gray {
     padding: .8rem 0;

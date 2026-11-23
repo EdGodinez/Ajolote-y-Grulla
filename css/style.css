@@ -105,11 +105,12 @@ h2 i {
   background-color: var(--lila);
 }
 
-/* Ondas sobre menta (inicio y contacto) */
+/* Ondas sobre un color de fondo: menta por defecto; cada página puede cambiarlo con --color-ondas */
 .background-ondas {
-  background:
-    url("../assets/images/fondo-ondas.png") center / cover,
-    var(--menta);
+  background-image: url("../assets/images/fondo-ondas.png");
+  background-position: center;
+  background-size: cover;
+  background-color: var(--color-ondas, var(--menta));
 }
 
 /* Degradado blanco cálido detrás de los encabezados de página (catálogo y contacto) */
