@@ -2,6 +2,11 @@ body {
   --color-ondas: var(--lila);
 }
 
+/* Titulares de iniciar sesión y registro */
+.formularios h1 {
+  color: var(--azul-marino-intenso);
+}
+
 .eyebrow-gray {
     padding: .8rem 0;
     font-size: 13px !important;
