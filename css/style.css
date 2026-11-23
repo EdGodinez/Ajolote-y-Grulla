@@ -13,6 +13,9 @@
 /* Header */
 @import url("./components/header/header.css");
 
+/* Detalle de producto (modal) */
+@import url("./components/detalle-producto/detalle-producto.css");
+
 /* ==========================================
    VARIABLES GLOBALES
    ========================================== */
@@ -198,8 +201,26 @@ h2 i {
     background-color: var(--lila);
 }
 
+.etiqueta-menta {
+    background-color: var(--menta);
+}
 
 
+/* ==========================================
+   NOMBRE Y PRECIO DE PRODUCTO (catálogo e inicio)
+   ========================================== */
+.producto-nombre {
+    margin-bottom: 10px;
+    color: var(--azul-marino-intenso);
+    font-family: var(--fuente-encabezados);
+    font-size: 1.15rem;
+    font-weight: 700;
+}
 
-
-
+.producto-precio {
+    margin-top: auto;
+    margin-bottom: 16px;
+    color: var(--azul-marino-intenso);
+    font-size: 1.4rem;
+    font-weight: 700;
+}
