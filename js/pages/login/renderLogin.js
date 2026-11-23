@@ -6,79 +6,51 @@ const colOverlay = document.getElementById("col-overlay");
 
 const renderColLogin = () => {
   colLogin.innerHTML += `
-    
-            <div class="formularios">
-              <p class="eyebrow d-flex align-items-center gap-2 m-2">
-                <span></span> BIENVENIDO(A)
-              </p>
-              <h1>Iniciar Sesión</h1>
-              <p class="text-muted">
-                Ingresa a tu cuenta para continuar comprando, ver tus pedidos y
-                mucho más.
-              </p>
-              <form method="post" class="d-grid gap-2" id="login-form">
-                <div class="username">
-                  <label for="login-email" class="form-label m-0"
-                    >Correo electrónico
-                    <p class="eyebrow d-inline">*</p></label
-                  >
-                  <input
-                    type="email"
-                    id="login-email"
-                    name="email"
-                    class="form-control"
-                    autocomplete="email"
-                    placeholder="Ingresa tu correo"
-                    required
-                  />
-                </div>
-                <div class="password">
-                  <label for="login-password" class="form-label m-0"
-                    >Contraseña
-                    <p class="eyebrow d-inline">*</p></label
-                  >
-                  <input
-                    type="password"
-                    id="login-password"
-                    name="password"
-                    class="form-control"
-                    autocomplete="current-password"
-                    placeholder="Ingresa tu contraseña"
-                    required
-                  />
-                </div>
-                <div class="recordar text-end py-2">
-                  <a href="./recoveryPassword.html" class="eyebrow">¿Olvidaste tu contraseña?</a>
-                </div>
-                <button
-                  type="submit"
-                  class="btn btn-primary w-100"
-                  id="btn-submit-login"
-                >
-                  Iniciar sesión
-                </button>
-                <div
-                  class=" text-muted d-flex justify-content-between align-items-center eyebrow-gray"
-                >
-                  <span class="w-100"></span>
-                  <p class="text-nowrap px-2 m-0">
-                    ¿Aun no tienes una cuenta?
-                  </p>
-                  <span class="w-100"></span>
-                </div>
-                <div class="registrarse">
-                  <button
-                    class="btn btn-secondary w-100"
-                    id="btn-toggle-login"
-                    type="button"
-                  >
-                    Regístrate
-                  </button>
-                </div>
-              </form>
-            </div>
-    `;
-};
+
+  <div class="formularios">
+    <p class="eyebrow d-flex align-items-center gap-2 m-2">
+      <span></span> BIENVENIDO(A)
+    </p>
+    <h1>Iniciar Sesión</h1>
+    <p class="text-muted">
+      Ingresa a tu cuenta para continuar comprando, ver tus pedidos y mucho más.
+    </p>
+    <form method="post" class="d-grid gap-2" id="login-form">
+      <div class="username">
+        <label id="emailLabel" for="login-email" class="form-label m-0" >
+          Correo electrónico
+          <p class="eyebrow d-inline">*</p>
+        </label>
+
+        <input type="email" id="login-email" name="login-email" class="form-control" autocomplete="email" placeholder="Ingresa tu correo" required>
+      </div>
+      <div class="password">
+        <label id="passwordLabel" for="login-password" class="form-label m-0">
+          Contraseña
+          <p class="eyebrow d-inline">*</p>
+        </label>
+        <input type="password" id="login-password" name="login-password" class="form-control" autocomplete="current-password" placeholder="Ingresa tu contraseña" required>
+      </div>
+      <div class="recordar text-end py-2">
+        <a href="./recoveryPassword.html" class="eyebrow">¿Olvidaste tu contraseña?</a>
+      </div>
+      <button type="submit" class="btn btn-primary w-100" id="btn-submit-login" >
+        Iniciar sesión
+      </button>
+
+      <div class=" text-muted d-flex justify-content-between align-items-center eyebrow-gray" >
+        <span class="w-100"></span>
+        <p class="text-nowrap px-2 m-0">¿Aun no tienes una cuenta?</p>
+        <span class="w-100"></span>
+      </div>
+      <div class="registrarse">
+        <button class="btn btn-secondary w-100" id="btn-toggle-login" type="button">
+          Regístrate
+        </button>
+      </div>
+    </form>
+  </div>
+`;};
 
 const renderColRegister = () => {
   colRegister.innerHTML += `
@@ -86,7 +58,7 @@ const renderColRegister = () => {
               <p class="eyebrow d-flex align-items-center gap-2 m-2">
                 <span></span> BIENVENIDO(A)
               </p>
-              <h1>Registrate</h1>
+              <h1>Regístrate</h1>
               <p class="text-muted">
                 Crea una cuenta para continuar comprando, ver tus pedidos y
                 mucho más.
@@ -94,13 +66,11 @@ const renderColRegister = () => {
 
               <form method="post" id="register-form">
                 <div class="d-grid gap-2">
-                  <!--  -->
-
                   <div class="">
-                    <label for="fullname" class="form-label m-0"
-                      >Nombre Completo
-                      <p class="eyebrow d-inline">*</p></label
-                    >
+                    <label id="fullnameLabel" for="fullname" class="form-label m-0">
+                    Nombre Completo
+                      <p class="eyebrow d-inline">*</p>
+                    </label>
                     <input
                       class="form-control"
                       type="text"
@@ -113,7 +83,7 @@ const renderColRegister = () => {
                   </div>
 
                   <div class="">
-                    <label for="register-email" class="form-label m-0"
+                    <label id="registerEmailLabel" for="register-email" class="form-label m-0"
                       >Correo electrónico
                       <p class="eyebrow d-inline">*</p></label
                     >
@@ -128,8 +98,27 @@ const renderColRegister = () => {
                     />
                   </div>
 
+                  <div>
+                    <label id="phoneLabel" for="register-phone" class="form-label m-0">
+                      Número telefónico
+                      <span class="eyebrow d-inline">*</span>
+                    </label>
+
+                    <input
+                      class="form-control"
+                      type="tel"
+                      id="register-phone"
+                      name="phone"
+                      autocomplete="tel-national"
+                      inputmode="numeric"
+                      maxlength="10"
+                      placeholder="Ingresa tu número telefónico"
+                      required
+                    />
+                  </div>
+
                   <div class="">
-                    <label for="register-password" class="form-label m-0"
+                    <label id="registerPasswordLabel" for="register-password" class="form-label m-0"
                       >Contraseña
                       <p class="eyebrow d-inline">*</p></label
                     >
@@ -145,7 +134,7 @@ const renderColRegister = () => {
                   </div>
 
                   <div class="">
-                    <label for="confirm-password" class="form-label m-0"
+                    <label id="confirmPasswordLabel" for="confirm-password" class="form-label m-0"
                       >Confirmar contraseña
                       <p class="eyebrow d-inline">*</p></label
                     >
@@ -165,7 +154,7 @@ const renderColRegister = () => {
                     class="btn btn-primary w-100"
                     id="btn-submit-register"
                   >
-                    Registrate
+                    Regístrate
                   </button>
 
                   <div

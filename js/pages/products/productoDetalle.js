@@ -1,11 +1,31 @@
 import { productos } from "./products.js";
+import { formatearPrecio } from "../../utils/formatoPrecio.js";
 
-const dlg = document.querySelector("#detalle");
+let dlg;
+
+// Crea el <dialog> del detalle una sola vez; así cualquier página puede abrirlo sin tenerlo en su HTML
+function obtenerDialogo() {
+  if (dlg) return dlg;
+
+  dlg = document.createElement("dialog");
+  dlg.id = "detalle";
+  dlg.innerHTML = `
+    <button type="button" class="detalle-cerrar btn-close position-absolute top-0 end-0 m-3" aria-label="Cerrar">&times;</button>
+    <div id="detalle-contenido" class="p-3"></div>`;
+
+  dlg.addEventListener("click", (e) => {
+    if (e.target === dlg || e.target.closest(".detalle-cerrar")) dlg.close();
+  });
+
+  document.body.appendChild(dlg);
+  return dlg;
+}
 
 function abreDetalle(id) {
   const p = productos.find((x) => x.id === id);
   if (!p) return;
-  document.querySelector("#detalle-contenido").innerHTML = `
+  const dlg = obtenerDialogo();
+  dlg.querySelector("#detalle-contenido").innerHTML = `
     <div class="row g-0 p-4">
       <p class="detalle-premio premio-dorado d-inline-flex align-items-center gap-2 rounded-pill w-auto px-3 py-1 mb-2">
         <i class="bi bi-award-fill"></i>
@@ -38,31 +58,17 @@ function abreDetalle(id) {
       </div>
       <div class="detalle-texto col-12 col-md-7 pt-3 px-5">
         <p class="detalle-marca text-muted">${p.brand} </p>
-        <span class="producto-etiqueta mb-2">${p.category}</span>
-        <p class="detalle-precio" style="color: var(--azul-marino-intenso); font-weight: 700; font-size: 1.5rem">$${p.price.toFixed(2)}</p>
+        <span class="etiqueta etiqueta-menta mb-2">${p.category}</span>
+        <p class="producto-precio">${formatearPrecio(p.price)}</p>
         <p class="">${p.detail}</p>
-        <ul class=" d-flex flex-wrap  px-0 gap-2 pe-none">${p.characteristics.map((t) => `<li class="filtro filtro-categoria ">${t}</li>`).join("")}</ul>
-        <div class="producto-acciones">
-        <button type="button" class="btn btn-primary rounded-pill py-3 mb-1" data-id="${p.id}">
-            <i class="bi bi-bag-plus"></i>
-             Agregar al carrito
+        <ul class="d-flex flex-wrap list-unstyled px-0 gap-2">${p.characteristics.map((t) => `<li class="etiqueta etiqueta-categoria">${t}</li>`).join("")}</ul>
+        <button type="button" data-id="${p.id}" class="btn-agregar-carrito py-3 mb-1">
+          <i class="bi bi-bag-plus" aria-hidden="true"></i>
+          Agregar al carrito
         </button>
       </div>
-    </div>
-    `;
-  dlg.dataset.id = id;
+    </div>`;
   dlg.showModal();
 }
 
-function clickDetalleProducto() {
-  dlg.addEventListener("click", (e) => {
-    if (e.target === dlg || e.target.closest(".detalle-cerrar")) {
-      dlg.close();
-      return;
-    }
-    const btn = e.target.closest("[data-accion]");
-    if (btn) accion(btn.dataset.accion, dlg.dataset.id);
-  });
-}
-
-export { abreDetalle, clickDetalleProducto };
+export { abreDetalle };
