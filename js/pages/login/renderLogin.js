@@ -58,7 +58,7 @@ const renderColRegister = () => {
               <p class="eyebrow d-flex align-items-center gap-2 m-2">
                 <span></span> BIENVENIDO(A)
               </p>
-              <h1>Registrate</h1>
+              <h1>Regístrate</h1>
               <p class="text-muted">
                 Crea una cuenta para continuar comprando, ver tus pedidos y
                 mucho más.
@@ -135,7 +135,7 @@ const renderColRegister = () => {
                     class="btn btn-primary w-100"
                     id="btn-submit-register"
                   >
-                    Registrate
+                    Regístrate
                   </button>
 
                   <div
