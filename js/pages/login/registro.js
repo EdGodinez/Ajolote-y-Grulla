@@ -45,6 +45,7 @@ if (formulario) {
     await registrarUsuario(email, password);
 
     // Limpiar formulario y validaciones
+
     formulario.reset();
 
     formulario.querySelectorAll(".form-control").forEach(campo => {
@@ -55,8 +56,20 @@ if (formulario) {
       mensaje.remove();
     });
 
-    // Mostrar formulario Login
+    // Cambiar al formulario de Login
     document.getElementById("btn-toggle-register")?.click();
+
+    // Mostrar Toast de registro exitoso
+    const toastElemento = document.getElementById("toast-registro");
+
+    const toast = bootstrap.Toast.getOrCreateInstance(toastElemento, {
+      animation: true,
+      autohide: true,
+      delay: 4000
+    });
+
+    toast.show();
+
   });
 }
 
