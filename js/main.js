@@ -34,9 +34,13 @@ import { initCatalogo } from "./pages/products/catalogo.js";
    INICIALIZACIÓN
    ========================================== */
 
+import { renderChatbot } from "./components/chatbot.js";
+
+
 // Componentes globales
 renderHeader();
 renderFooter();
+renderChatbot();
 
 // Componentes exclusivos de index.html
 if (document.getElementById("productSection")) {

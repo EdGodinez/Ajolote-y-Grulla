@@ -16,6 +16,10 @@
 /* Detalle de producto (modal) */
 @import url("./components/detalle-producto/detalle-producto.css");
 
+/* Chatbot */
+@import url("./components/chatbot/chatbot.css");
+
+
 /* ==========================================
    VARIABLES GLOBALES
    ========================================== */

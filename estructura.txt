@@ -1,0 +1,164 @@
+.
+├── .gitignore
+├── Productos_Ajolote y Grulla - Productos.pdf
+├── README.md
+├── about.html
+├── agregarProducto.html
+├── assets
+│   ├── about-carrusel
+│   │   ├── fondo.png
+│   │   ├── tarjeta-carrusel-1.png
+│   │   ├── tarjeta-carrusel-2.png
+│   │   └── tarjeta-carrusel-3.png
+│   ├── about-hero
+│   │   ├── fondo-about.png
+│   │   ├── papel-rosa.png
+│   │   ├── salpicadura-abajo.png
+│   │   ├── salpicadura-arriba.png
+│   │   └── salpicadura-izquierda.png
+│   ├── footer
+│   │   └── Vector.png
+│   ├── images
+│   │   ├── Ajolote&Grulla-LoginRegister.svg
+│   │   ├── Ajolote&Grulla-RecoveryPageIMG.png
+│   │   ├── Ajolote.jpg
+│   │   ├── Grulla.jpg
+│   │   ├── fondo-ondas.png
+│   │   ├── home-blog
+│   │   │   ├── deco-corazon-estrellas.png
+│   │   │   ├── deco-espiral-estrellas.png
+│   │   │   └── polaroid-premios-2026.png
+│   │   ├── home-hero
+│   │   │   ├── cajita-sorpresa.png
+│   │   │   ├── clip-libro.png
+│   │   │   ├── cuter-foca.png
+│   │   │   ├── lapiz.png
+│   │   │   ├── regalo-sorpresa.webp
+│   │   │   ├── video-hero-poster.jpg
+│   │   │   ├── video-hero.mp4
+│   │   │   └── washi-tape.png
+│   │   └── home-pick
+│   │       ├── video-pick-poster.jpg
+│   │       └── video-pick.mp4
+│   ├── logos
+│   │   ├── Isotipo.png
+│   │   ├── Logotipo-Horizontal.png
+│   │   ├── Logotipo-Principal.png
+│   │   ├── Negativo.png
+│   │   └── Positivo.png
+│   ├── productos
+│   │   ├── P1-Lapiz-solido-de-escritura.jpg
+│   │   ├── P10-bolígrafo-multifunción-Thought.jpg
+│   │   ├── P12-Marcador-LAMECO-purpurina.jpg
+│   │   ├── P13-Borrador-KADOLOOP.jpg
+│   │   ├── P15-Cintas-Washi.jpg
+│   │   ├── P16-Cortador-Pinguino.jpg
+│   │   ├── P3-FriXion-Synergy.jpg
+│   │   ├── P4-Estuchera-voladora-no-identificada.jpg
+│   │   ├── P5-Bolígrafo-de-gel-juice.jpg
+│   │   ├── P6-carpeta-campus-de-apertura-rapida.jpg
+│   │   ├── P7-Etiquetas-en-rollo-y-recambios.jpg
+│   │   ├── P8-clips-para-libros.jpg
+│   │   ├── P9-ZACCC-Tijeras.jpg
+│   │   ├── cuaderno.jpg
+│   │   ├── goma.png
+│   │   ├── images (1).png
+│   │   └── lapicero.png
+│   ├── team-photos
+│   │   ├── Luis Enrique J.jpg
+│   │   ├── alan.jpeg
+│   │   ├── ale.jpeg
+│   │   ├── arlly.jpeg
+│   │   ├── bitbusters.jpeg
+│   │   ├── cris.jpeg
+│   │   ├── ed.jpeg
+│   │   ├── kev.jpeg
+│   │   ├── kikin.jpeg
+│   │   ├── mar.jpeg
+│   │   └── sebas.jpeg
+│   └── videos_axo
+│       ├── despertando.mp4
+│       ├── hola.mp4
+│       └── trabajando.mp4
+├── cambiarPassword.html
+├── contact.html
+├── css
+│   ├── components
+│   │   ├── chatbot
+│   │   │   └── chatbot.css
+│   │   ├── footer
+│   │   │   └── footer.css
+│   │   └── header
+│   │       └── header.css
+│   ├── pages
+│   │   ├── about
+│   │   │   ├── carrusel.css
+│   │   │   ├── hero.css
+│   │   │   ├── presentationcards.css
+│   │   │   ├── style-about.css
+│   │   │   └── team.css
+│   │   ├── agregarProducto
+│   │   │   └── agregarProducto.css
+│   │   ├── contact
+│   │   │   └── style-contact.css
+│   │   ├── home
+│   │   │   └── style-home.css
+│   │   ├── login
+│   │   │   ├── login.css
+│   │   │   └── style-login.css
+│   │   └── products
+│   │       └── products.css
+│   ├── quiz.css
+│   └── style.css
+├── estructura.txt
+├── index.html
+├── js
+│   ├── components
+│   │   ├── chatbot.js
+│   │   ├── footer.js
+│   │   └── header.js
+│   ├── main.js
+│   ├── pages
+│   │   ├── about
+│   │   │   ├── carrusel.js
+│   │   │   ├── hero.js
+│   │   │   ├── index-about.js
+│   │   │   ├── login.js
+│   │   │   ├── presentationcards.js
+│   │   │   ├── registro.js
+│   │   │   └── team.js
+│   │   ├── agregarProducto
+│   │   │   └── agregarProducto.js
+│   │   ├── contact
+│   │   │   ├── contact.js
+│   │   │   ├── form.js
+│   │   │   └── index-contact.js
+│   │   ├── index
+│   │   │   ├── about-us.js
+│   │   │   ├── categories.js
+│   │   │   ├── hero.js
+│   │   │   ├── index-index.js
+│   │   │   ├── pick.js
+│   │   │   ├── products.js
+│   │   │   └── section-header.js
+│   │   ├── login
+│   │   │   ├── login.js
+│   │   │   ├── registro.js
+│   │   │   ├── renderLogin.js
+│   │   │   ├── responsiveToggle.js
+│   │   │   └── sesion.js
+│   │   ├── products
+│   │   │   ├── catalogo.js
+│   │   │   └── products.js
+│   │   └── recovery-password
+│   │       ├── changePassword.js
+│   │       ├── logicalRecovery.js
+│   │       └── renderRecovery.js
+│   └── quiz.js
+├── login.html
+├── products.html
+├── quiz.html
+├── recoveryPassword.html
+└── registro.html
+
+35 directories, 127 files

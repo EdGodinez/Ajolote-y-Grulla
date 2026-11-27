@@ -1,0 +1,246 @@
+
+/* ==========================================
+   CHATBOT - AJOLOTE Y GRULLA
+   Estilos del asistente virtual
+   ========================================== */
+
+.chatbot-container {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    z-index: 1050;
+    font-family: var(--fuente-contenido);
+}
+
+/* Botón flotante */
+
+.chatbot-toggle {
+    width: 85px;
+    height: 85px;
+    padding: 0;
+    border: 3px solid var(--rosa-sakura);
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: var(--blanco-calido);
+    box-shadow: 0 5px 18px rgba(46, 56, 85, 0.2);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.chatbot-toggle:hover {
+    transform: translateY(-4px) scale(1.05);
+}
+
+.chatbot-toggle video {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Ventana del chat */
+
+.chatbot-window {
+    position: absolute;
+    right: 0;
+    bottom: 80px;
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    height: 480px;
+    overflow: hidden;
+    border-radius: 20px;
+    background-color: var(--blanco-calido);
+    box-shadow: 0 8px 35px rgba(46, 56, 85, 0.2);
+    border: 1px solid rgba(46, 56, 85, 0.1);
+}
+
+.chatbot-window[hidden] {
+    display: none;
+}
+
+/* Encabezado */
+
+.chatbot-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 18px;
+    background-color: var(--rosa-sakura);
+    color: var(--azul-marino-intenso);
+}
+
+.chatbot-header > div:nth-child(2) {
+    flex: 1;
+}
+
+.chatbot-header h2 {
+    margin: 0;
+    font-family: var(--fuente-encabezados);
+    font-size: 1rem;
+}
+
+.chatbot-header p {
+    margin: 3px 0 0;
+    font-size: 0.85rem;
+}
+
+.chatbot-header button {
+    border: none;
+    background: transparent;
+    color: var(--azul-marino-intenso);
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+/* Mensajes */
+
+.chatbot-messages {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 12px;
+    padding: 18px;
+    overflow-y: auto;
+}
+
+.chatbot-message {
+    max-width: 85%;
+    padding: 11px 14px;
+    border-radius: 14px;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.chatbot-message-bot {
+    align-self: flex-start;
+    background-color: var(--menta);
+    color: var(--azul-marino-intenso);
+    border-bottom-left-radius: 4px;
+}
+
+/* Formulario */
+
+.chatbot-form {
+    display: flex;
+    gap: 8px;
+    padding: 14px;
+    border-top: 1px solid rgba(46, 56, 85, 0.1);
+    background-color: #fff;
+}
+
+.chatbot-form input {
+    flex: 1;
+    min-width: 0;
+    padding: 10px 13px;
+    border: 1px solid var(--lila);
+    border-radius: 25px;
+    outline: none;
+    font-family: var(--fuente-contenido);
+}
+
+.chatbot-form input:focus {
+    border-color: var(--rosa-coral);
+    box-shadow: 0 0 0 3px rgba(248, 92, 112, 0.12);
+}
+
+.chatbot-form button {
+    width: 42px;
+    height: 42px;
+    flex-shrink: 0;
+    border: none;
+    border-radius: 50%;
+    background-color: var(--rosa-coral);
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.chatbot-form button:hover {
+    background-color: var(--azul-marino-intenso);
+}
+
+/* Mensajes del usuario */
+
+.chatbot-message-user {
+    align-self: flex-end;
+    background-color: var(--lila);
+    color: var(--azul-marino-intenso);
+    border-bottom-right-radius: 4px;
+}
+
+/* Avatar animado */
+
+.chatbot-avatar {
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+    overflow: hidden;
+    border-radius: 50%;
+    background-color: var(--blanco-calido);
+}
+
+.chatbot-avatar video {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Adaptación móvil */
+
+@media (max-width: 480px) {
+    .chatbot-container {
+        right: 15px;
+        bottom: 15px;
+    }
+
+    .chatbot-window {
+        position: fixed;
+        right: 15px;
+        bottom: 90px;
+        width: calc(100vw - 30px);
+        height: min(480px, calc(100dvh - 120px));
+    }
+}
+
+
+/* Globo de bienvenida */
+
+.chatbot-tooltip {
+    position: absolute;
+    right: 100px;
+    bottom: 22px;
+    width: 190px;
+    padding: 12px 15px;
+
+    background: var(--blanco-calido) !important;
+    color: var(--azul-marino-intenso);
+
+    border: 2px solid var(--rosa-sakura);
+    border-radius: 15px;
+
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-align: center;
+
+    box-shadow: 0 4px 15px rgba(46, 56, 85, 0.15);
+    z-index: 1051;
+}
+
+/* Pequeña punta del globo */
+
+.chatbot-tooltip::after {
+    content: "";
+    position: absolute;
+    right: -8px;
+    bottom: 18px;
+    width: 14px;
+    height: 14px;
+
+    background: var(--blanco-calido);
+    border-top: 2px solid var(--rosa-sakura);
+    border-right: 2px solid var(--rosa-sakura);
+
+    transform: rotate(45deg);
+}
